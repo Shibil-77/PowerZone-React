@@ -32,13 +32,13 @@ function Login() {
                   <div className="flex justify-center">
                     <h4>------OR------</h4>
                   </div>
-                  <div className="flex gap-2 justify-center border-2 bg-myColor-500 border-heavy-metal-800 shadow-md rounded-md hover:bg-heavy-metal-100 shadow-heavy-metal-700 py-2 mt-5">
+                  <div className="flex gap-2 justify-center border-2 bg-[#85c964] border-heavy-metal-800 shadow-md rounded-md hover:bg-heavy-metal-100 shadow-heavy-metal-700 py-2 mt-5">
                     <svg className="h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
                       <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" /></svg>
                     <h3 className="mt-1 text-white">Google</h3>
                   </div>
                 </div>
-                <button  className="w-full my-5 py-3 border-white border-2 bg-myColor-500 shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" >Log In</button>
+                <button  className="w-full my-5 py-3 border-white border-2 bg-[#85c964] shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" >Log In</button>
               </form>
             </div>
           </div>

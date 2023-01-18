@@ -1,11 +1,14 @@
 import React from 'react'
+// import { Link } from 'react-router-dom'
+import  ProfileIcon from '../../../assets/Icons/user.png'
 
 function Navbar() {
     return (
         <>
             <div className="flex justify-between bg-myColor-500 shadow-md w-full h-16 shadow-heavy-metal-400 p-4 mb-5 sticky top-0 z-50">
                 <div>
-                    <h2 className="ml-5 font-bold text-snow-drift-200 text-2xl">Power Zone</h2>
+                    <h2 className="ml-5 font-bold text-snow-drift-200 text-white text-2xl">Power Zone</h2>
+                    {/* <img src="C:\Users\jithu\Downloads\PowerZone.png" alt="Power Zone" /> */}
                 </div>
                 <div className="flex gap-4 mr-2">
                     <span className="text-left mt-1 text-white">
@@ -16,13 +19,17 @@ function Navbar() {
                         </svg>
                         {/* </Link> */}
                     </span>
-                    <button className="hover:bg-snow-drift-50 px-6 rounded-xl font-bold text-md text-snow-drift-50 border-white border-4 hover:text-heavy-metal-800">Login</button>
-                    <div className='w-8 h-8 rounded-full border-white border overflow-hidden shadow-sm shadow-gray-500'>
-                        <img alt="avatars" />
+                    <button className="bg-white hover:bg-green-600 hover:text-white hover:bg-snow-drift-5 px-6 rounded-xl font-bold text-md text-gray-500  hover:text-heavy-metal-800">Login</button>
+                    <div className='w-28 h-8  bg-white rounded-md  overflow-hidden shadow-sm shadow-gray-500'>
+                        <div className='flex px-3'>
+                           <img src={ProfileIcon} className='w-7 mt-1' alt="" />
+                          <h1 className='text-gray-500 ml-3 mt-1'>Shibil</h1>
+                        </div>
                     </div>
                 </div>
             </div>
         </>
+      
     )
 }
 

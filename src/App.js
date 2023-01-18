@@ -3,7 +3,8 @@ import React  from 'react';
 import { Route,Routes } from 'react-router-dom'
 import LoginPage from './pages/Users/Login/LoginPage';
 import RegisterPage from './pages/Users/Register/RegisterPage';
-import Navbar from './components/Users/Navbar/Navbar';
+// import Navbar from './components/Users/Navbar/Navbar';
+import Home from './pages/Users/Home/Home';
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
       <Routes>
       <Route path="/login" element={ <LoginPage/> } />
       <Route path="/register" element={ <RegisterPage/> } />   
-      <Route path="/navbar" element={ <Navbar/> } />   
+      <Route path="/" element={ <Home/> } />   
        </Routes>
    </div>
   );
