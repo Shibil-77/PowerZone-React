@@ -5,9 +5,9 @@ import  ProfileIcon from '../../../assets/Icons/user.png'
 function Navbar() {
     return (
         <>
-            <div className="flex justify-between bg-myColor-500 shadow-md w-full h-16 shadow-heavy-metal-400 p-4 mb-5 sticky top-0 z-50">
+            <div className="flex justify-between bg-white shadow-md w-full h-16 shadow-heavy-metal-400 p-4 mb-5 sticky top-0 z-50">
                 <div>
-                    <h2 className="ml-5 font-bold text-snow-drift-200 text-white text-2xl">Power Zone</h2>
+                    <h2 className="ml-5 font-bold text-snow-drift-200 text-myColor-600 text-2xl">Power Zone</h2>
                     {/* <img src="C:\Users\jithu\Downloads\PowerZone.png" alt="Power Zone" /> */}
                 </div>
                 <div className="flex gap-4 mr-2">
@@ -19,7 +19,7 @@ function Navbar() {
                         </svg>
                         {/* </Link> */}
                     </span>
-                    <button className="bg-white hover:bg-green-600 hover:text-white hover:bg-snow-drift-5 px-6 rounded-xl font-bold text-md text-gray-500  hover:text-heavy-metal-800">Login</button>
+                    <button className="bg- hover:bg-[#c4dbec] hover:text-white hover:bg-snow-drift-5 px-6 rounded-xl font-bold text-md text-gray-500  hover:text-heavy-metal-800">Login</button>
                     <div className='w-28 h-8  bg-white rounded-md  overflow-hidden shadow-sm shadow-gray-500'>
                         <div className='flex px-3'>
                            <img src={ProfileIcon} className='w-7 mt-1' alt="" />
@@ -29,8 +29,7 @@ function Navbar() {
                 </div>
             </div>
         </>
-      
-    )
+      )
 }
 
 export default Navbar

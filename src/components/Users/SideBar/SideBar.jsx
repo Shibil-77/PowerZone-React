@@ -27,13 +27,14 @@ const SideBar= ({children}) => {
       <div
         className={` ${
           open ? "w-72" : "w-20 "
-        } bg-[#5EA634] h-full p-5  pt-8 relative duration-300`}
+        } bg-white h-full p-5  pt-8 relative rounded-2xl duration-300`}
       >
         <img
           src={Arrow}
           className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
            border-2 rounded-full  ${!open && "rotate-180"}`}
           onClick={() => setOpen(!open)}
+          alt='hello'
         />
         <div className="flex gap-x-4 items-center">
           <img 
@@ -41,9 +42,10 @@ const SideBar= ({children}) => {
             className={`cursor-pointer duration-500 w-10 ${
               open && "rotate-[360deg]"
             }`}
+            alt='hello'
           />
           <h1
-            className={`text-white origin-left font-medium text-xl duration-200 ${
+            className={`text-[#004f6d] origin-left font-medium text-xl duration-200 ${
               !open && "scale-0"
             }`}
           >
@@ -60,9 +62,8 @@ const SideBar= ({children}) => {
                 index === 0 && "bg-light-white"
               } `}
             >
-                
-              <Menu.src fontSize="large"/>
-               <span className={`${!open && "hidden"}  origin-left duration-200 text-lg text-white`}>
+              <Menu.src fontSize="large" color="success"/>
+               <span className={`${!open && "hidden"}  origin-left duration-200 text-lg text-black`}>
                 {Menu.title}
               </span>
             </li>
@@ -71,13 +72,7 @@ const SideBar= ({children}) => {
         </ul>
       </div>
 
-{/* Home  */}
-{/* 
-      <div className="h-screen flex-1 p-7">
-        <h1 className="text-2xl font-semibold ">Home Page</h1>
-      </div> */}
 {children}
-{/* end Home */}
 
     </div>
   );

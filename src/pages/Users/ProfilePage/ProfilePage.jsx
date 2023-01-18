@@ -1,19 +1,18 @@
 import React from 'react'
 import Navbar from '../../../components/Users/Navbar/Navbar'
+import Profile from '../../../components/Users/Profile/Profile'
 import SideBar from '../../../components/Users/SideBar/SideBar'
 
-
-function Home() {
+function ProfilePage() {
   return (
     <div>
         <Navbar/>
-        <SideBar>   
-        <div className="h-screen flex-1 p-7">
-        <h1 className="text-2xl font-semibold ">Home Page</h1>
-      </div>
-        </SideBar>  
+        <SideBar>
+            <Profile/>
+        </SideBar>
     </div>
   )
 }
 
-export default Home
+export default ProfilePage
+
