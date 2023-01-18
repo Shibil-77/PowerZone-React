@@ -4,12 +4,12 @@ import TextField from '@mui/material/TextField';
 function Register() {
   return (
     <>
-    <div className='flex w-full h-full justify-items-center bg-[#e9f7fa]'>
+    <div className='flex w-full h-full justify-items-center bg-[#e9f7fa] '>
       <div className='h-screen w-8/12  flex-col hidden lg:block'>
         <img className='mt-[250px]'
           src="https://electricvehicles.bchydro.com/sites/default/files/content-row/charging-an-ev-right-align%402x.png" alt="" />
       </div>
-      <div className='w-full h-full pt-20 flex justify-center'>
+      <div className='w-full h-full pt-10 flex justify-center '>
         <div className='bg-[#c4dbec] py-10 rounded-lg shadow-xl shadow-gray-300  flex justify-center w-full mx-3  md:w-5/12  xs:w-full'>
           <div>
             <h1 className='text-center text-3xl text-myColor-600  mt-4 font-white'>Sign Up</h1>
@@ -33,7 +33,7 @@ function Register() {
                 {/* <Link>HELLO WORLD</Link> */}
                 <div className="flex justify-center py-2">
                   {/* <Link to={'/register'}> */}
-                    <p className=" text-sm text-heavy-metal-900">Register?<span className="text-blue-600 cursor-pointer hover:underline">Click Me</span></p>
+                    <p className=" text-sm text-heavy-metal-900">Login?<span className="text-blue-600 cursor-pointer hover:underline">Click Me</span></p>
                   {/* </Link> */}
                 </div>
                 <div className="flex justify-center">
@@ -45,6 +45,7 @@ function Register() {
                   <h3 className="mt-1 text-white">Google</h3>
                 </div>
               </div>
+              <button  className="w-full my-5 py-3 border-white border-2 bg-myColor-500 shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" >Sign In</button>
             </form>
           </div>
         </div>

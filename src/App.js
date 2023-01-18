@@ -1,14 +1,21 @@
 import '../src/App.css'
 import React  from 'react';
-import Login from './components/Users/Login/Login';
-
+import { Route,Routes } from 'react-router-dom'
+import LoginPage from './pages/Users/Login/LoginPage';
+import RegisterPage from './pages/Users/Register/RegisterPage';
+import Navbar from './components/Users/Navbar/Navbar';
 
 
 function App() {
   return (
-    <>
-       <Login/>
-    </> 
+    <div>
+      
+      <Routes>
+      <Route path="/login" element={ <LoginPage/> } />
+      <Route path="/register" element={ <RegisterPage/> } />   
+      <Route path="/navbar" element={ <Navbar/> } />   
+       </Routes>
+   </div>
   );
 }
 

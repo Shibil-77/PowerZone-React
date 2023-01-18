@@ -14,28 +14,19 @@ function Login() {
         <div className='w-full h-full pt-20 flex justify-center'>
           <div className='bg-[#c4dbec] py-10 rounded-lg shadow-xl shadow-gray-300  flex justify-center w-full mx-3  md:w-5/12  xs:w-full'>
             <div>
-              <h1 className='text-center text-3xl text-myColor-600  mt-4 font-white'>Sign Up</h1>
+              <h1 className='text-center text-3xl text-myColor-600  mt-4 font-white'>Login Page</h1>
               <form action="" >
                 <div>
-                  <div className='grid  place-items-center mt-5 '>
-                    <TextField size='small' id="outlined-basic" className='w-full' label="Full Name" variant="outlined" />
-                  </div>
                   <div className='grid  place-items-center mt-5 '>
                     <TextField size='small' id="outlined-basic" className='w-full' label="E Mail" variant="outlined" />
                   </div>
                   <div className='grid  place-items-center mt-5 '>
-                    <TextField size='small' id="outlined-basic" className='w-full' label="Phone" variant="outlined" />
-                  </div>
-                  <div className='grid  place-items-center mt-5 '>
                     <TextField size='small' id="outlined-basic" className='w-full' label="PassWord" variant="outlined" />
-                  </div>
-                  <div className='grid  place-items-center mt-5 '>
-                    <TextField size='small' id="outlined-basic" className='w-full' label="Confirm Password" variant="outlined" />
                   </div>
                   {/* <Link>HELLO WORLD</Link> */}
                   <div className="flex justify-center py-2">
                     {/* <Link to={'/register'}> */}
-                      <p className=" text-sm text-heavy-metal-900">Register?<span className="text-blue-600 cursor-pointer hover:underline">Click Me</span></p>
+                      <p className=" text-sm text-heavy-metal-900">Login?<span className="text-blue-600 cursor-pointer hover:underline">Click Me</span></p>
                     {/* </Link> */}
                   </div>
                   <div className="flex justify-center">
@@ -47,6 +38,7 @@ function Login() {
                     <h3 className="mt-1 text-white">Google</h3>
                   </div>
                 </div>
+                <button  className="w-full my-5 py-3 border-white border-2 bg-myColor-500 shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" >Log In</button>
               </form>
             </div>
           </div>
