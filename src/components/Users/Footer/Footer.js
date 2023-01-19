@@ -5,7 +5,7 @@ function Footer() {
     <footer className="text-center bg-white text-black mt-20">
   <div className="container px-6 pt-6">
     <div className="flex justify-center mb-6">
-      <a href="#!" type="button" className="rounded-full border-2 border-white text-black mt-20 leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
+      <a href="#!" type="button" className="rounded-full border-2 border-white text-black mt-5 leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
         <svg aria-hidden="true"
         focusable="false"
         data-prefix="fab"
@@ -22,7 +22,7 @@ function Footer() {
         </svg>
       </a>
 
-      <a href="#!" type="button" className="rounded-full border-2 border-white text-black mt-20 leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
+      <a href="#!" type="button" className="rounded-full border-2 border-white text-black mt-5 leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
         <svg aria-hidden="true"
         focusable="false"
         data-prefix="fab"
@@ -39,7 +39,7 @@ function Footer() {
         </svg>
       </a>
 
-      <a href="#!" type="button" className="rounded-full border-2 border-white text-black mt-20 leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
+      <a href="#!" type="button" className="rounded-full border-2 border-white text-black mt-5 leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
         <svg aria-hidden="true"
         focusable="false"
         data-prefix="fab"
@@ -56,7 +56,7 @@ function Footer() {
         </svg>
       </a>
 
-      <a href="#!" type="button" className="rounded-full border-2 border-white text-black mt-20 leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
+      <a href="#!" type="button" className="rounded-full border-2 border-white text-black mt-5 leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
         <svg aria-hidden="true"
         focusable="false"
         data-prefix="fab"
@@ -73,7 +73,7 @@ function Footer() {
         </svg>
       </a>
 
-      <a href="#!" type="button" className="rounded-full border-2 border-white text-black mt-20 leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
+      <a href="#!" type="button" className="rounded-full border-2 border-white text-black mt-5 leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
         <svg aria-hidden="true"
         focusable="false"
         data-prefix="fab"
@@ -90,7 +90,7 @@ function Footer() {
         </svg>
       </a>
 
-      <a href="#!" type="button" className="rounded-full border-2 border-white text-black mt-20 leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
+      <a href="#!" type="button" className="rounded-full border-2 border-white text-black mt-5 leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
         <svg aria-hidden="true"
         focusable="false"
         data-prefix="fab"
@@ -110,7 +110,7 @@ function Footer() {
 
     <div>
       <form action="">
-        <div className="grid md:grid-cols-3 gird-cols-1 gap-4 flex justify-center items-center">
+        <div className="grid md:grid-cols-3 gird-cols-1 gap-2 flex justify-center ">
           <div className="md:ml-auto md:mb-6">
             <p className="">
               <strong>Sign up for our newsletter</strong>
@@ -141,8 +141,8 @@ function Footer() {
               placeholder="Email address"/>
           </div>
 
-          <div className="md:mr-auto mb-6">
-            <button type="submit" className="inline-block px-6 py-2 border-2 border-white text-black mt-20 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
+          <div className="md:mr-auto  mb-6">
+            <button type="submit" className="inline-block px-6 py-2 border-2 border-white text-black mt-0 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
               Subscribe
             </button>
           </div>
@@ -151,7 +151,7 @@ function Footer() {
     </div>
 
     <div className="mb-6">
-      <p>
+      <p className='text-center'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
         repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
         eum harum corrupti dicta, aliquam sequi voluptate quas.
