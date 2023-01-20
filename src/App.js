@@ -12,9 +12,16 @@ import BookingDetailsPage from './pages/Users/BookingDetailsPage.jsx/BookingDeta
 import NewBooking from './pages/Users/NewBookingPage/NewBooking';
 import PortDetails from './pages/Users/PortDetails/PortDetails';
 import PortBookings from './pages/Users/PortBookings/PortBookings';
+import AdminLoginPage from './pages/Admin/AdminLoginPage/AdminLoginPage';
+import BookingDetails from './pages/Admin/BookingDetails/BookingDetails';
+import AddBanner from './pages/Admin/AddBanner/AddBanner';
+import BannerDetails from './pages/Admin/BannerDetails/BannerDetails'
+import UserDetails from './pages/Admin/UserDetails/UserDetails';
+
 
 function App() {
   return (
+    <>
     <div>
     <Routes>
       <Route path="/login" element={ <LoginPage/> } />
@@ -27,15 +34,21 @@ function App() {
       <Route path="/AddChargingPort" element={<AddChargingPort/>} /> 
       <Route path="/PortDetails" element={<PortDetails/>} /> 
       <Route path="/PortBookings" element={<PortBookings/>} /> 
-      
-{/* 
-      <Route path="/PortRequests" element={<FormPage/>} /> 
-      <Route path="/AddChargingPortStep2" element={<FormPage/>} /> 
-      <Route path="/AddChargingPortStep3" element={<FormPage/>} /> 
-      <Route path="/AddBookingDetails" element={<FormPage/>} />  */}
-     
     </Routes>
    </div>
+
+   <div>
+    <Routes>
+         <Route path="/admin/login" element={<AdminLoginPage/>} /> 
+         <Route path="/admin/BookingDetails" element={<BookingDetails/>} /> 
+         <Route path="/admin/PortDetails" element={<PortDetails/>} /> 
+         <Route path="/admin/AddBanner" element={<AddBanner/>} /> 
+         <Route path="/admin/BannerDetails" element={<BannerDetails/>} /> 
+         <Route path="/admin/UsersDetails" element={<UserDetails/>} /> 
+    </Routes>
+
+   </div>
+  </>
   );
 }
 
