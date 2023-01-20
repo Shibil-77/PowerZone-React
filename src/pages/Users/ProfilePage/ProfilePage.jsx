@@ -3,16 +3,13 @@ import Navbar from '../../../components/Users/Navbar/Navbar'
 import Profile from '../../../components/Users/Profile/Profile'
 import SideBar from '../../../components/Users/SideBar/SideBar'
 import Footer from '../../../components/Users/Footer/Footer'
+import Layout from '../Layout/Layout'
 
 function ProfilePage() {
   return (
-    <div className='bg-[#e9f7fa] h-screen'>
-        <Navbar/>
-        <SideBar>
-            <Profile/>
-        </SideBar>
-        <Footer/>
-    </div>
+       <Layout>
+       <Profile/>
+        </Layout>
   )
 }
 
