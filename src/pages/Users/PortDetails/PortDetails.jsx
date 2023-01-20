@@ -2,14 +2,12 @@ import React from 'react'
 import Table from '../../../components/Users/Table/Table'
 import Layout from '../Layout/Layout'
 
-function BookingPage() {
+function PortDetails() {
   return (
-    <div className='bg-[#e9f7fa] h-screen'>
       <Layout>
-        <Table />
+        <Table/>
       </Layout>
-    </div>
   )
 }
 
-export default BookingPage
+export default PortDetails

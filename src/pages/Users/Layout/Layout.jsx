@@ -11,9 +11,12 @@ function Layout({ children }) {
                     <Navbar />
                 </div>
                 <div>
-                    <SideBar>
+                    <div className="flex">
+                        <div className='hidden md:block'>
+                            <SideBar />
+                        </div>
                         {children}
-                    </SideBar>
+                    </div>
                 </div>
                 <div>
                     <Footer />

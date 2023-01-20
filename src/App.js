@@ -7,19 +7,34 @@ import RegisterPage from './pages/Users/Register/RegisterPage';
 import HomePage from './pages/Users/HomePage/HomePage';
 import ProfilePage from './pages/Users/ProfilePage/ProfilePage';
 import BookingPage from './pages/Users/BookingsPage/BookingPage';
-import FormPage from './pages/Users/FormPage/FormPage';
+import AddChargingPort from './pages/Users/AddChargingPort/AddChargingPort';
+import BookingDetailsPage from './pages/Users/BookingDetailsPage.jsx/BookingDetailsPage';
+import NewBooking from './pages/Users/NewBookingPage/NewBooking';
+import PortDetails from './pages/Users/PortDetails/PortDetails';
+import PortBookings from './pages/Users/PortBookings/PortBookings';
 
 function App() {
   return (
     <div>
-      <Routes>
+    <Routes>
       <Route path="/login" element={ <LoginPage/> } />
       <Route path="/register" element={ <RegisterPage/> } />   
       <Route path="/" element={ <HomePage/> } />   
       <Route path="/Profile" element={ <ProfilePage/> } />  
-      <Route path="/Bookings" element={<BookingPage/>  } />  
-      <Route path="/Add" element={<FormPage/>} /> 
-      </Routes>
+      <Route path="/OldBookingsDetails" element={<BookingPage/>  } />  
+      <Route path="/AddBookingDetails" element={<BookingDetailsPage/>} /> 
+      <Route path="/NewBookings" element={<NewBooking/>  } />  
+      <Route path="/AddChargingPort" element={<AddChargingPort/>} /> 
+      <Route path="/PortDetails" element={<PortDetails/>} /> 
+      <Route path="/PortBookings" element={<PortBookings/>} /> 
+      
+{/* 
+      <Route path="/PortRequests" element={<FormPage/>} /> 
+      <Route path="/AddChargingPortStep2" element={<FormPage/>} /> 
+      <Route path="/AddChargingPortStep3" element={<FormPage/>} /> 
+      <Route path="/AddBookingDetails" element={<FormPage/>} />  */}
+     
+    </Routes>
    </div>
   );
 }

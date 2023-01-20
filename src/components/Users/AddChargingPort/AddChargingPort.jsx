@@ -1,14 +1,14 @@
 import React from 'react'
 
-function Form() {
+function Form({children}) {
   return (
     <>
-      <div className='bg-white w-6/12 mx-20 rounded-3xl flex h-full justify-center mb-10'>
+      <div className='bg-white w-screen md:bg-none gap-5 md:mx-10 mx-10 rounded-3xl flex h-full justify-center mb-10'>
         <div>
-          <div className='w-full'>
-            <h1 className='text-center mx-[90px] font-bold mt-8 text-3xl'>Add Charging Port</h1>
+          <div className='w-full '>
+            {children}
           </div>
-          <div className='mt-10 w-12/12 bg-[#c2c2c228]  shadow-xl rounded-3xl py-20 mb-10'>
+          <div className='mt-10 w-auto bg-[#c2c2c228]  shadow-xl rounded-3xl py-20 mb-10'>
             <form action='/' >
       
               <div class="flex justify-center ">

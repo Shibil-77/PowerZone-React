@@ -1,18 +1,14 @@
 import React from 'react'
-import Navbar from '../../../components/Users/Navbar/Navbar'
-import Sidebar from '../../../components/Users/SideBar/SideBar'
 import Home from '../../../components/Users/Home/Home'
-import Footer from '../../../components/Users/Footer/Footer'
+import Layout from '../Layout/Layout'
 
 function HomePage() {
 
   return (
     <div className='bg-[#e9f7fa] h-screen'>
-        <Navbar/>
-         <Sidebar>   
-          <Home />
-        </Sidebar> 
-        <Footer/> 
+      <Layout>
+        <Home />
+      </Layout>
     </div>
   )
 }

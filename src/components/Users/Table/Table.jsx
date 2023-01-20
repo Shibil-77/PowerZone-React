@@ -6,7 +6,7 @@ function Table() {
         <div className="flex flex-col justify-center h-full ">
             <div className="w-full max-w-2xl mx-auto bg-white shadow-lg rounded-sm border border-gray-200 ">
                 <header className="px-5 py-4 border-b border-gray-100">
-                    <h2 className="font-semibold text-gray-800">Customers</h2>
+                    <h2 className="font-semibold text-gray-800">Booking Details</h2>
                 </header>
                 <div className="p-3">
                     <div className="overflow-x-auto">
@@ -14,16 +14,16 @@ function Table() {
                             <thead className="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
                                 <tr>
                                     <th className="p-2 whitespace-nowrap">
-                                        <div className="font-semibold text-left">Name</div>
+                                        <div className="font-semibold text-left">No</div>
                                     </th>
                                     <th className="p-2 whitespace-nowrap">
-                                        <div className="font-semibold text-left">Email</div>
+                                        <div className="font-semibold text-left">Date</div>
                                     </th>
                                     <th className="p-2 whitespace-nowrap">
-                                        <div className="font-semibold text-left">Spent</div>
+                                        <div className="font-semibold text-left">Time</div>
                                     </th>
                                     <th className="p-2 whitespace-nowrap">
-                                        <div className="font-semibold text-center">Country</div>
+                                        <div className="font-semibold text-center">Location</div>
                                     </th>
                                 </tr>
                             </thead>
@@ -31,81 +31,81 @@ function Table() {
                                 <tr>
                                     <td className="p-2 whitespace-nowrap">
                                         <div className="flex items-center">
-                                            <div className="font-medium text-gray-800">Alex Shatov</div>
+                                            <div className="font-medium text-gray-800">1</div>
                                         </div>
                                     </td>
                                     <td className="p-2 whitespace-nowrap">
-                                        <div className="text-left">alexshatov@gmail.com</div>
+                                        <div className="text-left">01/01/2023</div>
                                     </td>
                                     <td className="p-2 whitespace-nowrap">
-                                        <div className="text-left font-medium text-green-500">$2,890.66</div>
+                                        <div className="text-left font-medium ">8.00Am-9.00Pm</div>
                                     </td>
                                     <td className="p-2 whitespace-nowrap">
-                                        <div className="text-lg text-center">??</div>
+                                        <div className="text-lg text-center">Malappuram,Kerala,India</div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td className="p-2 whitespace-nowrap">
                                         <div className="flex items-center">
-                                            <div className="font-medium text-gray-800">Philip Harbach</div>
+                                            <div className="font-medium text-gray-800">1</div>
                                         </div>
                                     </td>
                                     <td className="p-2 whitespace-nowrap">
-                                        <div className="text-left">philip.h@gmail.com</div>
+                                        <div className="text-left">01/01/2023</div>
                                     </td>
                                     <td className="p-2 whitespace-nowrap">
-                                        <div className="text-left font-medium text-green-500">$2,767.04</div>
+                                        <div className="text-left font-medium ">8.00Am-9.00Pm</div>
                                     </td>
                                     <td className="p-2 whitespace-nowrap">
-                                        <div className="text-lg text-center">??</div>
+                                        <div className="text-lg text-center">Malappuram,Kerala,India</div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td className="p-2 whitespace-nowrap">
                                         <div className="flex items-center">
-                                            <div className="font-medium text-gray-800">Mirko Fisuk</div>
+                                            <div className="font-medium text-gray-800">1</div>
                                         </div>
                                     </td>
                                     <td className="p-2 whitespace-nowrap">
-                                        <div className="text-left">mirkofisuk@gmail.com</div>
+                                        <div className="text-left">01/01/2023</div>
                                     </td>
                                     <td className="p-2 whitespace-nowrap">
-                                        <div className="text-left font-medium text-green-500">$2,996.00</div>
+                                        <div className="text-left font-medium ">8.00Am-9.00Pm</div>
                                     </td>
                                     <td className="p-2 whitespace-nowrap">
-                                        <div className="text-lg text-center">??</div>
+                                        <div className="text-lg text-center">Malappuram,Kerala,India</div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td className="p-2 whitespace-nowrap">
                                         <div className="flex items-center">
-                                            <div className="font-medium text-gray-800">Olga Semklo</div>
+                                            <div className="font-medium text-gray-800">1</div>
                                         </div>
                                     </td>
                                     <td className="p-2 whitespace-nowrap">
-                                        <div className="text-left">olga.s@cool.design</div>
+                                        <div className="text-left">01/01/2023</div>
                                     </td>
                                     <td className="p-2 whitespace-nowrap">
-                                        <div className="text-left font-medium text-green-500">$1,220.66</div>
+                                        <div className="text-left font-medium ">8.00Am-9.00Pm</div>
                                     </td>
                                     <td className="p-2 whitespace-nowrap">
-                                        <div className="text-lg text-center">??</div>
+                                        <div className="text-lg text-center">Malappuram,Kerala,India</div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td className="p-2 whitespace-nowrap">
                                         <div className="flex items-center">
-                                            <div className="font-medium text-gray-800">Burak Long</div>
+                                            <div className="font-medium text-gray-800">1</div>
                                         </div>
                                     </td>
                                     <td className="p-2 whitespace-nowrap">
-                                        <div className="text-left">longburak@gmail.com</div>
+                                        <div className="text-left">01/01/2023</div>
                                     </td>
                                     <td className="p-2 whitespace-nowrap">
-                                        <div className="text-left font-medium text-green-500">$1,890.66</div>
+                                        <div className="text-left font-medium ">8.00Am-9.00Pm</div>
                                     </td>
                                     <td className="p-2 whitespace-nowrap">
-                                        <div className="text-lg text-center">??</div>
+                                        <div className="text-lg text-center">Malappuram,Kerala,India</div>
                                     </td>
                                 </tr>
                             </tbody>
