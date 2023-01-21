@@ -17,6 +17,7 @@ import BookingDetails from './pages/Admin/BookingDetails/BookingDetails';
 import AddBanner from './pages/Admin/AddBanner/AddBanner';
 import BannerDetails from './pages/Admin/BannerDetails/BannerDetails'
 import UserDetails from './pages/Admin/UserDetails/UserDetails';
+import PopupPage from './pages/Users/PopupPage/PopupPage';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
       <Route path="/AddChargingPort" element={<AddChargingPort/>} /> 
       <Route path="/PortDetails" element={<PortDetails/>} /> 
       <Route path="/PortBookings" element={<PortBookings/>} /> 
+      <Route path="/Popup" element={<PopupPage/>} /> 
     </Routes>
    </div>
 

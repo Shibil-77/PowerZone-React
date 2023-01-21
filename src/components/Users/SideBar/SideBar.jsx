@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,React } from "react";
 import Icons from '../../../assets/Icons/user.png'
 import Arrow from '../../../assets/Icons/arrow.png'
 import AddLocationAltSharpIcon from '@mui/icons-material/AddLocationAltSharp';
@@ -13,19 +13,19 @@ import { NavLink } from 'react-router-dom'
 const SideBar = () => {
   const [open, setOpen] = useState(true);
   const Menus = [
-    { title: "Home", src: HomeIcon },
-    { title: "Add a charging point", src: AddLocationAltSharpIcon },
-    { title: "Find a Charging point", src: QueryStatsIcon },
-    { title: "Bookings ", src: EventNoteIcon },
-    { title: "Requests", src: ThreePSharpIcon },
-    { title: "Login", src: LoginIcon },
+    { title: "Home", src: HomeIcon,link:'/' },
+    { title: "Add a charging point", src: AddLocationAltSharpIcon ,link:'/AddChargingPort'},
+    { title: "Find a Charging point", src: QueryStatsIcon,link:'/AddBookingDetails' },
+    { title: "Bookings ", src: EventNoteIcon ,link:'/NewBookings'},
+    { title: "Requests", src: ThreePSharpIcon ,link:'/PortDetails'},
+    { title: "Login", src: LoginIcon ,link:'/AddBookingDetails'},
 
   ];
 
   return (
-
+<>
     <div
-      className={`${open ? "w-72" : "w-20 "
+      className={`${open ? "w-72" : "w-20 " 
         } bg-white h-auto p-5  pt-8 relative rounded-2xl duration-300`}
     >
       <img
@@ -51,7 +51,7 @@ const SideBar = () => {
       </div>
       <ul className="pt-6">
         {Menus.map((Menu, index) => (
-          <NavLink to='/login'>
+          <NavLink to={Menu.link}>
             <li
               key={index}
               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
@@ -67,6 +67,8 @@ const SideBar = () => {
         ))}
       </ul>
     </div>
+    </>
+
   );
 };
 

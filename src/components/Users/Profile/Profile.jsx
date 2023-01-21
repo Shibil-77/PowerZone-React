@@ -10,36 +10,36 @@ function Profile() {
         <h1 className=' text-center font-bold text-3xl text-gray-700'>Muhammed Shibil</h1>
 
 
-        <div className='px-6 bg-[#c2c2c228] shadow-xl w-10/12 mt-12 rounded-3xl'>
-          <div className='grid grid-cols-3 md:grid-cols-1 sm:grid-cols-1'>
+        <div className='px-6 bg-[#c2c2c228] shadow-xl w- mt-12 rounded-3xl border'>
+          <div className='grid gap-1 md:grid-cols-1 sm:grid-cols-1'>
             <h1 className='font-bold '>Full Name: <span >Muhammed Shibil</span></h1>
             <h1 className='font-bold '>Email : <span>shibil@gamil.com</span></h1>
             <h1 className='font-bold'>Phone Number : <span>984 631 4476</span></h1>
           </div>
         </div>
 
-        <div className='w-10/12 lg:gap-10 md:gap-10 mt-20 md:mt-10    grid xl:grid-cols-4 md:grid-cols-2 grid-cols-2 lg:grid-cols-4  rounded-3xl'>
+        <div className='w-10/12 lg:gap-10 md:gap-10 mt-20 md:mt-10 gap-5 grid xl:grid-cols-4 md:grid-cols-2 grid-cols-2 lg:grid-cols-4  rounded-3xl'>
           <NavLink>
-            <div className='bg-[#c2c2c228] shadow-xl rounded-3xl'>
-              <h1 className='text-center font-bold mt-5'>Bookings</h1>
+            <div className='bg-[#c2c2c228] h-[150px] shadow-xl rounded-3xl py-2 px-4'>
+              <h1 className='text-center font-bold'>Bookings</h1>
               <h1 className='font-extrabold text-[70px] text-center'>3</h1>
             </div>
           </NavLink>
           <NavLink>
-            <div className='bg-[#c2c2c228] shadow-xl  max-w-sm rounded-3xl'>
-              <h1 className='text-center font-bold mt-5'>Booking Requests</h1>
+            <div className='bg-[#c2c2c228] h-[150px] shadow-xl rounded-3xl py-1 px-4'>
+              <h1 className='text-center font-bold '>Booking Requests</h1>
               <h1 className='font-extrabold text-[70px] text-center'>3</h1>
             </div>
           </NavLink>
           <NavLink>
-            <div className='bg-[#c2c2c228] shadow-xl rounded-3xl'>
-              <h1 className='text-center font-bold mt-5 text-ellipsis'>Port Bookings</h1>
+            <div className='bg-[#c2c2c228] h-[150px] shadow-xl rounded-3xl py-1 px-4'>
+              <h1 className='text-center font-bold'>Port Bookings</h1>
               <h1 className='font-extrabold text-[70px] text-center'>0</h1>
             </div>
           </NavLink>
           <NavLink to='/'>
-            <div className='bg-[#c2c2c228] shadow-xl rounded-3xl'>
-              <h1 className='text-center font-bold mt-5'>Port Requests</h1>
+            <div className='bg-[#c2c2c228] h-[150px] shadow-xl rounded-3xl py-1 px-4'>
+              <h1 className='text-center font-bold'>Port Requests</h1>
               <h1 className='font-extrabold text-[70px] text-center'>0</h1>
             </div>
           </NavLink>

@@ -4,12 +4,12 @@ import React from 'react'
 function BookingDetails({ children }) {
   return (
     <>
-      <div className='bg-white w-screen  md:bg-none gap-5 md:mx-10 mx-10 rounded-3xl flex  justify-center mb-10'>
+      <div className='bg-white w-full md:bg-none gap-5 mx-10 rounded-3xl flex py-2  justify-center border'>
         <div>
           <div className='w-full '>
             {children}
           </div>
-          <div className='mt-10 w-auto bg-[#c2c2c228]  shadow-xl rounded-3xl py-20 mb-10'>
+          <div className=' w-auto bg-[#c2c2c228]  shadow-xl rounded-3xl '>
             <form action='/' >
 
               <div class="flex justify-center ">

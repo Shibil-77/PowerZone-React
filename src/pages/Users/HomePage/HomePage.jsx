@@ -7,7 +7,7 @@ function HomePage() {
   return (
     <div className='bg-[#e9f7fa] h-screen'>
       <Layout>
-        <Home />
+        <Home/>
       </Layout>
     </div>
   )

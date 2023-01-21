@@ -14,7 +14,7 @@ function AdminLogin() {
         <div className='w-full h-full pt-20 flex justify-center'>
           <div className='bg-[#c4dbec] py-10 rounded-lg shadow-xl shadow-gray-300  flex justify-center w-full mx-3  md:w-5/12  xs:w-full'>
             <div>
-              <h1 className='text-center text-3xl text-myColor-600  mt-4 font-white'>Login Page</h1>
+              <h1 className='text-center text-3xl text-myColor-600  mt-4 font-white'>Admin Login Page</h1>
               <form action="" >
                 <div>
                   <div className='grid  place-items-center mt-5 '>
