@@ -1,13 +1,18 @@
-import React from 'react'
-import Popup from '../../../components/Users/Popup/Popup'
-import Layout from '../Layout/Layout'
+// import React from 'react'
+// import Popup from '../../../components/Users/Popup/Popup'
+// import Layout from '../Layout/Layout'
 
-function PopupPage() {
-  return (
-    <Layout>
-        <Popup/>
-    </Layout>
-  )
-}
+// function PopupPage() {
+//   return (
+//     <Layout>
+//       <Popup
+//         visible={showFollowModal}
+//         value={modal}
+//         userId={user.userId}
+//         onClose={handleFollowOnClose}
+//       />
+//     </Layout>
+//   )
+// }
 
-export default PopupPage
+// export default PopupPage

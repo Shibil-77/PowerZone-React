@@ -48,6 +48,7 @@ function App() {
          <Route path="/admin/BannerDetails" element={<BannerDetails/>} /> 
          <Route path="/admin/UsersDetails" element={<UserDetails/>} /> 
     </Routes>
+    
 
    </div>
   </>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React  from 'react';
 import { Link } from 'react-router-dom'
 import AddLocationAltSharpIcon from '@mui/icons-material/AddLocationAltSharp';
 import HomeIcon from '@mui/icons-material/HomeSharp';
@@ -8,8 +8,6 @@ import EventNoteIcon from '@mui/icons-material/EventNoteSharp';
 import ThreePSharpIcon from '@mui/icons-material/ThreePSharp';
 
 function AdminBottomBar() {
-
-  const [open, setOpen] = useState(true);
   const Menus = [
     { title: "Home", src: HomeIcon },
     { title: "Add a charging point", src: AddLocationAltSharpIcon },

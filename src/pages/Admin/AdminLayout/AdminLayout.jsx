@@ -12,12 +12,11 @@ function AdminLayout({children}) {
             <AdminNavbar />
         </div>
         <div>
-            <div className="flex">
-                <div className='hidden md:block '>
+            <div className="flex ">
+                <div className='hidden md:block fixed top-15'>
                     <AdminSideBar />
                 </div>
                 {children}
-               
             </div>
         </div>
         <div>
@@ -25,8 +24,8 @@ function AdminLayout({children}) {
         </div>
     </div>
     <div className=' z-50  block md:hidden'>
-                <AdminBottomBar />
-                </div>
+        <AdminBottomBar />
+    </div>
 </>
   )
 }
