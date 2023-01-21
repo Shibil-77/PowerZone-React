@@ -26,7 +26,7 @@ function AdminLogin() {
                   {/* <Link>HELLO WORLD</Link> */}
                   <div className="flex justify-center py-2">
                     {/* <Link to={'/register'}> */}
-                      <p className=" text-sm text-heavy-metal-900">Login?<span className="text-blue-600 cursor-pointer hover:underline">Click Me</span></p>
+                    <p className=" text-sm text-heavy-metal-900">Login?<span className="text-blue-600 cursor-pointer hover:underline">Click Me</span></p>
                     {/* </Link> */}
                   </div>
                   <div className="flex justify-center">
@@ -38,7 +38,7 @@ function AdminLogin() {
                     <h3 className="mt-1 text-black">Google</h3>
                   </div>
                 </div>
-                <button  className="w-full my-5 py-3 border-white border-2 bg-white shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" >Log In</button>
+                <button className="w-full my-5 py-3 border-white border-2 bg-white shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" >Log In</button>
               </form>
             </div>
           </div>

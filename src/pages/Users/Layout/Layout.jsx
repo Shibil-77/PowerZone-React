@@ -12,12 +12,12 @@ function Layout({ children }) {
                     <Navbar />
                 </div>
                 <div>
-                    <div className="flex">
-                        <div className='hidden md:block '>
+                    <div className="flex ">
+                        <div className='hidden md:block fixed top-15'>
                             <SideBar />
                         </div>
                         {children}
-                       
+
                     </div>
                 </div>
                 <div>
@@ -25,8 +25,8 @@ function Layout({ children }) {
                 </div>
             </div>
             <div className=' z-50  block md:hidden'>
-                        <BottomBar />
-                        </div>
+                <BottomBar />
+            </div>
         </>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 // import { Link } from 'react-router-dom'
-import  ProfileIcon from '../../../assets/Icons/user.png'
+import ProfileIcon from '../../../assets/Icons/user.png'
 
 function AdminNavbar() {
     return (
@@ -22,14 +22,14 @@ function AdminNavbar() {
                     {/* <button className="bg- hover:bg-[#c4dbec] hover:text-white hover:bg-snow-drift-5 px-6 rounded-xl font-bold text-md text-gray-500  hover:text-heavy-metal-800">Login</button> */}
                     <div className='w-28 h-8  bg-white rounded-md  overflow-hidden shadow-sm shadow-gray-500'>
                         <div className='flex px-3'>
-                           <img src={ProfileIcon} className='w-7 mt-1' alt="" />
-                          <h1 className='text-gray-500 ml-3 mt-1'>Shibil</h1>
+                            <img src={ProfileIcon} className='w-7 mt-1' alt="" />
+                            <h1 className='text-gray-500 ml-3 mt-1'>Shibil</h1>
                         </div>
                     </div>
                 </div>
             </div>
         </>
-      )
+    )
 }
 
 export default AdminNavbar

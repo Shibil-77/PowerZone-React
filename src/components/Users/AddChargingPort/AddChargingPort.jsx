@@ -1,16 +1,16 @@
 import React from 'react'
 
-function Form({children}) {
+function Form({ children }) {
   return (
     <>
-      <div className='bg-white w-screen md:bg-none gap-5 md:mx-10 mx-10 rounded-3xl flex h-full justify-center mb-10'>
+      <div className='bg-white w-full md:bg-none gap-5 md:mx-10 mx-10 rounded-3xl flex py-2 justify-center border'>
         <div>
           <div className='w-full '>
             {children}
           </div>
-          <div className='mt-10 w-auto bg-[#c2c2c228]  shadow-xl rounded-3xl py-20 mb-10'>
-            <form action='/' >
-      
+          <div className='w-auto bg-[#c2c2c228]  shadow-xl rounded-3xl '>
+            <form action='/' className=''>
+
               <div class="flex justify-center ">
                 <div class="mb-3 xl:w-96 ">
                   <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700"
@@ -205,6 +205,10 @@ function Form({children}) {
                   />
                 </div>
               </div>
+              <div className='flex justify-center'>
+                <button className=" flex  w-2/6 my-5 jus py-3 px-12 border-white border-2 bg-white shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" >Submit</button>
+              </div>
+
 
             </form>
           </div>

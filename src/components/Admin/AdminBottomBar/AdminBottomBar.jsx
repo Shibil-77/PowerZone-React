@@ -7,7 +7,7 @@ import LoginIcon from '@mui/icons-material/LoginSharp';
 import EventNoteIcon from '@mui/icons-material/EventNoteSharp';
 import ThreePSharpIcon from '@mui/icons-material/ThreePSharp';
 
-function BottomBar() {
+function AdminBottomBar() {
 
   const [open, setOpen] = useState(true);
   const Menus = [
@@ -41,4 +41,4 @@ function BottomBar() {
   )
 }
 
-export default BottomBar
+export default AdminBottomBar

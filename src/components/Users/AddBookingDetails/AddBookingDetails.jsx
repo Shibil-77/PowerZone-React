@@ -181,7 +181,9 @@ function BookingDetails({ children }) {
               </div>
 
 
-
+              <div className='flex justify-center'>
+                <button className=" flex  w-2/6 my-5 jus py-3 px-12 border-white border-2 bg-white shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" >Submit</button>
+              </div>
 
             </form>
           </div>

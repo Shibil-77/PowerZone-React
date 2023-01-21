@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Icons from '../../../assets/Icons/user.png'
 import Arrow from '../../../assets/Icons/arrow.png'
-import AddLocationAltSharpIcon from '@mui/icons-material/AddLocationAltSharp';
+// import AddLocationAltSharpIcon from '@mui/icons-material/AddLocationAltSharp';
 import HomeIcon from '@mui/icons-material/HomeSharp';
 import QueryStatsIcon from '@mui/icons-material/QueryStatsSharp';
 import LoginIcon from '@mui/icons-material/LoginSharp';
@@ -14,8 +14,8 @@ const AdminSideBar = () => {
   const [open, setOpen] = useState(true);
   const Menus = [
     { title: "Home", src: HomeIcon },
-    { title: "Add a charging point", src: AddLocationAltSharpIcon },
-    { title: "Find a Charging point", src: QueryStatsIcon },
+    { title: "Users Details", src: Icons },
+    { title: "Charging Port Details", src: QueryStatsIcon },
     { title: "Bookings ", src: EventNoteIcon },
     { title: "Requests", src: ThreePSharpIcon },
     { title: "Login", src: LoginIcon },
@@ -25,7 +25,7 @@ const AdminSideBar = () => {
   return (
 
     <div
-      className={`${open ? "w-72" : "w-20 "
+      className={`${open ? "w-72" : "w-20  "
         } bg-white h-auto p-5  pt-8 relative rounded-2xl duration-300`}
     >
       <img

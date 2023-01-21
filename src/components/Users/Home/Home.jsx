@@ -3,100 +3,27 @@ import React from 'react'
 function Home() {
   return (
     <>
-{/* <div id="carouselExampleCaptionsFull" className="carousel slide carousel-fade relative h-screen" data-bs-ride="carousel">
-  <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
-    <button
-      type="button"
-      data-bs-target="#carouselExampleCaptionsFull"
-      data-bs-slide-to="0"
-      className="active"
-      aria-current="true"
-      aria-label="Slide 1"
-    ></button>
-    <button
-      type="button"
-      data-bs-target="#carouselExampleCaptionsFull"
-      data-bs-slide-to="1"
-      aria-label="Slide 2"
-    ></button>
-    <button
-      type="button"
-      data-bs-target="#carouselExampleCaptionsFull"
-      data-bs-slide-to="2"
-      aria-label="Slide 3"
-    ></button>
-  </div>
-  <div className="carousel-inner relative w-full overflow-hidden h-screen">
-    <div className="carousel-item active relative float-left w-full h-screen bg-no-repeat bg-cover bg-center">
-      <video className="min-w-full min-h-full max-w-fit xl:min-w-0 xl:min-h-0" playsinline autoplay muted loop>
-        <source className="" src="https://mdbootstrap.com/img/video/Lines.mp4" type="video/mp4" />
-      </video>
-      <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed" style="background-color: rgba(0, 0, 0, 0.6);">
-        <div className="flex justify-center items-center h-full">
-          <div className="text-white text-center px-14 px-md-0">
-            <h2 className="text-3xl font-semibold mb-4">Learn Tailwind Elements</h2>
-            <h5 className="text-lg font-semibold mb-6">Best & free guide of responsive web design</h5>
-            <div className="md:space-x-2">
-              <a type="button" className="inline-block px-6 py-2 mb-2 md:mb-0 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" href="#!" role="button"     data-mdb-ripple="true" data-mdb-ripple-color="light">Start tutorial</a>
-              <a type="button" className="inline-block px-6 py-2 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" href="#!" role="button"     data-mdb-ripple="true" data-mdb-ripple-color="light">Read more</a>
+
+      <div className='md:flex w-full h-full justify-items-center '>
+        <div className='h-screen w-12/12 justify-center flex-col '>
+          <img className='md:mt-[150px]'
+            src="https://fleely.com/wp-content/uploads/2021/08/ev-fleely-charging.png" alt="" />
+          <div className=' md:hidden w-full h-full md:pt-40 pt-4 flex justify-center'>
+            <div>
+              <h1 className=' text-3xl text-myColor-600 font-extrabold  md:mt-10 font-white '>The India’s <br /> bookable destination <br /> EV charging network</h1>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div className="carousel-item relative float-left w-full h-screen bg-no-repeat bg-cover bg-center">
-      <video className="min-w-full min-h-full max-w-fit xl:min-w-0 xl:min-h-0" playsinline autoplay muted loop>
-        <source className="" src="https://mdbootstrap.com/img/video/forest.mp4" type="video/mp4" />
-      </video>
-      <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed" style="background-color: rgba(0, 0, 0, 0.3)">
-        <div className="flex justify-center items-center h-full">
-          <div className='text-white text-center px-14 px-md-0'>
-            <h2 className='text-3xl font-semibold mb-4'>You can place here any content</h2>
+        <div className='hidden md:block w-full h-full md:pt-40 pt-4 flex justify-center'>
+          <div>
+            <h1 className=' text-3xl text-myColor-600 font-extrabold  md:mt-10 font-white '>The India’s <br /> bookable destination <br /> EV charging network</h1>
           </div>
+          <button className="w-2/6 my-5 py-3 border-white border-2 bg-white shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" >Find a chargingpoint</button>
+          <button className="w-2/6 my-5 mx-4 py-3 border-white border-2 bg-white shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" >Add a charging point</button>
         </div>
-      </div>
-    </div>
-    <div className='carousel-item relative float-left w-full h-screen bg-no-repeat bg-cover bg-center'>
-      <video className='min-w-full min-h-full max-w-fit xl:min-w-0 xl:min-h-0' playsinline autoplay muted loop>
-        <source className="" src="https://mdbootstrap.com/img/video/Tropical.mp4" type="video/mp4" />
-      </video>
-      <div className='absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed' style="background: linear-gradient(45deg, rgba(29, 236, 197, 0.7), rgba(91, 14, 214, 0.7) 100%);">
-        <div className="flex justify-center items-center h-full">
-          <div className="text-white text-center px-14 px-md-0">
-            <h2 className="text-3xl font-semibold mb-4">And cover it with any mask</h2>
-            <a type="button" className='inline-block px-6 py-2 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out' href="#!" role="button"     data-mdb-ripple="true" data-mdb-ripple-color="light">Learn more</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button
-    className='carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0'
-    type="button"
-    data-bs-target="#carouselExampleCaptionsFull"
-    data-bs-slide="prev"
-  >
-    <span
-      className='carousel-control-prev-icon inline-block bg-no-repeat'
-      aria-hidden="true"
-    ></span>
-    <span className="visually-hidden">Previous</span>
-  </button>
-  <button
-    className='carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0'
-    type="button"
-    data-bs-target="#carouselExampleCaptionsFull"
-    data-bs-slide="next"
-  >
-    <span
-      className='carousel-control-next-icon inline-block bg-no-repeat'
-      aria-hidden="true"
-    ></span>
-    <span className='visually-hidden'>Next</span>
-  </button>
-</div> */}
 
-</>
+      </div>
+    </>
   )
 }
 
