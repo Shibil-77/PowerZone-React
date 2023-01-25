@@ -1,5 +1,5 @@
 import React from 'react'
-import BookingDetails from '../../../components/Users/AddBookingDetails/AddBookingDetails'
+import BookingDetails from '../../../components/Users/AddBookingDetails'
 import Layout from '../Layout/Layout'
 
 function BookingDetailsPage() {

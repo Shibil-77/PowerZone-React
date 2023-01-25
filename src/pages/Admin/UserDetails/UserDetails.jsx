@@ -1,5 +1,5 @@
 import React from 'react'
-import AdminTable from '../../../components/Admin/AdminTable/AdminTable'
+import AdminTable from '../../../components/Admin/AdminTable'
 import AdminLayout from '../AdminLayout/AdminLayout'
 
 function UserDetails() {

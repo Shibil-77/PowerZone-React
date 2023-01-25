@@ -1,8 +1,8 @@
 import React from 'react'
 // import { Link } from 'react-router-dom'
-import ProfileIcon from '../../../assets/Icons/user.png'
+import ProfileIcon from '../../assets/Icons/user.png'
 
-function Navbar() {
+function AdminNavbar() {
     return (
         <>
             <div className="flex justify-between bg-white shadow-md w-full h-16 shadow-heavy-metal-400 p-4 mb-5 sticky top-0 z-50">
@@ -23,7 +23,7 @@ function Navbar() {
                     <div className='w-28 h-8  bg-white rounded-md  overflow-hidden shadow-sm shadow-gray-500'>
                         <div className='flex px-3'>
                             <img src={ProfileIcon} className='w-7 mt-1' alt="" />
-                            <h1 className='text-gray-500 ml-3 mt-1'>Shibil</h1>
+                            <h1 className='text-gray-500 ml-3 mt-1'>Admin</h1>
                         </div>
                     </div>
                 </div>
@@ -32,4 +32,4 @@ function Navbar() {
     )
 }
 
-export default Navbar
+export default AdminNavbar

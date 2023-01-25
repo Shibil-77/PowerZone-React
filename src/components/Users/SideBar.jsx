@@ -1,6 +1,6 @@
 import { useState, React } from "react";
-import Icons from '../../../assets/Icons/user.png'
-import Arrow from '../../../assets/Icons/arrow.png'
+import Icons from '../../assets/Icons/user.png'
+import Arrow from '../../assets/Icons/arrow.png'
 import AddLocationAltSharpIcon from '@mui/icons-material/AddLocationAltSharp';
 import HomeIcon from '@mui/icons-material/HomeSharp';
 import QueryStatsIcon from '@mui/icons-material/QueryStatsSharp';
@@ -35,6 +35,7 @@ const SideBar = () => {
           onClick={() => setOpen(!open)}
           alt='hello'
         />
+          <NavLink to='/profile'>
         <div className="flex gap-x-4 items-center">
           <img
             src={Icons}
@@ -49,6 +50,7 @@ const SideBar = () => {
             Muhammed Shibil
           </h1>
         </div>
+        </NavLink>
         <ul className="pt-6">
           {Menus.map((Menu, index) => (
             <NavLink to={Menu.link}>

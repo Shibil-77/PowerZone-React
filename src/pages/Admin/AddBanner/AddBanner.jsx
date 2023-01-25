@@ -1,6 +1,6 @@
 import React from 'react'
 import AdminLayout from '../AdminLayout/AdminLayout'
-import AddBanner from '../../../components/Admin/AddBanner/AddBanner'
+import AddBanner from '../../../components/Admin/AddBanner'
 
 function AddBannerPage() {
   return (

@@ -1,8 +1,8 @@
 import React from 'react'
-import AdminBottomBar from '../../../components/Admin/AdminBottomBar/AdminBottomBar'
-import AdminFooter from '../../../components/Admin/AdminFooter/AdminFooter'
-import AdminNavbar from '../../../components/Admin/AdminNavbar/AdminNavbar'
-import AdminSideBar from '../../../components/Admin/AdminSideBar/AdminSideBar'
+import AdminBottomBar from '../../../components/Admin/AdminBottomBar'
+import AdminFooter from '../../../components/Admin/AdminFooter'
+import AdminNavbar from '../../../components/Admin/AdminNavbar'
+import AdminSideBar from '../../../components/Admin/AdminSideBar'
 
 function AdminLayout({children}) {
   return (

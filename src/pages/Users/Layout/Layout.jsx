@@ -1,8 +1,8 @@
 import React, { Children } from 'react'
-import BottomBar from '../../../components/Users/BottomBar/BottomBar'
-import Footer from '../../../components/Users/Footer/Footer'
-import Navbar from '../../../components/Users/Navbar/Navbar'
-import SideBar from '../../../components/Users/SideBar/SideBar'
+import BottomBar from '../../../components/Users/BottomBar'
+import Footer from '../../../components/Users/Footer'
+import Navbar from '../../../components/Users/Navbar'
+import SideBar from '../../../components/Users/SideBar'
 
 function Layout({ children }) {
     return (

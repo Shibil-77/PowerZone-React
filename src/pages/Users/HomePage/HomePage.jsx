@@ -1,5 +1,5 @@
 import React from 'react'
-import Home from '../../../components/Users/Home/Home'
+import Home from '../../../components/Users/Home'
 import Layout from '../Layout/Layout'
 
 function HomePage() {

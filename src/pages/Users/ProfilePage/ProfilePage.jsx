@@ -1,5 +1,5 @@
 import React from 'react'
-import Profile from '../../../components/Users/Profile/Profile'
+import Profile from '../../../components/Users/Profile'
 import Layout from '../Layout/Layout'
 
 function ProfilePage() {

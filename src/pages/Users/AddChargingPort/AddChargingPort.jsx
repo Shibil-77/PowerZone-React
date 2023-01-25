@@ -1,5 +1,5 @@
 import React from 'react'
-import AddChargingPort from '../../../components/Users/AddChargingPort/AddChargingPort'
+import AddChargingPort from '../../../components/Users/AddChargingPort'
 import Layout from '../Layout/Layout'
 
 function FormPage() {

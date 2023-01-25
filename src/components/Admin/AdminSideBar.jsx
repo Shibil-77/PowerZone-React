@@ -1,6 +1,6 @@
 import { useState, React } from "react";
-import Icons from '../../../assets/Icons/user.png'
-import Arrow from '../../../assets/Icons/arrow.png'
+import Icons from '../../assets/Icons/user.png'
+import Arrow from '../../assets/Icons/arrow.png'
 import HomeIcon from '@mui/icons-material/HomeSharp';
 import QueryStatsIcon from '@mui/icons-material/QueryStatsSharp';
 import LoginIcon from '@mui/icons-material/LoginSharp';
