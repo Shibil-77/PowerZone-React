@@ -1,7 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import TextField from '@mui/material/TextField';
+import {SignUpValidation} from './userUtils/utilRegister'
 
 function Register() {
+  const [registerData, setRegisterData] = useState('')
+  const handleEdit = async (e) => {
+    const { name, value } = e.target;
+    setRegisterData({ ...registerData, [name]: value });
+  };
+
+  async function handleSignUp(e){
+    e.preventDefault();
+   const signUp =  SignUpValidation(registerData)
+      if(signUp == 'success'){
+          // console.log(signUp);
+          
+      }else{
+        console.log(signUp);
+      }
+  }
+
   return (
     <>
       <div className='flex w-full h-full justify-items-center bg-[#e9f7fa] '>
@@ -16,19 +34,19 @@ function Register() {
               <form action="" >
                 <div>
                   <div className='grid  place-items-center mt-5 '>
-                    <TextField size='small' id="outlined-basic" className='w-full' label="Full Name" variant="outlined" />
+                    <TextField size='small' id="outlined-basic" name='fullName' onChange={handleEdit} className='w-full' label="Full Name" variant="outlined" />
                   </div>
                   <div className='grid  place-items-center mt-5 '>
-                    <TextField size='small' id="outlined-basic" className='w-full' label="E Mail" variant="outlined" />
+                    <TextField size='small' id="outlined-basic"  name='email' onChange={handleEdit} className='w-full' label="E Mail" variant="outlined" />
                   </div>
                   <div className='grid  place-items-center mt-5 '>
-                    <TextField size='small' id="outlined-basic" className='w-full' label="Phone" variant="outlined" />
+                    <TextField size='small' id="outlined-basic"  name='phone' onChange={handleEdit} className='w-full' label="Phone" variant="outlined" />
                   </div>
                   <div className='grid  place-items-center mt-5 '>
-                    <TextField size='small' id="outlined-basic" className='w-full' label="PassWord" variant="outlined" />
+                    <TextField size='small' id="outlined-basic"  name='password' onChange={handleEdit} className='w-full' label="PassWord" variant="outlined" />
                   </div>
                   <div className='grid  place-items-center mt-5 '>
-                    <TextField size='small' id="outlined-basic" className='w-full' label="Confirm Password" variant="outlined" />
+                    <TextField size='small' id="outlined-basic"  name='confirmPassword' onChange={handleEdit} className='w-full' label="Confirm Password" variant="outlined" />
                   </div>
                   {/* <Link>HELLO WORLD</Link> */}
                   <div className="flex justify-center py-2">
@@ -45,7 +63,7 @@ function Register() {
                     <h3 className="mt-1 text-white">Google</h3>
                   </div>
                 </div>
-                <button className="w-full my-5 py-3 border-white border-2 bg-myColor-500 shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" >Sign In</button>
+                <button onClick={handleSignUp} className="w-full my-5 py-3 border-white border-2 bg-myColor-500 shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" >Sign In</button>
               </form>
             </div>
           </div>
