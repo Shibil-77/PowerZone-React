@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import TextField from '@mui/material/TextField';
 import {SignUpValidation} from './userUtils/utilRegister'
+import { apiUserSignUp } from '../../api/usersAuthRequest';
 
 function Register() {
   const [registerData, setRegisterData] = useState('')
@@ -12,14 +13,15 @@ function Register() {
   async function handleSignUp(e){
     e.preventDefault();
    const signUp =  SignUpValidation(registerData)
-      if(signUp == 'success'){
-          // console.log(signUp);
-          
+      if(signUp === 'success'){
+          console.log(signUp);
+          apiUserSignUp(registerData)
       }else{
         console.log(signUp);
       }
   }
-
+  const userJwt = 'ggggggggggggggg'
+   const test =  `<h2>${userJwt}</h2>`
   return (
     <>
       <div className='flex w-full h-full justify-items-center bg-[#e9f7fa] '>
@@ -30,6 +32,7 @@ function Register() {
         <div className='w-full h-full pt-10 flex justify-center '>
           <div className='bg-[#c4dbec] py-10 rounded-lg shadow-xl shadow-gray-300  flex justify-center w-full mx-3  md:w-5/12  xs:w-full'>
             <div>
+              <h1>{test}</h1>
               <h1 className='text-center text-3xl text-myColor-600  mt-4 font-white'>Sign Up</h1>
               <form action="" >
                 <div>
