@@ -11,7 +11,6 @@ function BookingDetails({ children }) {
           </div>
           <div className=' w-auto bg-[#c2c2c228]  shadow-xl rounded-3xl '>
             <form action='/' >
-
               <div class="flex justify-center ">
                 <div class="mb-3 xl:w-96 ">
                   <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700"

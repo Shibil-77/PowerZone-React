@@ -18,6 +18,7 @@ import AddBanner from './pages/Admin/AddBanner/AddBanner';
 import BannerDetails from './pages/Admin/BannerDetails/BannerDetails'
 import UserDetails from './pages/Admin/UserDetails/UserDetails';
 import PopupPage from './pages/Users/PopupPage/PopupPage';
+import Verify from './components/Users/Verify'
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
       <Route path="/PortDetails" element={<PortDetails/>} /> 
       <Route path="/PortBookings" element={<PortBookings/>} /> 
       <Route path="/Popup" element={<PopupPage/>} /> 
+      <Route path="/verify/:id" element={<Verify/>} /> 
     </Routes>
    </div>
 
@@ -48,8 +50,6 @@ function App() {
          <Route path="/admin/BannerDetails" element={<BannerDetails/>} /> 
          <Route path="/admin/UsersDetails" element={<UserDetails/>} /> 
     </Routes>
-    
-
    </div>
   </>
   );

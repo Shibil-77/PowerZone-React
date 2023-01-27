@@ -10,18 +10,25 @@ function Register() {
     setRegisterData({ ...registerData, [name]: value });
   };
 
+  const [errorMessage,setErrorMessage] = useState(null)
+  const [successMessage,setSuccessMessage] = useState(null)
   async function handleSignUp(e){
     e.preventDefault();
-   const signUp =  SignUpValidation(registerData)
+       const signUp =  SignUpValidation(registerData)
       if(signUp === 'success'){
-          console.log(signUp);
-          apiUserSignUp(registerData)
+        setSuccessMessage(null)
+         const userData = await apiUserSignUp(registerData)
+          if(userData.status === 200){
+            setErrorMessage(null)
+            setSuccessMessage("check user email")
+          }else{
+            setErrorMessage(userData)
+          }
       }else{
-        console.log(signUp);
+        setErrorMessage(signUp)
+        console.log(errorMessage,"errorMessage");
       }
   }
-  const userJwt = 'ggggggggggggggg'
-   const test =  `<h2>${userJwt}</h2>`
   return (
     <>
       <div className='flex w-full h-full justify-items-center bg-[#e9f7fa] '>
@@ -32,7 +39,6 @@ function Register() {
         <div className='w-full h-full pt-10 flex justify-center '>
           <div className='bg-[#c4dbec] py-10 rounded-lg shadow-xl shadow-gray-300  flex justify-center w-full mx-3  md:w-5/12  xs:w-full'>
             <div>
-              <h1>{test}</h1>
               <h1 className='text-center text-3xl text-myColor-600  mt-4 font-white'>Sign Up</h1>
               <form action="" >
                 <div>
@@ -68,6 +74,8 @@ function Register() {
                 </div>
                 <button onClick={handleSignUp} className="w-full my-5 py-3 border-white border-2 bg-myColor-500 shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" >Sign In</button>
               </form>
+              {errorMessage && <div className="mx-10" ><h1 className='text-red-600'>{errorMessage}</h1></div>}
+            {successMessage && <div className="mx-10" ><h1 className='text-green-500'>{successMessage}</h1></div>}
             </div>
           </div>
         </div>
