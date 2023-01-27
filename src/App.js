@@ -19,6 +19,8 @@ import BannerDetails from './pages/Admin/BannerDetails/BannerDetails'
 import UserDetails from './pages/Admin/UserDetails/UserDetails';
 import PopupPage from './pages/Users/PopupPage/PopupPage';
 import Verify from './components/Users/Verify'
+import ForgotPassword from './components/Users/ForgotPassword';
+import ResetPassword from './components/Users/ResetPassword';
 
 
 function App() {
@@ -37,7 +39,9 @@ function App() {
       <Route path="/PortDetails" element={<PortDetails/>} /> 
       <Route path="/PortBookings" element={<PortBookings/>} /> 
       <Route path="/Popup" element={<PopupPage/>} /> 
-      <Route path="/verify/:id" element={<Verify/>} /> 
+      <Route path="/verify/:id" element={<Verify/>} />
+      <Route path="/forgotPassword" element={<ForgotPassword/>} />
+       <Route path="/resetPassword/:id" element={<ResetPassword/>} />      
     </Routes>
    </div>
 

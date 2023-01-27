@@ -1,6 +1,15 @@
-import React from 'react'
+import React, { useEffect,useState } from 'react'
 
-function AdminTable() {
+function AdminTable({tableHeaders,data}) {
+    const [tableData,setTableData] = useState('')
+     console.log(data)
+       useEffect(()=>{
+          if(data === "userDetails"){
+             
+          }else{
+            console.log("==================");
+          }
+       },[])
     return (
         <section className="w-full px-4">
             <div className="flex justify-center h-full ">
@@ -13,18 +22,9 @@ function AdminTable() {
                             <table className="table-auto w-full">
                                 <thead className="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
                                     <tr>
-                                        <th className="p-2 whitespace-nowrap">
-                                            <div className="font-semibold text-left">No</div>
-                                        </th>
-                                        <th className="p-2 whitespace-nowrap">
-                                            <div className="font-semibold text-left">Date</div>
-                                        </th>
-                                        <th className="p-2 whitespace-nowrap">
-                                            <div className="font-semibold text-left">Time</div>
-                                        </th>
-                                        <th className="p-2 whitespace-nowrap">
-                                            <div className="font-semibold text-center">Location</div>
-                                        </th>
+                                        {tableHeaders.map((header)=>{
+                                            return <th key={header}>{header}</th>
+                                        })}
                                     </tr>
                                 </thead>
                                 <tbody className="text-sm divide-y divide-gray-100">

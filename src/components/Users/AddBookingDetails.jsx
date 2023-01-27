@@ -38,10 +38,6 @@ function BookingDetails({ children }) {
                 </div>
               </div>
 
-
-
-
-
               <div class="flex justify-center ">
                 <div class="mb-3 xl:w-96">
                   <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700"

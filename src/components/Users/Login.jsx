@@ -1,9 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
+import { loginValidation } from '../Users/userUtils/utilRegister'
+import { apiLogin } from '../../api/usersAuthRequest'
+import { useNavigate } from 'react-router-dom'
 // import { Link } from 'react-router-dom';
 
 
 function Login() {
+  const navigate = useNavigate()
+  const [loginData, setLoginData] = useState('')
+  const handleEdit = async (e) => {
+    const { name, value } = e.target;
+    setLoginData({ ...loginData, [name]: value });
+  };
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const login = loginValidation(loginData)
+    if (login === 'success') {
+      const login =await apiLogin(loginData)
+        console.log(login.status === 200);
+      if (login.status === 200) {
+        localStorage.setItem('token', login.data.token)
+        localStorage.setItem('user', login.data.user)
+        navigate('/')
+      }
+    } else {
+      console.log(login)
+    }
+  }
+
+
   return (
     <>
       <div className='flex w-full h-full justify-items-center bg-[#e9f7fa]'>
@@ -18,10 +44,10 @@ function Login() {
               <form action="" >
                 <div>
                   <div className='grid  place-items-center mt-5 '>
-                    <TextField size='small' id="outlined-basic" className='w-full' label="E Mail" variant="outlined" />
+                    <TextField size='small' id="outlined-basic" className='w-full' name='email' onChange={handleEdit} label="E Mail" variant="outlined" />
                   </div>
                   <div className='grid  place-items-center mt-5 '>
-                    <TextField size='small' id="outlined-basic" className='w-full' label="PassWord" variant="outlined" />
+                    <TextField size='small' id="outlined-basic" className='w-full' name='password' onChange={handleEdit} label="PassWord" variant="outlined" />
                   </div>
                   {/* <Link>HELLO WORLD</Link> */}
                   <div className="flex justify-center py-2">
@@ -38,7 +64,7 @@ function Login() {
                     <h3 className="mt-1 text-black">Google</h3>
                   </div>
                 </div>
-                <button className="w-full my-5 py-3 border-white border-2 bg-white shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" >Log In</button>
+                <button onClick={handleLogin} className="w-full my-5 py-3 border-white border-2 bg-white shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" >Log In</button>
               </form>
             </div>
           </div>

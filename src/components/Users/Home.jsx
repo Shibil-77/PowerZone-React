@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 function Home() {
   return (
     <>
-
       <div className='md:flex w-full h-full justify-items-center '>
         <div className='h-screen w-12/12 justify-center flex-col '>
           <img className='md:mt-[150px]'

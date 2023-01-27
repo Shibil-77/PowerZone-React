@@ -19,7 +19,6 @@ const SideBar = () => {
     { title: "Bookings ", src: EventNoteIcon, link: '/NewBookings' },
     { title: "Requests", src: ThreePSharpIcon, link: '/PortDetails' },
     { title: "Login", src: LoginIcon, link: '/AddBookingDetails' },
-
   ];
 
   return (

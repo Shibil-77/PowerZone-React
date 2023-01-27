@@ -1,28 +1,28 @@
 
 export const SignUpValidation = (signupData) => {
-  if (!signupData.fullName) {
+  const {email,fullName,password,phone,confirmPassword,} = signupData
+  if (!fullName) {
     return "Please enter your full name"
-  }
-  else if (!signupData.email) {
+  }else if (!email) {
     return "Please enter your email"
-  } else if (!signupData.phone) {
+  } else if (!phone) {
     return "Please enter your phone number"
-  }else if (!signupData.password) {
+  }else if (!password) {
     return "Please enter your password"
-  } else if (!signupData.confirmPassword) {
+  } else if (!confirmPassword) {
     return "Please confirm your password"
-  } else if (signupData.password !== signupData.confirmPassword) {
+  } else if (password !== confirmPassword) {
     return "Passwords do not match"
-  } else if (signupData.fullName.trim().length < 5) {
-    console.log(signupData.fullName);
+  } else if (fullName.trim().length < 5) {
+    console.log(fullName);
     return "Full name must be than 5 characters"
-  } else if (signupData.phone.trim().length < 10) {
+  } else if (phone.trim().length < 10) {
     return "Phone must be  than 10 numbers"
-  }else if (signupData.email.includes('@') && signupData.email.trim().length < 7){
+  }else if (email.includes('@') && email.trim().length < 7){
     return "wrong email"
-  }else if(signupData.password.trim().length >8){
+  }else if(password.trim().length >8){
     return "Password must be less than 8 characters"
-  }else if (signupData.confirmPassword.trim().length >8){
+  }else if (confirmPassword.trim().length >8){
     return "Confirm password must be less than 8 characters"
   }else {
     return 'success'
@@ -30,3 +30,32 @@ export const SignUpValidation = (signupData) => {
 }
 
 
+
+export const loginValidation = (loginData) => {
+      const {email, password} = loginData
+      if(!loginData){
+      return "Please enter your values"
+      }else if(!email){
+      return "Please enter your email"
+      }else if(!password){
+      return "Please enter your password"
+      }else if(password.length<8){
+      return "Password must be than 8 characters"
+      }else{
+      return 'success'
+      }
+}
+
+
+
+export const forgotPasswordValidation = (forgotPasswordData) => {
+        const {email} = forgotPasswordData
+        if(!forgotPasswordData){
+        return "Please enter your values"
+        }else if(!email){
+        return "Please enter your email"
+        }
+        else{
+        return'success'
+        }
+}
