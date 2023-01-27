@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import TextField from '@mui/material/TextField';
 import {SignUpValidation} from './userUtils/utilRegister'
-import { apiUserSignUp } from '../../api/usersAuthRequest';
+import { apiUserSignUp } from '../../api/authApi';
 
 function Register() {
   const [registerData, setRegisterData] = useState('')

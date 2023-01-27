@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import { loginValidation } from '../Users/userUtils/utilRegister'
-import { apiLogin } from '../../api/usersAuthRequest'
+import { apiLogin } from '../../api/authApi'
 import { useNavigate } from 'react-router-dom'
 // import { Link } from 'react-router-dom';
 

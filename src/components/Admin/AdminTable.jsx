@@ -1,15 +1,24 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { getUserData } from '../../api/userApi'
 
-function AdminTable({tableHeaders,data}) {
-    const [tableData,setTableData] = useState('')
-     console.log(data)
-       useEffect(()=>{
-          if(data === "userDetails"){
-             
-          }else{
-            console.log("==================");
-          }
-       },[])
+function AdminTable({ tableHeaders, data }) {
+    const [tableData, setTableData] = useState([])
+    console.log(data)
+    useEffect(() => {
+        const user = async () => {
+            if (data === "userDetails") {
+                const data = await getUserData()
+                if (data) {
+                    setTableData(data)
+                } else {
+                    console.log("server error");
+                }
+            } else {
+                console.log("==================");
+            }
+        }
+        user()
+    }, [])
     return (
         <section className="w-full px-4">
             <div className="flex justify-center h-full ">
@@ -22,93 +31,24 @@ function AdminTable({tableHeaders,data}) {
                             <table className="table-auto w-full">
                                 <thead className="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
                                     <tr>
-                                        {tableHeaders.map((header)=>{
+                                        {tableHeaders.map((header) => {
                                             return <th key={header}>{header}</th>
                                         })}
                                     </tr>
                                 </thead>
-                                <tbody className="text-sm divide-y divide-gray-100">
-                                    <tr>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="flex items-center">
-                                                <div className="font-medium text-gray-800">1</div>
-                                            </div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-left">01/01/2023</div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-left font-medium ">8.00Am-9.00Pm</div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-lg text-center">Malappuram,Kerala,India</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="flex items-center">
-                                                <div className="font-medium text-gray-800">1</div>
-                                            </div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-left">01/01/2023</div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-left font-medium ">8.00Am-9.00Pm</div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-lg text-center">Malappuram,Kerala,India</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="flex items-center">
-                                                <div className="font-medium text-gray-800">1</div>
-                                            </div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-left">01/01/2023</div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-left font-medium ">8.00Am-9.00Pm</div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-lg text-center">Malappuram,Kerala,India</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="flex items-center">
-                                                <div className="font-medium text-gray-800">1</div>
-                                            </div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-left">01/01/2023</div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-left font-medium ">8.00Am-9.00Pm</div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-lg text-center">Malappuram,Kerala,India</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="flex items-center">
-                                                <div className="font-medium text-gray-800">1</div>
-                                            </div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-left">01/01/2023</div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-left font-medium ">8.00Am-9.00Pm</div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-lg text-center">Malappuram,Kerala,India</div>
-                                        </td>
-                                    </tr>
-                                </tbody>
+
+                                {tableData.map((data) => {
+                                    return (
+                                        <tbody className="text-sm divide-y divide-gray-100">
+                                            <tr key={data.id} >
+                                                <td>{data.fullName}</td>
+                                                <td>{data.email}</td>
+                                                <td>{data.phone}</td>
+                                                {data.isVerified ? <td>success</td> : <td>error</td>}
+                                            </tr>
+                                        </tbody>
+                                    )
+                                })}
                             </table>
                         </div>
                     </div>

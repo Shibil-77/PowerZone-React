@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {forgotPasswordValidation} from  './userUtils/utilRegister'
-import {apiForgotPassword} from '../../api/usersAuthRequest'
+import {apiForgotPassword} from '../../api/authApi'
 // import { useNavigate } from 'react-router-dom'
 
 function ForgotPassword() {
