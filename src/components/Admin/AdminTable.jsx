@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { getUserData } from '../../api/userApi'
+import { getUserData, userAccess } from '../../api/userApi'
+
 
 function AdminTable({ tableHeaders, data }) {
     const [tableData, setTableData] = useState([])
+    const [access,setAccess] = useState("")
     console.log(data)
     useEffect(() => {
         const user = async () => {
@@ -10,6 +12,7 @@ function AdminTable({ tableHeaders, data }) {
                 const data = await getUserData()
                 if (data) {
                     setTableData(data)
+
                 } else {
                     console.log("server error");
                 }
@@ -40,11 +43,18 @@ function AdminTable({ tableHeaders, data }) {
                                 {tableData.map((data) => {
                                     return (
                                         <tbody className="text-sm divide-y divide-gray-100">
-                                            <tr key={data.id} >
+                                            <tr key={data._id} >
                                                 <td>{data.fullName}</td>
                                                 <td>{data.email}</td>
                                                 <td>{data.phone}</td>
-                                                {data.isVerified ? <td>success</td> : <td>error</td>}
+                                                {data.access ? <td onClick={async() => {
+                                                const result = await  userAccess(data._id)
+                                                console.log("unblock");
+                                                }}>Unblock</td> : <td onClick={async() => {
+                                                 const  blockResult = await userAccess(data._id)
+                                                   console.log();
+                                                     console.log("block");
+                                                }}>Block</td>}
                                             </tr>
                                         </tbody>
                                     )

@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import { loginValidation } from '../Users/userUtils/utilRegister'
 import { apiLogin } from '../../api/authApi'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,Link } from 'react-router-dom'
 // import { Link } from 'react-router-dom';
 
 
 function Login() {
+  const [errorMessage,setErrorMessage] = useState()
   const navigate = useNavigate()
   const [loginData, setLoginData] = useState('')
   const handleEdit = async (e) => {
@@ -20,12 +21,15 @@ function Login() {
       const login =await apiLogin(loginData)
         console.log(login.status === 200);
       if (login.status === 200) {
+        setErrorMessage(null)
         localStorage.setItem('token', login.data.token)
         localStorage.setItem('user', login.data.user)
         navigate('/')
+      }else{
+        setErrorMessage(login.data.message)
       }
-    } else {
-      console.log(login)
+      }else {
+        setErrorMessage(login.data.message)
     }
   }
 
@@ -52,7 +56,8 @@ function Login() {
                   {/* <Link>HELLO WORLD</Link> */}
                   <div className="flex justify-center py-2">
                     {/* <Link to={'/register'}> */}
-                    <p className=" text-sm text-heavy-metal-900">Login?<span className="text-blue-600 cursor-pointer hover:underline">Click Me</span></p>
+                    <p className=" text-sm text-heavy-metal-900">SignUp?<Link to='/register'><span className="text-blue-600 cursor-pointer hover:underline">Click Me</span></Link></p><br/>
+                    <p className=" text-sm text-heavy-metal-900">   forgotPassword<Link to='/forgotPassword'><span className="text-blue-600 cursor-pointer hover:underline">Click Me</span></Link></p>
                     {/* </Link> */}
                   </div>
                   <div className="flex justify-center">
@@ -65,6 +70,7 @@ function Login() {
                   </div>
                 </div>
                 <button onClick={handleLogin} className="w-full my-5 py-3 border-white border-2 bg-white shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" >Log In</button>
+                {errorMessage && <div className="mx-10" ><h1 className='text-red-600'>{errorMessage}hello</h1></div>}
               </form>
             </div>
           </div>

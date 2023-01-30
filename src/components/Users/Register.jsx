@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import TextField from '@mui/material/TextField';
 import {SignUpValidation} from './userUtils/utilRegister'
 import { apiUserSignUp } from '../../api/authApi';
+import { Link } from 'react-router-dom';
 
 function Register() {
   const [registerData, setRegisterData] = useState('')
@@ -60,7 +61,7 @@ function Register() {
                   {/* <Link>HELLO WORLD</Link> */}
                   <div className="flex justify-center py-2">
                     {/* <Link to={'/register'}> */}
-                    <p className=" text-sm text-heavy-metal-900">Login?<span className="text-blue-600 cursor-pointer hover:underline">Click Me</span></p>
+                    <p className=" text-sm text-heavy-metal-900">Login?<Link to='/login'><span className="text-blue-600 cursor-pointer hover:underline">Click Me</span></Link></p>
                     {/* </Link> */}
                   </div>
                   <div className="flex justify-center">
