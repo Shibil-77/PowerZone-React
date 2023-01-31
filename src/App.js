@@ -21,7 +21,8 @@ import PopupPage from './pages/Users/PopupPage/PopupPage';
 import Verify from './components/Users/Verify'
 import ForgotPassword from './components/Users/ForgotPassword';
 import ResetPassword from './components/Users/ResetPassword';
-import Map from './components/Users/Map';
+import MapView from './components/Users/MapView';
+
 
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
       <Route path="/verify/:id" element={<Verify/>} />
       <Route path="/forgotPassword" element={<ForgotPassword/>} />
        <Route path="/resetPassword/:id" element={<ResetPassword/>} />      
-       <Route path="/Map" element={<Map/>} />    
+       <Route path="/map" element={<MapView/>} />    
     </Routes>
    </div>
 
