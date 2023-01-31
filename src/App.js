@@ -22,6 +22,7 @@ import Verify from './components/Users/Verify'
 import ForgotPassword from './components/Users/ForgotPassword';
 import ResetPassword from './components/Users/ResetPassword';
 import MapView from './components/Users/MapView';
+import MapValue from './components/Users/MapValue';
 
 
 
@@ -44,7 +45,8 @@ function App() {
       <Route path="/verify/:id" element={<Verify/>} />
       <Route path="/forgotPassword" element={<ForgotPassword/>} />
        <Route path="/resetPassword/:id" element={<ResetPassword/>} />      
-       <Route path="/map" element={<MapView/>} />    
+       <Route path="/map" element={<MapView/>} />  
+       <Route path="/mapValue" element={<MapValue/>} />   
     </Routes>
    </div>
 

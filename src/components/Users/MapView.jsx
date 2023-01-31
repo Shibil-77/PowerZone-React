@@ -15,8 +15,10 @@ class MapView extends Component {
 
   render() {
     const { currentLocation, zoom } = this.state;
-
+    
     return (
+      <>
+      
       <MapContainer center={currentLocation} zoom={zoom}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -25,6 +27,7 @@ class MapView extends Component {
 
         <Markers venues={data.venues}/>
       </MapContainer>
+      </>
     );
   }
 }
