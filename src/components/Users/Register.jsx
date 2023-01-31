@@ -73,7 +73,7 @@ function Register() {
                     <h3 className="mt-1 text-white">Google</h3>
                   </div>
                 </div>
-                <button onClick={handleSignUp} className="w-full my-5 py-3 border-white border-2 bg-myColor-500 shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" >Sign In</button>
+                <button onClick={handleSignUp} className="w-full my-5 py-3 border-white border-2 bg-myColor-500 shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" >Sign Up</button>
               </form>
               {errorMessage && <div className="mx-10" ><h1 className='text-red-600'>{errorMessage}</h1></div>}
             {successMessage && <div className="mx-10" ><h1 className='text-green-500'>{successMessage}</h1></div>}
