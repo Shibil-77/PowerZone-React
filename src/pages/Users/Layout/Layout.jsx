@@ -7,7 +7,7 @@ import SideBar from '../../../components/Users/SideBar'
 function Layout({ children }) {
     return (
         <>
-            <div className='bg-[#e9f7fa] h-screen'>
+            <div className='bg-[#e9f7fa] h-full'>
                 <div>
                     <Navbar />
                 </div>

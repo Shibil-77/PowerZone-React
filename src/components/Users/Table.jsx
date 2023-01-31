@@ -1,120 +1,85 @@
+
 import React from 'react'
 
 function Table() {
     return (
-        <section className="w-full px-4">
-            <div className="flex justify-center h-full ">
-                <div className="w-full mx-auto bg-white shadow-lg rounded-sm border border-gray-200 ">
-                    <header className="px-5 py-4 border-b border-gray-100">
-                        <h2 className="font-semibold text-gray-800">Booking Details</h2>
-                    </header>
-                    <div className="p-3">
-                        <div className="overflow-x-auto">
-                            <table className="table-auto w-full">
-                                <thead className="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
-                                    <tr>
-                                        <th className="p-2 whitespace-nowrap">
-                                            <div className="font-semibold text-left">No</div>
-                                        </th>
-                                        <th className="p-2 whitespace-nowrap">
-                                            <div className="font-semibold text-left">Date</div>
-                                        </th>
-                                        <th className="p-2 whitespace-nowrap">
-                                            <div className="font-semibold text-left">Time</div>
-                                        </th>
-                                        <th className="p-2 whitespace-nowrap">
-                                            <div className="font-semibold text-center">Location</div>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody className="text-sm divide-y divide-gray-100">
-                                    <tr>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="flex items-center">
-                                                <div className="font-medium text-gray-800">1</div>
-                                            </div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-left">01/01/2023</div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-left font-medium ">8.00Am-9.00Pm</div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-lg text-center">Malappuram,Kerala,India</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="flex items-center">
-                                                <div className="font-medium text-gray-800">1</div>
-                                            </div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-left">01/01/2023</div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-left font-medium ">8.00Am-9.00Pm</div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-lg text-center">Malappuram,Kerala,India</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="flex items-center">
-                                                <div className="font-medium text-gray-800">1</div>
-                                            </div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-left">01/01/2023</div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-left font-medium ">8.00Am-9.00Pm</div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-lg text-center">Malappuram,Kerala,India</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="flex items-center">
-                                                <div className="font-medium text-gray-800">1</div>
-                                            </div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-left">01/01/2023</div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-left font-medium ">8.00Am-9.00Pm</div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-lg text-center">Malappuram,Kerala,India</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="flex items-center">
-                                                <div className="font-medium text-gray-800">1</div>
-                                            </div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-left">01/01/2023</div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-left font-medium ">8.00Am-9.00Pm</div>
-                                        </td>
-                                        <td className="p-2 whitespace-nowrap">
-                                            <div className="text-lg text-center">Malappuram,Kerala,India</div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="overflow-x-auto w-full flex justify-center">
+    <table class="   shadow-md sm:rounded-lg text-sm text-left text-gray-500 dark:text-gray-400 w-1/3 ">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Product name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Color
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Category
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Price
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Apple MacBook Pro 17"
+                </th>
+                <td class="px-6 py-4">
+                    Sliver
+                </td>
+                <td class="px-6 py-4">
+                    Laptop
+                </td>
+                <td class="px-6 py-4">
+                    $2999
+                </td>
+                <td class="px-6 py-4">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                </td>
+            </tr>
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Microsoft Surface Pro
+                </th>
+                <td class="px-6 py-4">
+                    White
+                </td>
+                <td class="px-6 py-4">
+                    Laptop PC
+                </td>
+                <td class="px-6 py-4">
+                    $1999
+                </td>
+                <td class="px-6 py-4">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-gray-800">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    Magic Mouse 2
+                </th>
+                <td class="px-6 py-4">
+                    Black
+                </td>
+                <td class="px-6 py-4">
+                    Accessories
+                </td>
+                <td class="px-6 py-4">
+                    $99
+                </td>
+                <td class="px-6 py-4">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
     )
 }
 

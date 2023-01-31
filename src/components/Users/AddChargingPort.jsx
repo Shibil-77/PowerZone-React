@@ -2,219 +2,185 @@ import React from 'react'
 
 function Form({ children }) {
   return (
-    <>
-      <div className='bg-white w-full md:bg-none gap-5 md:mx-10 mx-10 rounded-3xl flex py-2 justify-center border'>
-        <div>
-          <div className='w-full '>
-            {children}
+    <section className=" py-1 bg-blueGray-50 w-full flex justify-center">
+      <div className=" lg:w-6/12 px-4 mx-auto mt-6 w-full">
+        <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0">
+          <div className="rounded-t bg-white mb-0 px-6 py-6">
+            <div className="text-center flex justify-between">
+              <h6 className="text-blueGray-700 text-xl font-bold">
+                ADD CHARGING PORT
+              </h6>
+              <button className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="button">
+                Settings
+              </button>
+            </div>
           </div>
-          <div className='w-auto bg-[#c2c2c228]  shadow-xl rounded-3xl '>
-            <form action='/' className=''>
+          <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
+            <form>
 
-              <div class="flex justify-center ">
-                <div class="mb-3 xl:w-96 ">
-                  <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700"
-                  >Rate</label>
-                  <input
-                    type="number"
-                    className=" form-control
-                                block
-                                w-full
-                                px-3
-                                py-1.5
-                                text-base
-                                font-normal
-                                text-gray-700
-                                bg-white bg-clip-padding
-                                border border-solid border-gray-300
-                                rounded
-                                transition
-                                ease-in-out
-                                m-0
-                                focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none"
-                    id="exampleText0"
-                    placeholder="Text input"
-                  />
+
+            <h6 className="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+                Charging Port Information
+              </h6>
+              <div className="flex flex-wrap">
+                <div className="w-full lg:w-6/12 px-4">
+                  <div className="relative w-full mb-3">
+                    <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                     $ Rate
+                    </label>
+                    <input type="number" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                  </div>
+                </div>
+                <div className="w-full lg:w-6/12 px-4">
+                  <div className="relative w-full mb-3">
+                    <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                     kW
+                    </label>
+                    <input type="number" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                  </div>
+                </div>
+                <div className="w-full lg:w-6/12 px-4">
+                  <div className="relative w-full mb-3">
+                    <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                     Types
+                    </label>
+                    <input type="text" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                  </div>
+                </div>
+                {/* <div className="w-full lg:w-6/12 px-4">
+                  <div className="relative w-full mb-3">
+                    <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                      Time
+                    </label>
+                    <input type="time" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                  </div>
+                </div> */}
+              </div>
+
+              <hr className="mt-6 border-b-1 border-blueGray-300" />
+
+
+
+              <h6 className="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+                Details
+              </h6>
+
+              <div className="flex flex-wrap">
+                <div className="w-full lg:w-6/12 px-4">
+                  <div className="relative w-full mb-3">
+                    <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                      Days available
+                    </label>
+                    <select className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                      <option>Choose a color</option>
+                      <option>Red</option>
+                      <option>Blue</option>
+                      <option>Yellow</option>
+                      <option>Black</option>
+                      <option>Orange</option>
+                      <option>Purple</option>
+                      <option>Gray</option>
+                      <option>White</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="w-full lg:w-6/12 px-4">
+                  <div className="relative w-full mb-3">
+                    <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                      Days available
+                    </label>
+                    <select className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                      <option>Choose a color</option>
+                      <option>Red</option>
+                      <option>Blue</option>
+                      <option>Yellow</option>
+                      <option>Black</option>
+                      <option>Orange</option>
+                      <option>Purple</option>
+                      <option>Gray</option>
+                      <option>White</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="w-full lg:w-6/12 px-4">
+                  <div className="relative w-full mb-3">
+                    <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                      Time
+                    </label>
+                    <input type="time" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                  </div>
+                </div>
+                <div className="w-full lg:w-6/12 px-4">
+                  <div className="relative w-full mb-3">
+                    <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                      Time
+                    </label>
+                    <input type="time" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                  </div>
                 </div>
               </div>
 
+              <hr className="mt-6 border-b-1 border-blueGray-300" />
 
-              <div class="flex justify-center">
-                <div class="mb-3 xl:w-96">
-                  <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700"
-                  >Available Days</label>
-                  <input
-                    type="text"
-                    className=" form-control
-                                block
-                                w-full
-                                px-3
-                                py-1.5
-                                text-base
-                                font-normal
-                                text-gray-700
-                                bg-white bg-clip-padding
-                                border border-solid border-gray-300
-                                rounded
-                                transition
-                                ease-in-out
-                                m-0
-                                focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none"
-                    id="exampleText0"
-                    placeholder="Text input"
-                  />
+              <h6 className="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+                Contact Information
+              </h6>
+              <div className="flex flex-wrap">
+                <div className="w-full lg:w-12/12 px-4">
+                  <div className="relative w-full mb-3">
+                    <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                      Address
+                    </label>
+                    <input type="text" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                  </div>
+                </div>
+                <div className="w-full lg:w-4/12 px-4">
+                  <div className="relative w-full mb-3">
+                    <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                      City
+                    </label>
+                    <input type="email" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                  </div>
+                </div>
+                <div className="w-full lg:w-4/12 px-4">
+                  <div className="relative w-full mb-3">
+                    <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                      Country
+                    </label>
+                    <input type="text" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                  </div>
+                </div>
+                <div className="w-full lg:w-4/12 px-4">
+                  <div className="relative w-full mb-3">
+                    <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                      Postal Code
+                    </label>
+                    <input type="text" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                  </div>
                 </div>
               </div>
 
+              <hr className="mt-6 border-b-1 border-blueGray-300" />
 
-              <div class="flex justify-center ">
-                <div class="mb-3 xl:w-96">
-                  <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700"
-                  >Start Time</label>
-                  <input
-                    type="time"
-                    className=" form-control
-                                block
-                                w-full
-                                px-3
-                                py-1.5
-                                text-base
-                                font-normal
-                                text-gray-700
-                                bg-white bg-clip-padding
-                                border border-solid border-gray-300
-                                rounded
-                                transition
-                                ease-in-out
-                                m-0
-                                focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none"
-                    id="exampleText0"
-                    placeholder="Start Time"
-                  />
-                </div>
-              </div>
-
-
-              <div class="flex justify-center">
-                <div class="mb-3 xl:w-96">
-                  <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700"
-                  >End Time</label>
-                  <input
-                    type="time"
-                    className=" form-control
-                                block
-                                w-full
-                                px-3
-                                py-1.5
-                                text-base
-                                font-normal
-                                text-gray-700
-                                bg-white bg-clip-padding
-                                border border-solid border-gray-300
-                                rounded
-                                transition
-                                ease-in-out
-                                m-0
-                                focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none"
-                    id="exampleText0"
-                    placeholder="End Time"
-                  />
-                </div>
-              </div>
-
-              <div class="flex justify-center">
-                <div class="mb-3 xl:w-96">
-                  <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700"
-                  >Phone Number</label>
-                  <input
-                    type="number"
-                    className=" form-control
-                                block
-                                w-full
-                                px-3
-                                py-1.5
-                                text-base
-                                font-normal
-                                text-gray-700
-                                bg-white bg-clip-padding
-                                border border-solid border-gray-300
-                                rounded
-                                transition
-                                ease-in-out
-                                m-0
-                                focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none"
-                    id="exampleText0"
-                    placeholder="Phone Number"
-                  />
-                </div>
-              </div>
-
-
-              <div class="flex justify-center">
-                <div class="mb-3 xl:w-96">
-                  <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700"
-                  >Address 1</label>
-                  <input
-                    type="text"
-                    className=" form-control
-                                block
-                                w-full
-                                px-3
-                                py-1.5
-                                text-base
-                                font-normal
-                                text-gray-700
-                                bg-white bg-clip-padding
-                                border border-solid border-gray-300
-                                rounded
-                                transition
-                                ease-in-out
-                                m-0
-                                focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none"
-                    id="exampleText0"
-                    placeholder="Address 1"
-                  />
-                </div>
-              </div>
-
-
-
-              <div class="flex justify-center">
-                <div class="mb-3 xl:w-96">
-                  <label for="exampleText0" class="form-label inline-block mb-2 text-gray-700"
-                  >Address 2</label>
-                  <input
-                    type="text"
-                    className=" form-control
-                                block
-                                w-full
-                                px-3
-                                py-1.5
-                                text-base
-                                font-normal
-                                text-gray-700
-                                bg-white bg-clip-padding
-                                border border-solid border-gray-300
-                                rounded
-                                transition
-                                ease-in-out
-                                m-0
-                                focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none"
-                    id="exampleText0"
-                    placeholder="Address 2"
-                  />
-                </div>
-              </div>
-              <div className='flex justify-center'>
-                <button className=" flex  w-2/6 my-5 jus py-3 px-12 border-white border-2 bg-white shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" >Submit</button>
-              </div>
-
-
+              {/* <h6 className="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+          About Me
+        </h6>
+        <div className="flex flex-wrap">
+          <div className="w-full lg:w-12/12 px-4">
+            <div className="relative w-full mb-3">
+              <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                About me
+              </label>
+              <textarea type="text" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" rows="4"> A beautiful UI Kit and Admin for JavaScript &amp; Tailwind CSS. It is Freeand Open Source.</textarea>
+            </div>
+          </div>
+        </div> */}
             </form>
           </div>
         </div>
+
       </div>
-    </>
+    </section>
   )
 }
 

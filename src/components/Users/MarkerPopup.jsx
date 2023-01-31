@@ -1,5 +1,6 @@
 import React from 'react';
 import {Popup} from 'react-leaflet';
+import MapModal from './MapModal';
 
 const MarkerPopup = (props) => {
   const { name } = props.data;
@@ -7,7 +8,7 @@ const MarkerPopup = (props) => {
 
   return  (<Popup>
     <div className='poup-text'>
-      <h1>{name}</h1>
+      <MapModal/>
     </div>
   </Popup>);
 };
