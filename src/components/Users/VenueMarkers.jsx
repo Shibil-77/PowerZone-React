@@ -5,9 +5,8 @@ import MarkerPopup from './MarkerPopup';
 
 const VenueMarkers = (props) => {
   const { venues } = props;
-
-  const markers = venues.map((venue, index) => (
-    <Marker key={index} position={venue.geometry} icon={VenueLocationIcon} >
+  const markers = venues.map((venue) => (
+    <Marker key={venue._id} position={venue.map} icon={VenueLocationIcon} >
       <MarkerPopup data={venue}/>
     </Marker>
   ));

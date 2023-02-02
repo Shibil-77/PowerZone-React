@@ -12,7 +12,38 @@ export const addChargingPortApi = async(value) => {
         })
         console.log(chargingData);
           return chargingData
-    } catch (error) {
+         } catch (error) {
+            
+         }
+}
 
+export const addPointValueApi = async(map,id)=>{
+    console.log(id);
+    try {
+         console.log(map);
+        const chargingData = await axios.patch('http://localhost:4000/api/port/addMapValue',{map,id},{
+            withCredentials: true,
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem("token"),
+            },
+        })
+        return chargingData
+    }catch(e) {
+       
     }
+}
+
+
+export const mapDataApi =async()=>{
+try {
+    const data = await axios.get('http://localhost:4000/api/port/mapData',{
+        withCredentials: true,
+        headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+    })
+    return data.data
+} catch (error) {
+     return error.message 
+}
 }

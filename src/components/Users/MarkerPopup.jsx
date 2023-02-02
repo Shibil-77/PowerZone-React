@@ -3,12 +3,12 @@ import {Popup} from 'react-leaflet';
 import MapModal from './MapModal';
 
 const MarkerPopup = (props) => {
-  const { name } = props.data;
-  console.log(name);
-
+  const data = props.data;
+  console.log(data,"==================================");
   return  (<Popup>
     <div className='poup-text'>
-      <MapModal/>
+
+      <MapModal mapValue={data}/>
     </div>
   </Popup>);
 };

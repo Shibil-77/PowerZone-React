@@ -16,10 +16,12 @@ function AddChargingPort({ children }) {
     console.log(chargingPortData);
     // const chargingPort = addChargingPortValidation(chargingPortData)      
     const chargingData = await addChargingPortApi(chargingPortData)
-      console.log(chargingData.data,"charging ===================vsd,m");
     if (chargingData.status === 200) {
-       console.log("successfully");
-      navigate('/mapValue')
+       console.log(chargingData.data.message,"chargingData.data.id");
+        navigate({
+          pathname: '/mapValue',
+          hash: chargingData.data.message,
+        })
     } else {
       alert(chargingData.data.message)
     }
