@@ -19,7 +19,6 @@ function Login() {
     const login = loginValidation(loginData)
     if (login === 'success') {
       const login =await apiLogin(loginData)
-        console.log(login.status === 200);
       if (login.status === 200) {
         setErrorMessage(null)
         localStorage.setItem('token', login.data.token)

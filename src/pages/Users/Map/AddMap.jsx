@@ -4,7 +4,7 @@ import MapValue from '../../../components/Users/MapValue'
 
 function AddMap() {
   return (
-    <MapLayout>
+   <MapLayout>
     <MapValue/>
   </MapLayout>
   )

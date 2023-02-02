@@ -1,50 +1,73 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { addChargingPortValidation } from './userUtils/utilsPort'
+import { addChargingPortApi } from '../../api/portApi'
+import { useNavigate } from 'react-router-dom'
 
-function Form({ children }) {
+function AddChargingPort({ children }) {
+  const navigate = useNavigate()
+  const [chargingPortData, setChargingPortData] = useState('')
+  const handleEdit = async (e) => {
+    const { name, value } = e.target;
+    setChargingPortData({ ...chargingPortData, [name]: value });
+  };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    console.log(chargingPortData);
+    // const chargingPort = addChargingPortValidation(chargingPortData)      
+    const chargingData = await addChargingPortApi(chargingPortData)
+      console.log(chargingData.data,"charging ===================vsd,m");
+    if (chargingData.status === 200) {
+       console.log("successfully");
+      navigate('/mapValue')
+    } else {
+      alert(chargingData.data.message)
+    }
+
+  }
+
   return (
     <section className=" py-1 bg-blueGray-50 w-full flex justify-center">
-      <div className=" lg:w-6/12 px-4 mx-auto mt-6 w-full">
+      <div className=" md:w-6/12 px-4 mx-auto mt-6 w-full">
         <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0">
           <div className="rounded-t bg-white mb-0 px-6 py-6">
             <div className="text-center flex justify-between">
               <h6 className="text-blueGray-700 text-xl font-bold">
                 ADD CHARGING PORT
               </h6>
-              <button className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="button">
-                Settings
-              </button>
+
             </div>
           </div>
           <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
             <form>
 
 
-            <h6 className="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+              <h6 className="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
                 Charging Port Information
               </h6>
               <div className="flex flex-wrap">
                 <div className="w-full lg:w-6/12 px-4">
                   <div className="relative w-full mb-3">
                     <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                     $ Rate
+                      $ Rate
                     </label>
-                    <input type="number" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    <input type="number" name='rate' className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" onChange={handleEdit} />
                   </div>
                 </div>
                 <div className="w-full lg:w-6/12 px-4">
                   <div className="relative w-full mb-3">
                     <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                     kW
+                      kW
                     </label>
-                    <input type="number" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    <input type="number" name='kW' className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" onChange={handleEdit} />
                   </div>
                 </div>
                 <div className="w-full lg:w-6/12 px-4">
                   <div className="relative w-full mb-3">
                     <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                     Types
+                      Types
                     </label>
-                    <input type="text" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    <input type="text" name='type' className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" onChange={handleEdit} />
                   </div>
                 </div>
                 {/* <div className="w-full lg:w-6/12 px-4">
@@ -71,7 +94,7 @@ function Form({ children }) {
                     <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                       Days available
                     </label>
-                    <select className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                    <select name='dayStart' className="border-0 px-3 py-3  placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" onChange={handleEdit}>
                       <option>Choose a color</option>
                       <option>Red</option>
                       <option>Blue</option>
@@ -89,7 +112,7 @@ function Form({ children }) {
                     <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                       Days available
                     </label>
-                    <select className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                    <select name='dayEnd' className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" onChange={handleEdit}>
                       <option>Choose a color</option>
                       <option>Red</option>
                       <option>Blue</option>
@@ -105,17 +128,17 @@ function Form({ children }) {
                 <div className="w-full lg:w-6/12 px-4">
                   <div className="relative w-full mb-3">
                     <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                      Time
+                      Time Start
                     </label>
-                    <input type="time" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    <input type="time" name='timeStart' className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" onChange={handleEdit} />
                   </div>
                 </div>
                 <div className="w-full lg:w-6/12 px-4">
                   <div className="relative w-full mb-3">
                     <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                      Time
+                      Time End
                     </label>
-                    <input type="time" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    <input name='timeEnd' type="time" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" onChange={handleEdit} />
                   </div>
                 </div>
               </div>
@@ -131,7 +154,7 @@ function Form({ children }) {
                     <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                       Address
                     </label>
-                    <input type="text" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    <input type="text" name='address' className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" onChange={handleEdit} />
                   </div>
                 </div>
                 <div className="w-full lg:w-4/12 px-4">
@@ -139,7 +162,7 @@ function Form({ children }) {
                     <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                       City
                     </label>
-                    <input type="email" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    <input type="email" name='city' className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" onChange={handleEdit} />
                   </div>
                 </div>
                 <div className="w-full lg:w-4/12 px-4">
@@ -147,7 +170,7 @@ function Form({ children }) {
                     <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                       Country
                     </label>
-                    <input type="text" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    <input name='country' type="text" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" onChange={handleEdit} />
                   </div>
                 </div>
                 <div className="w-full lg:w-4/12 px-4">
@@ -155,7 +178,7 @@ function Form({ children }) {
                     <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                       Postal Code
                     </label>
-                    <input type="text" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
+                    <input name='postalCode' type="text" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" onChange={handleEdit} />
                   </div>
                 </div>
               </div>
@@ -175,6 +198,14 @@ function Form({ children }) {
             </div>
           </div>
         </div> */}
+
+              <div className='flex justify-center mt-5'>
+                <button onClick={onSubmit} className="bg-green-600 text-white active:bg-green-500 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="button">
+                  Submit
+                </button>
+              </div>
+
+
             </form>
           </div>
         </div>
@@ -184,4 +215,4 @@ function Form({ children }) {
   )
 }
 
-export default Form
+export default AddChargingPort

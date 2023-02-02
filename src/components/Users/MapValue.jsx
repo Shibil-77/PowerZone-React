@@ -4,17 +4,19 @@ import React,{useState} from 'react'
 import {VenueLocationIcon} from './VenueLocationIcon';
 
 function MapValue() {
-    const [latitude, setLatitude] = useState(5.6);
-    const [longitude, setLongitude] = useState(7.8);
+   
+
+    const [latitude, setLatitude] = useState(11.151974290747289);
+    const [longitude, setLongitude] = useState( 75.89381330188164);
     const [zoom, setZoom] = useState(13);
-    const [view,setView] = useState(false)
+    const [view,setView] = useState(true)
     return (
       <>
       <button onClick={(e)=>{
            e.preventDefault();
            setView(true)
       }} className='bg-red-700'>Hello</button>
-      <button className='mx-11 bg-green-500' onClick={(e)=>{
+      <button className='mx-11  bg-green-500' onClick={(e)=>{
            e.preventDefault();
            setView(false)
       }}>Hai </button>

@@ -2,7 +2,7 @@ import React from 'react'
 import AddChargingPort from '../../../components/Users/AddChargingPort'
 import Layout from '../Layout/Layout'
 
-function FormPage() {
+function AddChargingPortPage() {
   return ( 
         <Layout>
            <AddChargingPort>
@@ -12,4 +12,4 @@ function FormPage() {
   )
 }
 
-export default FormPage
+export default AddChargingPortPage

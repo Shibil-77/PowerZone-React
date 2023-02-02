@@ -17,9 +17,9 @@ export const verifyResponse= async(id,code)=>{
      const data =  await axios.get(`http://localhost:4000/api/auth/verify/${id}`,{
       withCredentials: true,
     })
-    console.log(data);
+    console.log(data.token);
     return data
-  } catch (error) {
+    } catch (error) {
      console.log( error.response.data.message);
      return  error.response.data.message
 }}
@@ -36,7 +36,8 @@ export const apiLogin = async(loginData) => {
     const data = await axios.post(`http://localhost:4000/api/auth/login`,loginData,{
       withCredentials: true,
     })
-    console.log(data);
+    console.log("api call success");
+    console.log(data.token);
     return data
   } catch (error) {
     console.log( error.response.data.message);

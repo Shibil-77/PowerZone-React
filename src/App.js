@@ -22,7 +22,7 @@ import Verify from './components/Users/Verify'
 import ForgotPassword from './components/Users/ForgotPassword';
 import ResetPassword from './components/Users/ResetPassword';
 import MapView from './pages/Users/Map/FindMap';
-import MapValue from './components/Users/MapValue';
+import MapValue from './pages/Users/Map/AddMap';
 
 
 
