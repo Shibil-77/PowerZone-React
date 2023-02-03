@@ -23,7 +23,7 @@ import ForgotPassword from './components/Users/ForgotPassword';
 import ResetPassword from './components/Users/ResetPassword';
 import MapView from './pages/Users/Map/FindMap';
 import MapValue from './pages/Users/Map/AddMap';
-
+import  CalendarPage from './components/Users/CalendarPage';
 
 
 function App() {
@@ -47,6 +47,7 @@ function App() {
        <Route path="/resetPassword/:id" element={<ResetPassword/>} />      
        <Route path="/map" element={<MapView/>} />  
        <Route path="/mapValue" element={<MapValue/>} />   
+       <Route path="/Calendar" element={<CalendarPage/>} /> 
     </Routes>
    </div>
 
