@@ -8,8 +8,12 @@ import pay from '../../assets/Icons/pay-day.png'
 function MapModal(props) {
    const mapData = props.mapValue
    const navigate = useNavigate()
-   const onSubmit =()=>{
-     navigate('/addBookingDetails')
+   const onSubmit =(e)=>{
+     e.preventDefault()
+     navigate({
+      pathname: '/AddBookingDetails',
+      hash: mapData._id,
+    })
    }
   
   return (
@@ -33,7 +37,7 @@ function MapModal(props) {
                  <img src={Location} alt="" className=' w-10 h-10 mt-5' />
             </div>
             <div className='flex justify-center'>
-                <h1 className='text-[20px] text-end mt-8 mx-3'>Location:<span>{mapData.address}</span></h1>
+                <h1 className='text-[20px] text-end mt-8 mx-3'>Location:<span>{mapData.location}</span></h1>
             </div>
         </div>
         <hr className='mt-6' />
