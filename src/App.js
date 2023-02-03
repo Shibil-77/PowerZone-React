@@ -47,7 +47,7 @@ function App() {
        <Route path="/resetPassword/:id" element={<ResetPassword/>} />      
        <Route path="/map" element={<MapView/>} />  
        <Route path="/mapValue" element={<MapValue/>} />   
-       <Route path="/Calendar" element={<CalendarPage/>} /> 
+       <Route path="/CalendarPage" element={<CalendarPage/>} /> 
     </Routes>
    </div>
 
