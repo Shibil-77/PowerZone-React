@@ -14,16 +14,14 @@ function MapValue() {
   const navigate = useNavigate()
 
   const location = useLocation()
-  console.log(location.hash, "location hash");
+ 
 
   // const [data, setData] = useState([]);
   const AddPointValue = async(e) => {
     e.preventDefault()
     const pointValue = [latitude, longitude]
     const  mapValueData =await addPointValueApi(pointValue, location.hash)
-    console.log(mapValueData,"=====---------------===============--------------==========------------=====");
     if (mapValueData.status === 200) {
-       console.log("========4===========");
       navigate('/')
     } else {
       alert(mapValueData.data.message)

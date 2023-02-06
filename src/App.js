@@ -1,6 +1,6 @@
 import '../src/App.css'
-import React  from 'react';
-import { Route,Routes } from 'react-router-dom'
+import React from 'react';
+import { Route, Routes } from 'react-router-dom'
 import LoginPage from './pages/Users/Login/LoginPage';
 import RegisterPage from './pages/Users/Register/RegisterPage';
 // import Navbar from './components/Users/Navbar/Navbar';
@@ -23,45 +23,90 @@ import ForgotPassword from './components/Users/ForgotPassword';
 import ResetPassword from './components/Users/ResetPassword';
 import MapView from './pages/Users/Map/FindMap';
 import MapValue from './pages/Users/Map/AddMap';
-import  CalendarPage from './components/Users/CalendarPage';
+import CalendarPage from './components/Users/CalendarPage';
+import UserProtectRouter from './UserProtectRouter/UserProtectRouter';
 
 
 function App() {
   return (
     <>
-    <div>
-    <Routes>
-      <Route path="/login" element={ <LoginPage/> } />
-      <Route path="/register" element={ <RegisterPage/> } />   
-      <Route path="/" element={ <HomePage/> } />   
-      <Route path="/Profile" element={ <ProfilePage/> } />  
-      <Route path="/OldBookingsDetails" element={<BookingPage/>  } />  
-      <Route path="/AddBookingDetails" element={<BookingDetailsPage/>} /> 
-      <Route path="/NewBookings" element={<NewBooking/>  } />  
-      <Route path="/AddChargingPort" element={<AddChargingPort/>} /> 
-      <Route path="/PortDetails" element={<PortDetails/>} /> 
-      <Route path="/PortBookings" element={<PortBookings/>} /> 
-      <Route path="/Popup" element={<PopupPage/>} /> 
-      <Route path="/verify/:id" element={<Verify/>} />
-      <Route path="/forgotPassword" element={<ForgotPassword/>} />
-       <Route path="/resetPassword/:id" element={<ResetPassword/>} />      
-       <Route path="/map" element={<MapView/>} />  
-       <Route path="/mapValue" element={<MapValue/>} />   
-       <Route path="/CalendarPage" element={<CalendarPage/>} /> 
-    </Routes>
-   </div>
+      <div>
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/" element={<HomePage />} />
 
-   <div>
-    <Routes>
-         <Route path="/admin/login" element={<AdminLoginPage/>} /> 
-         <Route path="/admin/BookingDetails" element={<BookingDetails/>} /> 
-         <Route path="/admin/PortDetails" element={<PortDetails/>} /> 
-         <Route path="/admin/AddBanner" element={<AddBanner/>} /> 
-         <Route path="/admin/BannerDetails" element={<BannerDetails/>} /> 
-         <Route path="/admin/UsersDetails" element={<UserDetails/>} /> 
-    </Routes>
-   </div>
-  </>
+          <Route path="/Profile" element={
+            <UserProtectRouter>
+              <ProfilePage />
+            </UserProtectRouter>
+          } />
+          <Route path="/OldBookingsDetails" element={
+            <UserProtectRouter>
+              <BookingPage />
+            </UserProtectRouter>
+          } />
+          <Route path="/AddBookingDetails" element={
+            <UserProtectRouter>
+              <BookingDetailsPage />
+            </UserProtectRouter>
+          } />
+
+          <Route path="/NewBookings" element={
+            <UserProtectRouter>
+              <NewBooking />
+            </UserProtectRouter>
+          } />
+          <Route path="/AddChargingPort" element={
+            <UserProtectRouter>
+              <AddChargingPort />
+            </UserProtectRouter>
+          } />
+          <Route path="/PortDetails" element={
+            <UserProtectRouter>
+              <PortDetails />
+            </UserProtectRouter>
+          } />
+          <Route path="/PortBookings" element={
+            <UserProtectRouter><PortBookings />
+            </UserProtectRouter>
+          } />
+          <Route path="/Popup" element={
+            <UserProtectRouter>
+              <PopupPage />
+            </UserProtectRouter>
+          } />
+          <Route path="/verify/:id" element={
+            <Verify />
+          } />
+          <Route path="/forgotPassword" element={<ForgotPassword />} />
+          <Route path="/resetPassword/:id" element={<ResetPassword />} />
+          <Route path="/map" element={
+            <UserProtectRouter>
+              <MapView />
+            </UserProtectRouter>} />
+          <Route path="/mapValue" element={
+            <UserProtectRouter><MapValue />
+            </UserProtectRouter>} />
+          <Route path="/CalendarPage" element={
+            <UserProtectRouter>
+              <CalendarPage />
+            </UserProtectRouter>} />
+
+        </Routes>
+      </div>
+
+      <div>
+        <Routes>
+          <Route path="/admin/login" element={<AdminLoginPage />} />
+          <Route path="/admin/BookingDetails" element={<BookingDetails />} />
+          <Route path="/admin/PortDetails" element={<PortDetails />} />
+          <Route path="/admin/AddBanner" element={<AddBanner />} />
+          <Route path="/admin/BannerDetails" element={<BannerDetails />} />
+          <Route path="/admin/UsersDetails" element={<UserDetails />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 

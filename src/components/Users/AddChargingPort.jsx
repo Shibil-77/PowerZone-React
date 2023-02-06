@@ -97,7 +97,7 @@ function AddChargingPort({ children }) {
                       Days available
                     </label>
                     <select name='dayStart' className="border-0 px-3 py-3  placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" onChange={handleEdit}>
-                      <option>Choose a color</option>
+                      <option>Choose a Day</option>
                       <option>Red</option>
                       <option>Blue</option>
                       <option>Yellow</option>
