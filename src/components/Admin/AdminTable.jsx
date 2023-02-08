@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getUserData, userAccess } from '../../api/userApi'
+import { getUserData, userAccess } from '../../api/adminApi'
 
 
 function AdminTable({ tableHeaders, data }) {

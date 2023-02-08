@@ -19,9 +19,6 @@ function AdminLayout({children}) {
                 {children}
             </div>
         </div>
-        <div>
-            <AdminFooter />
-        </div>
     </div>
     <div className=' z-50  block md:hidden'>
         <AdminBottomBar />

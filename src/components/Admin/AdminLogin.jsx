@@ -1,9 +1,37 @@
-import React from 'react';
+import React,{useState} from 'react';
 import TextField from '@mui/material/TextField';
-// import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import {apiAdminLogin} from "../../api/adminApi"
+import {loginValidation} from '../Users/userUtils/utilRegister'
 
 
 function AdminLogin() {
+
+    const navigate = useNavigate();
+const [adminLoginData,setAdminLoginData] = useState()
+  const handleEdit = async (e) => {
+    const { name, value } = e.target;
+    setAdminLoginData({ ...adminLoginData, [name]: value });
+  };
+
+  const handleAdminLogin = async (e) => {
+    e.preventDefault();
+    const login = loginValidation(adminLoginData)
+    if (login === 'success') {
+      const login =await apiAdminLogin(adminLoginData)
+      if (login.status === 200) {
+        // setErrorMessage(null)
+        localStorage.setItem('token', login.data.token)
+        localStorage.setItem('user', login.data.user)
+        navigate('/')
+      }else{
+        // setErrorMessage(login.data.message)
+      }
+      }else {
+        // setErrorMessage(login.data.message)
+    }
+  }
+
   return (
     <>
       <div className='flex w-full h-full justify-items-center bg-[#e9f7fa]'>
@@ -18,10 +46,10 @@ function AdminLogin() {
               <form action="" >
                 <div>
                   <div className='grid  place-items-center mt-5 '>
-                    <TextField size='small' id="outlined-basic" className='w-full' label="E Mail" variant="outlined" />
+                    <TextField size='small' id="outlined-basic" className='w-full' label="E Mail" variant="outlined" onChange={handleEdit} />
                   </div>
                   <div className='grid  place-items-center mt-5 '>
-                    <TextField size='small' id="outlined-basic" className='w-full' label="PassWord" variant="outlined" />
+                    <TextField size='small' id="outlined-basic" className='w-full' label="PassWord" variant="outlined" onChange={handleEdit} />
                   </div>
                   {/* <Link>HELLO WORLD</Link> */}
                   <div className="flex justify-center py-2">
@@ -38,7 +66,7 @@ function AdminLogin() {
                     <h3 className="mt-1 text-black">Google</h3>
                   </div>
                 </div>
-                <button className="w-full my-5 py-3 border-white border-2 bg-white shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" >Log In</button>
+                <button className="w-full my-5 py-3 border-white border-2 bg-white shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" onClick={handleAdminLogin}>Log In</button>
               </form>
             </div>
           </div>
