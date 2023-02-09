@@ -1,31 +1,78 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { addChargingPortValidation } from './userUtils/utilsPort'
 import { addChargingPortApi } from '../../api/portApi'
 import { useNavigate } from 'react-router-dom'
 
 function AddChargingPort({ children }) {
+
   const navigate = useNavigate()
+ 
+  // State
+
   const [chargingPortData, setChargingPortData] = useState('')
+  const [dayDetails, setDayDetails] = useState('')
+  const [selectedDay, setSelectedDay] = useState(null);
+  const [dayAndTime,setDayAndTime] = useState([])
+  const [stateUpdate, setStateUpdated] = useState(false)
+  // functions
+
   const handleEdit = async (e) => {
     const { name, value } = e.target;
     setChargingPortData({ ...chargingPortData, [name]: value });
   };
 
+  function handleSelectChange(event) {
+    setSelectedDay(event.target.value);
+  }
+
+  const dayHandle = async (e) => {
+    const { name, value } = e.target;
+    setDayDetails({...dayDetails, [name]:value,selectedDay });
+  };
+
+  
+
+  const dayAdding  = (e)=>{
+    e.preventDefault();
+    setDayAndTime([...dayAndTime,dayDetails])
+    console.log(dayAndTime,"dayAndTime")
+    setStateUpdated(true)
+    
+
+  }
+
+  useEffect(()=>{
+    if(stateUpdate){
+      setChargingPortData({ ...chargingPortData,dayDetail:dayAndTime});
+      setSelectedDay(null)
+      setStateUpdated(false)
+    }
+  },[stateUpdate])
+
+
+  const deleteDay =(day)=>{
+      const filterData = dayAndTime.filter((data)=>data.selectedDay !== day)
+      setDayAndTime(filterData)
+  }
+
+  // main function
+
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log(chargingPortData);
-    // const chargingPort = addChargingPortValidation(chargingPortData)      
+  
+    console.log(chargingPortData,"chargingPortData")
     const chargingData = await addChargingPortApi(chargingPortData)
+
     if (chargingData.status === 200) {
-       console.log(chargingData.data.message,"chargingData.data.id");
-        navigate({
-          pathname: '/mapValue',
-          hash: chargingData.data.message,
-        })
+
+      navigate({
+        pathname: '/mapValue',
+        hash: chargingData.data.message,
+      })
+
     } else {
       alert(chargingData.data.message)
     }
-
   }
 
   return (
@@ -93,13 +140,13 @@ function AddChargingPort({ children }) {
               <div className="flex flex-wrap">
                 <div className="w-full lg:w-6/12 px-4">
                   <div className="relative w-full mb-3">
-                    <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                      Days available
+                    <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                     Select Days 
                     </label>
-                    <select name='dayStart' className="border-0 px-3 py-3  placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" onChange={handleEdit}>
+                    <select name='days' value={selectedDay} onChange={handleSelectChange} className="border-0 px-3 py-3  placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" >
                       <option>Choose a Day</option>
-                      <option>Red</option>
-                      <option>Blue</option>
+                      <option value="sunday" name='sunday'>Sunday</option>
+                      <option value='monday'>Monday</option>
                       <option>Yellow</option>
                       <option>Black</option>
                       <option>Orange</option>
@@ -109,40 +156,71 @@ function AddChargingPort({ children }) {
                     </select>
                   </div>
                 </div>
+
                 <div className="w-full lg:w-6/12 px-4">
                   <div className="relative w-full mb-3">
-                    <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                    {dayAndTime.length>0 && <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                       Days available
-                    </label>
-                    <select name='dayEnd' className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" onChange={handleEdit}>
-                      <option>Choose a color</option>
-                      <option>Red</option>
-                      <option>Blue</option>
-                      <option>Yellow</option>
-                      <option>Black</option>
-                      <option>Orange</option>
-                      <option>Purple</option>
-                      <option>Gray</option>
-                      <option>White</option>
-                    </select>
+                    </label>}
+                    <div className='grid-cols-4'>
+                    {dayAndTime.map((data)=>{
+                      return(
+                           <div
+                            // key={index}
+                            className="bg-gray-400 inline-flex items-center text-sm rounded mt-2 mr-1 overflow-hidden"
+                          >
+                            <span className="ml-2 mr-1 leading-relaxed truncate max-w-xs px-1">
+                              {data.selectedDay}
+                            </span>
+                            <button
+                              type="button"
+                              className="w-6 h-8 inline-block align-middle text-gray-500 bg-gray-800 focus:outline-none"
+                              onClick={() => deleteDay(data.selectedDay)}
+                            >
+                              <svg
+                                className="w-6 h-6 fill-current mx-auto"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M15.78 14.36a1 1 0 0 1-1.42 1.42l-2.82-2.83-2.83 2.83a1 1 0 1 1-1.42-1.42l2.83-2.82L7.3 8.7a1 1 0 0 1 1.42-1.42l2.83 2.83 2.82-2.83a1 1 0 0 1 1.42 1.42l-2.83 2.83 2.83 2.82z"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+
+                      )       
+                    }) }
+                    </div>
+                
                   </div>
                 </div>
-                <div className="w-full lg:w-6/12 px-4">
-                  <div className="relative w-full mb-3">
-                    <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                      Time Start
-                    </label>
-                    <input type="time" name='timeStart' className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" onChange={handleEdit} />
-                  </div>
-                </div>
-                <div className="w-full lg:w-6/12 px-4">
-                  <div className="relative w-full mb-3">
-                    <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                      Time End
-                    </label>
-                    <input name='timeEnd' type="time" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" onChange={handleEdit} />
-                  </div>
-                </div>
+
+
+                {selectedDay &&
+                  <>
+                    <div className="w-full lg:w-6/12 px-4">
+                      <div className="relative w-full mb-3">
+                        <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                          Time Start
+                        </label>
+                        <input type="time" name='timeStart' className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" onChange={dayHandle} />
+                      </div>
+                    </div>
+                    <div className="w-full lg:w-6/12 px-4">
+                      <div className="relative w-full mb-3">
+                        <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                          Time End
+                        </label>
+                        <input name='timeEnd' type="time" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" onChange={dayHandle} />
+                      </div>
+                    </div>
+                    <button onClick={dayAdding} className="bg-green-600 text-white active:bg-green-500 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150 h-12" type="button">
+                      Submit
+                    </button>
+                  </>
+                }
               </div>
 
               <hr className="mt-6 border-b-1 border-blueGray-300" />

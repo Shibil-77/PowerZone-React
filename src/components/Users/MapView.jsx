@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-// import data from '../../assets/data.json';
 import Markers from './VenueMarkers';
 import { mapDataApi } from '../../api/portApi'
 
 function MapView() {
-
   const currentLocation = { lat:  9.221001595129604, lng:77.32796920716841 }
   const [mapData, setMapData] = useState([])
   useEffect(() => {
     const apiCall = async () => {
       const data = await mapDataApi()
-      console.log("data:======",data);
       setMapData(data)
     }
     apiCall()
