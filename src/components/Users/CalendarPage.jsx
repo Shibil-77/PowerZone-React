@@ -45,8 +45,8 @@ function CalendarPage() {
 
   return (
     <>
-     <h1 className='text-black font-bold text-3xl text-center  '>Booking Now</h1>
-      <div className='calendar-container  flex justify-center mt-6 '>
+     <div className='grid-rows-2'>
+      <div className='calendar-container h-48 flex justify-center mt-6 '>
         <Calendar
           onChange={onChange}
           value={value}
@@ -57,6 +57,7 @@ function CalendarPage() {
           minDate={new Date()}
         />
       </div>
+      <div className='grid-rows-2'>
       <div className=' flex justify-center '>
 
        <div className='grid grid-cols-2 md:grid-cols-4 gap-2 max-2xl:'>
@@ -69,6 +70,8 @@ function CalendarPage() {
       </div>
       <div className='flex justify-center'>
       <button type="submit" onClick={onSubmit} class="w-20 h-11 max-w-xs mx-2 mt-2 bg-green-600 text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 text-xs rounded-lg  px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-900 dark:focus:ring-primary-800 hover:bg-orange-600" >Booking Now</button>
+      </div>
+      </div>
       </div>
     </>
 
