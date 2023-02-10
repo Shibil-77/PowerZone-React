@@ -1,6 +1,6 @@
 import React from 'react'
-import MapLayout from '../MapLayout'
-import MapView from '../../../components/Users/MapView'
+import MapLayout from './MapLayout'
+import MapView from '../../../components/Users/Map/MapView'
 
 function FindMap() {
   return (

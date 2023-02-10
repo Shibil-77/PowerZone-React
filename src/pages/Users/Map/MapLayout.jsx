@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../../components/Users/Navbar'
+import Navbar from '../../../components/Users/Navbar'
 
 function MapLayout({children}) {
   return (
