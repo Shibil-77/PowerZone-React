@@ -4,7 +4,6 @@ import MapModal from './MapModal';
 
 const MarkerPopup = (props) => {
   const data = props.data;
-  console.log(data,"==================================");
   return  (<Popup>
     <div className='poup-text'>
 

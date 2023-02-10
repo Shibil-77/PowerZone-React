@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import React, { useState } from 'react'
 import { VenueLocationIcon } from './VenueLocationIcon';
-import { addPointValueApi } from '../../api/portApi'
+import { addPointValueApi } from '../../../api/portApi'
 
 
 function MapValue() {
