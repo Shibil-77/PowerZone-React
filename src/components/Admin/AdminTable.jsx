@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { getUserData, userAccess } from '../../api/adminApi'
+import { getUserData } from '../../api/adminApi'
+import AdminTableRow from './AdminTableRow'
+
 
 
 function AdminTable({ tableHeaders, data }) {
     const [tableData, setTableData] = useState([])
-    const [access,setAccess] = useState("")
     console.log(data)
     useEffect(() => {
         const user = async () => {
@@ -12,7 +13,6 @@ function AdminTable({ tableHeaders, data }) {
                 const data = await getUserData()
                 if (data) {
                     setTableData(data)
-
                 } else {
                     console.log("server error");
                 }
@@ -22,49 +22,27 @@ function AdminTable({ tableHeaders, data }) {
         }
         user()
     }, [])
-    return (
-        <section className="w-full px-4">
-            <div className="flex justify-center h-full ">
-                <div className="w-full mx-auto bg-white shadow-lg rounded-sm border border-gray-200 ">
-                    <header className="px-5 py-4 border-b border-gray-100">
-                        <h2 className="font-semibold text-gray-800">Booking Details</h2>
-                    </header>
-                    <div className="p-3">
-                        <div className="overflow-x-auto">
-                            <table className="table-auto w-full">
-                                <thead className="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
-                                    <tr>
-                                        {tableHeaders.map((header) => {
-                                            return <th key={header}>{header}</th>
-                                        })}
-                                    </tr>
-                                </thead>
 
-                                {tableData.map((data) => {
-                                    return (
-                                        <tbody className="text-sm divide-y divide-gray-100">
-                                            <tr key={data._id} >
-                                                <td>{data.fullName}</td>
-                                                <td>{data.email}</td>
-                                                <td>{data.phone}</td>
-                                                {data.access ? <td onClick={async() => {
-                                                const result = await  userAccess(data._id)
-                                                console.log("unblock");
-                                                }}>Unblock</td> : <td onClick={async() => {
-                                                 const  blockResult = await userAccess(data._id)
-                                                   console.log();
-                                                     console.log("block");
-                                                }}>Block</td>}
-                                            </tr>
-                                        </tbody>
-                                    )
-                                })}
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
+    return (
+        <div className="overflow-x-auto w-full flex justify-center">
+            <table className="   shadow-md sm:rounded-lg text-sm text-left text-gray-500 dark:text-gray-400 w-1/3 ">
+                <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        {tableHeaders.map((header) => {
+                            return <th scope="col" className="px-6 py-3" key={header}>{header}</th>
+                        })}
+                    </tr>
+                </thead>
+                <tbody>
+                    {tableData.map((data) => {
+                        return (
+                           <AdminTableRow data={data}/> 
+                        )
+                    })}
+                </tbody>
+            </table>
+        </div>
     )
 }
 

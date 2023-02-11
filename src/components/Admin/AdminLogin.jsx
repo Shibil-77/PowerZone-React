@@ -22,9 +22,7 @@ const [adminLoginData,setAdminLoginData] = useState()
       console.log("success login",loginData)
       if (loginData.status === 200) {
         // setErrorMessage(null)
-        console.log("success login")
-        localStorage.setItem('adminToken', login.data.adminToken)
-        // localStorage.setItem('user', login.data.user)
+        localStorage.setItem('adminToken',loginData.data.adminToken)
         navigate('/admin')
       }else{
         // setErrorMessage(login.data.message)

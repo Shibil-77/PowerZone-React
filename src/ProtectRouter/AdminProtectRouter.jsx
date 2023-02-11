@@ -6,14 +6,15 @@ const AdminProtectRouter = ({ children }) => {
   const navigate = useNavigate()
   useEffect(() => {
     const publicFu = () => {
-        const AdminToken = localStorage.getItem("AdminToken");
+        const AdminToken = localStorage.getItem("adminToken");
+        console.log(AdminToken)
         if (!AdminToken) {
           navigate('/admin/login')
         }
     };
     publicFu();
   },[]);
-  const AdminToken = localStorage.getItem("AdminToken")
+  const AdminToken = localStorage.getItem("adminToken")
   if (AdminToken !=null) {
     return children;
   }
