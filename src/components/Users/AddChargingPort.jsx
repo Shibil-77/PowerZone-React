@@ -146,13 +146,12 @@ function AddChargingPort({ children }) {
                     <select name='days' value={selectedDay} onChange={handleSelectChange} className="border-0 px-3 py-3  placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" >
                       <option>Choose a Day</option>
                       <option value="sunday" name='sunday'>Sunday</option>
-                      <option value='monday'>Monday</option>
-                      <option>Yellow</option>
-                      <option>Black</option>
-                      <option>Orange</option>
-                      <option>Purple</option>
-                      <option>Gray</option>
-                      <option>White</option>
+                      <option value="monday" name='monday'>Monday</option>
+                      <option  value="tuesday" name='tuesday'>Tuesday</option>
+                      <option  value="wednesday" name='wednesday'>Wednesday</option>
+                      <option  value="thursday" name='thursday'>Thursday</option>
+                      <option  value="friday" name='friday'>Friday</option>
+                      <option  value="saturday" name='saturday'>Saturday</option>
                     </select>
                   </div>
                 </div>

@@ -6,8 +6,7 @@ import {loginValidation} from '../Users/userUtils/utilRegister'
 
 
 function AdminLogin() {
-
-    const navigate = useNavigate();
+ const navigate = useNavigate();
 const [adminLoginData,setAdminLoginData] = useState()
   const handleEdit = async (e) => {
     const { name, value } = e.target;
@@ -17,13 +16,16 @@ const [adminLoginData,setAdminLoginData] = useState()
   const handleAdminLogin = async (e) => {
     e.preventDefault();
     const login = loginValidation(adminLoginData)
+     console.log(login);
     if (login === 'success') {
-      const login =await apiAdminLogin(adminLoginData)
-      if (login.status === 200) {
+      const loginData =await apiAdminLogin(adminLoginData)
+      console.log("success login",loginData)
+      if (loginData.status === 200) {
         // setErrorMessage(null)
-        localStorage.setItem('token', login.data.token)
-        localStorage.setItem('user', login.data.user)
-        navigate('/')
+        console.log("success login")
+        localStorage.setItem('adminToken', login.data.adminToken)
+        // localStorage.setItem('user', login.data.user)
+        navigate('/admin')
       }else{
         // setErrorMessage(login.data.message)
       }
@@ -46,10 +48,10 @@ const [adminLoginData,setAdminLoginData] = useState()
               <form action="" >
                 <div>
                   <div className='grid  place-items-center mt-5 '>
-                    <TextField size='small' id="outlined-basic" className='w-full' label="E Mail" variant="outlined" onChange={handleEdit} />
+                    <TextField size='small' id="outlined-basic" className='w-full' label="E Mail" type='email' name='email' variant="outlined" onChange={handleEdit} />
                   </div>
                   <div className='grid  place-items-center mt-5 '>
-                    <TextField size='small' id="outlined-basic" className='w-full' label="PassWord" variant="outlined" onChange={handleEdit} />
+                    <TextField size='small' id="outlined-basic" className='w-full' label="PassWord" type='password' name='password' variant="outlined" onChange={handleEdit} />
                   </div>
                   {/* <Link>HELLO WORLD</Link> */}
                   <div className="flex justify-center py-2">
@@ -60,11 +62,7 @@ const [adminLoginData,setAdminLoginData] = useState()
                   <div className="flex justify-center">
                     <h4>------OR------</h4>
                   </div>
-                  <div className="flex gap-2 justify-center border-2 bg-white border-heavy-metal-800 shadow-md rounded-md hover:bg-heavy-metal-100 shadow-heavy-metal-700 py-2 mt-5">
-                    <svg className="h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
-                      <path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" /></svg>
-                    <h3 className="mt-1 text-black">Google</h3>
-                  </div>
+                
                 </div>
                 <button className="w-full my-5 py-3 border-white border-2 bg-white shadow-lg text-snow-drift-50 hover:shadow-heavy-metal-700  font-semibold rounded-lg" onClick={handleAdminLogin}>Log In</button>
               </form>

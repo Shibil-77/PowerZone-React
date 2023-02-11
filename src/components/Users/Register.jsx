@@ -44,19 +44,19 @@ function Register() {
               <form action="" >
                 <div>
                   <div className='grid  place-items-center mt-5 '>
-                    <TextField size='small' id="outlined-basic" name='fullName' onChange={handleEdit} className='w-full' label="Full Name" variant="outlined" />
+                    <TextField size='small' id="outlined-basic" name='fullName' type='text' onChange={handleEdit} className='w-full' label="Full Name" variant="outlined" />
                   </div>
                   <div className='grid  place-items-center mt-5 '>
-                    <TextField size='small' id="outlined-basic"  name='email' onChange={handleEdit} className='w-full' label="E Mail" variant="outlined" />
+                    <TextField size='small' id="outlined-basic"  name='email' type='email' onChange={handleEdit} className='w-full' label="E Mail" variant="outlined" />
                   </div>
                   <div className='grid  place-items-center mt-5 '>
-                    <TextField size='small' id="outlined-basic"  name='phone' onChange={handleEdit} className='w-full' label="Phone" variant="outlined" />
+                    <TextField size='small' id="outlined-basic"  name='phone' type='number' onChange={handleEdit} className='w-full' label="Phone" variant="outlined" />
                   </div>
                   <div className='grid  place-items-center mt-5 '>
-                    <TextField size='small' id="outlined-basic"  name='password' onChange={handleEdit} className='w-full' label="PassWord" variant="outlined" />
+                    <TextField size='small' id="outlined-basic"  name='password' type='password' onChange={handleEdit} className='w-full' label="PassWord" variant="outlined" />
                   </div>
                   <div className='grid  place-items-center mt-5 '>
-                    <TextField size='small' id="outlined-basic"  name='confirmPassword' onChange={handleEdit} className='w-full' label="Confirm Password" variant="outlined" />
+                    <TextField size='small' id="outlined-basic"  name='confirmPassword' type='password' onChange={handleEdit} className='w-full' label="Confirm Password" variant="outlined" />
                   </div>
                   {/* <Link>HELLO WORLD</Link> */}
                   <div className="flex justify-center py-2">

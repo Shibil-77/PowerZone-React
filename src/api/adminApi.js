@@ -31,7 +31,8 @@ export const apiAdminLogin =async (data)=>{
         const response = await axios.post('http://localhost:4000/api/admin/adminLogin',data,{
             withCredentials: true,
         })
+        return response
      } catch (error) {
-        
+         return error
      }
 }

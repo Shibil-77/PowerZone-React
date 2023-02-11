@@ -7,7 +7,7 @@ import pay from '../../assets/Icons/pay-day.png'
 function BookingDetails({ children }) {
   return (
     <>
-        <div className='w-8/12 mb-10  border-collapse rounded-3xl  shadow-2xl '>
+        <div className='w-8/12 mb-10   '>
         <h1 className='text-[50px] text-center'>Details</h1>
         <img src="https://electricvehicles.bchydro.com/sites/default/files/content-row/charging-an-ev-right-align%402x.png" className='w-screen h-1/6' alt="" />
         <hr />

@@ -15,10 +15,10 @@ const SideBar = () => {
   const Menus = [
     { title: "Home", src: HomeIcon, link: '/' },
     { title: "Add a charging point", src: AddLocationAltSharpIcon, link: '/AddChargingPort' },
-    { title: "Find a Charging point", src: QueryStatsIcon, link: '/AddBookingDetails' },
+    { title: "Find a Charging point", src: QueryStatsIcon, link: '/map' },
     { title: "Bookings ", src: EventNoteIcon, link: '/NewBookings' },
     { title: "Requests", src: ThreePSharpIcon, link: '/PortDetails' },
-    { title: "Login", src: LoginIcon, link: '/AddBookingDetails' },
+    { title: "Login", src: LoginIcon, link: '/login' },
   ];
 
   return (
