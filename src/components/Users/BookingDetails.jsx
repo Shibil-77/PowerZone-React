@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Icons from '../../assets/Icons/user.png'
 import Location from '../../assets/Icons/locationModal.png'
 import charging from '../../assets/Icons/charging.png'
 import pay from '../../assets/Icons/pay-day.png'
+import { useLocation } from 'react-router-dom'
+import { findPortData } from '../../api/portApi'
 
 function BookingDetails({ children }) {
+  const location = useLocation()
+  const [chargingPortData,setChargingPortData] = useState()
+
+  async function test() {
+    const findData = await findPortData(location.hash)
+    setChargingPortData(findData)
+  }
+  // useEffect(()=>{
+  //  test()
+  // },[])
+
   return (
     <>
         <div className='w-8/12 mb-10   '>

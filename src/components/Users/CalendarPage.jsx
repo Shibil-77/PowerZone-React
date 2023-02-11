@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
-import { useLocation } from 'react-router-dom'
+import { useLocation,useNavigate } from 'react-router-dom'
 import "./Calendar.css"
 import { findPortData } from '../../api/portApi'
 import { bookingApi } from '../../api/portApi'
 
 
 function CalendarPage() {
-
+  const navigate = useNavigate()
   const location = useLocation()
-  const [portData, setPortData] = useState({})
   const [timeData, setTimeData] = useState([])
   const [value, onChange] = useState(new Date());
   const [selectedTime, setSelectedTime] = useState([]);
@@ -18,9 +17,6 @@ function CalendarPage() {
 
 
   const findTime = async () => {
-    
-    console.log("============================4====================================",chargingPortData)
-
     const timeData = await chargingPortData.dayDetail.filter((data) => {
       console.log(data.selectedDay, "data.selectedDay")
       console.log(day, "day")
@@ -43,31 +39,28 @@ function CalendarPage() {
   const handleClick = (date) => {
     console.log('date'.date)
     findTime()
-    console.log("==============================3==================================")
-
   };
 
   async function test() {
     const findData = await findPortData(location.hash)
     setChargingPortData(findData)
-    console.log("============================1====================================")
-
   }
 
   useEffect(() => {
     test();
     findTime()
-    console.log("================================================================")
   }, [])
 
 
   const onSubmit = () => {
-    bookingApi(timeData, value, location.hash)
+   const res = bookingApi(timeData, value, location.hash)
+     if(res){
+      navigate('/')
+     }
   }
 
   const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
   const day = days[value.getDay()];
-
 
   return (
     <>
@@ -87,11 +80,13 @@ function CalendarPage() {
         <div className='grid-rows-2'>
           <div className=' flex justify-center '>
             <div className='grid grid-cols-2 md:grid-cols-4 gap-2 max-2xl:'>
-              {selectedTime.map((data) => {
+              {selectedTime.length>0 ? selectedTime.map((data) => {
                 return <button type="submit" onClick={() => {
                   setTimeData(data)
                 }} class="w-20 h-11 max-w-xs mx-2 mt-2 bg-blue-600 text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 text-xs rounded-lg  px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-900 dark:focus:ring-primary-800 hover:bg-orange-600" >{data}</button>
-              })}
+              }):<div>
+                <h1>not</h1>
+              </div>}
             </div>
           </div>
           <div className='flex justify-center'>
