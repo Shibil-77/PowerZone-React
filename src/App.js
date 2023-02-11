@@ -24,7 +24,8 @@ import ResetPassword from './components/Users/ResetPassword';
 import MapView from './pages/Users/Map/FindMap';
 import MapValue from './pages/Users/Map/AddMap';
 import CalendarPage from './components/Users/CalendarPage';
-import UserProtectRouter from './UserProtectRouter/UserProtectRouter';
+import UserProtectRouter from './ProtectRouter/UserProtectRouter';
+import AdminProtectRouter from './ProtectRouter/AdminProtectRouter';
 
 
 function App() {
@@ -99,11 +100,21 @@ function App() {
       <div>
         <Routes>
           <Route path="/admin/login" element={<AdminLoginPage />} />
-          <Route path="/admin/BookingDetails" element={<BookingDetails />} />
-          <Route path="/admin/PortDetails" element={<PortDetails />} />
-          <Route path="/admin/AddBanner" element={<AddBanner />} />
-          <Route path="/admin/BannerDetails" element={<BannerDetails />} />
-          <Route path="/admin/UsersDetails" element={<UserDetails />} />
+          <Route path="/admin/BookingDetails" element={
+            <AdminProtectRouter><BookingDetails /></AdminProtectRouter>
+          } />
+          <Route path="/admin/PortDetails" element={
+            <AdminProtectRouter> <PortDetails /></AdminProtectRouter>
+          } />
+          <Route path="/admin/AddBanner" element={
+            <AdminProtectRouter><AddBanner /></AdminProtectRouter>
+          } />
+          <Route path="/admin/BannerDetails" element={
+            <AdminProtectRouter><BannerDetails /></AdminProtectRouter>
+          } />
+          <Route path="/admin/UsersDetails" element={
+            <AdminProtectRouter> <UserDetails /></AdminProtectRouter>
+          } />
         </Routes>
       </div>
     </>
