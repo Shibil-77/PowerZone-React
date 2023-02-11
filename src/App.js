@@ -26,6 +26,7 @@ import MapValue from './pages/Users/Map/AddMap';
 import CalendarPage from './components/Users/CalendarPage';
 import UserProtectRouter from './ProtectRouter/UserProtectRouter';
 import AdminProtectRouter from './ProtectRouter/AdminProtectRouter';
+import AdminPortDetails from './pages/Admin/PortDetails/PortDetails'
 
 
 function App() {
@@ -104,7 +105,7 @@ function App() {
             <AdminProtectRouter><BookingDetails /></AdminProtectRouter>
           } />
           <Route path="/admin/PortDetails" element={
-            <AdminProtectRouter> <PortDetails /></AdminProtectRouter>
+            <AdminProtectRouter> <AdminPortDetails /></AdminProtectRouter>
           } />
           <Route path="/admin/AddBanner" element={
             <AdminProtectRouter><AddBanner /></AdminProtectRouter>

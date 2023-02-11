@@ -36,3 +36,31 @@ export const apiAdminLogin =async (data)=>{
          return error
      }
 }
+
+
+export const getPortData =async ()=>{
+    try {
+        const response = await axios.get("http://localhost:4000/api/admin/getPortData", {
+            withCredentials: true,
+        })
+        console.log(response,"response");
+        return response.data
+    } catch (error) {
+        
+    }
+}
+
+
+export const portRequest = async(id)=>{
+    console.log(id);
+    console.log("================================44=4=4=44=4=4==4===========");
+    try {
+        const response = await axios.get(`http://localhost:4000/api/admin/portRequest/${id}`, {
+            withCredentials: true,
+        })
+        return response.data
+    } catch (error) {
+        console.log(error)
+        return error
+    }
+}

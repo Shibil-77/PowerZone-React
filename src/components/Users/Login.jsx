@@ -4,9 +4,12 @@ import { loginValidation } from '../Users/userUtils/utilRegister'
 import { apiLogin } from '../../api/authApi'
 import { useNavigate,Link } from 'react-router-dom'
 // import { Link } from 'react-router-dom';
+import {useDispatch} from 'react-redux'
+import {userActions} from '../../redux/userAuth'
 
 
 function Login() {
+  const  dispatch = useDispatch()
   const [errorMessage,setErrorMessage] = useState()
   const navigate = useNavigate()
   const [loginData, setLoginData] = useState('')
@@ -22,7 +25,11 @@ function Login() {
       if (login.status === 200) {
         setErrorMessage(null)
         localStorage.setItem('token', login.data.token)
-        localStorage.setItem('user', login.data.user)
+        console.log(login.data.user);
+        localStorage.setItem('user', login.data.user.fullName)
+        dispatch(
+          userActions.userAddDetails({token:login.data.token,user:localStorage.getItem("user")})
+        )
         navigate('/')
       }else{
         setErrorMessage(login.data.message)

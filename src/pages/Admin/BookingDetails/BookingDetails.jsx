@@ -1,5 +1,5 @@
 import React from 'react'
-import AdminTable from '../../../components/Admin/AdminTable'
+import AdminTable from '../../../components/Admin/Table/AdminTable'
 import AdminLayout from '../AdminLayout/AdminLayout'
 
 function BookingDetails() {

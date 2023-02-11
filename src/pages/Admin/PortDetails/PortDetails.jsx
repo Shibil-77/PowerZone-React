@@ -1,16 +1,18 @@
 import React from 'react'
 import AdminLayout from '../AdminLayout/AdminLayout'
-import AdminTable from '../../../components/Admin/AdminTable/AdminTable'
+import AdminPortTable from '../../../components/Admin/Table/AdminPortDetails'
 
 
-function PortDetails() {
+function AdminPortDetails() {
+    const tableHeaders =["Id", "Rate","kW","Location","Request"]
+    const portDetails = "userDetails"
     return (
         <div>
             <AdminLayout>
-                <AdminTable />
+                <AdminPortTable data={portDetails} tableHeaders={tableHeaders} />
             </AdminLayout>
         </div>
     )
 }
 
-export default PortDetails
+export default AdminPortDetails

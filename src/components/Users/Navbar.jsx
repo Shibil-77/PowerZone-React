@@ -1,17 +1,18 @@
 import React from 'react'
 // import { Link } from 'react-router-dom'
 import ProfileIcon from '../../assets/Icons/user.png'
-// import { useDispatch,useSelector } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 
 
 function Navbar() {
 
 //    const dispatch = useDispatch()
+  const user = useSelector((state)=>state?.user.user)
    const Logout =()=>{
     localStorage.removeItem("token");
     localStorage.removeItem("user");
    }
-
+   console.log(user);
     return (
         <>
             <div className="flex justify-between bg-white shadow-md w-full h-16 shadow-heavy-metal-400 p-4 mb-5 sticky top-0 z-50">
@@ -36,7 +37,7 @@ function Navbar() {
 
                         <div className='flex px-3'>
                             <img src={ProfileIcon} className='w-7 mt-1' alt="" />
-                            <h1 className='text-gray-500 ml-3 mt-1'>Shibil</h1>
+                            <h1 className='text-gray-500 font-thin text-xs ml-3 mt-1'>{user ? user:"Login"}</h1>
 
                         </div>
 

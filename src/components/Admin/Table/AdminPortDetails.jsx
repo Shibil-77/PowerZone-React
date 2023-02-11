@@ -1,18 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import { getUserData } from '../../api/adminApi'
-import AdminTableRow from './AdminTableRow'
+import React,{useEffect,useState} from 'react'
+import { getPortData } from '../../../api/adminApi'
+import PortRow from './PortRow'
 
-
-
-function AdminTable({ tableHeaders, data }) {
+function AdminPortDetails({data,tableHeaders}) {
     const [tableData, setTableData] = useState([])
-    console.log(data)
     useEffect(() => {
         const user = async () => {
             if (data === "userDetails") {
-                const data = await getUserData()
-                if (data) {
-                    setTableData(data)
+                const portData = await getPortData()
+                if (portData) {
+                    console.log(portData);
+                    setTableData(portData)
                 } else {
                     console.log("server error");
                 }
@@ -37,7 +35,7 @@ function AdminTable({ tableHeaders, data }) {
                 <tbody>
                     {tableData.map((data) => {
                         return (
-                           <AdminTableRow data={data}/> 
+                           <PortRow data={data}/>    
                         )
                     })}
                 </tbody>
@@ -46,4 +44,4 @@ function AdminTable({ tableHeaders, data }) {
     )
 }
 
-export default AdminTable
+export default AdminPortDetails

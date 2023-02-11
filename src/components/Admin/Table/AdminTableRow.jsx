@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { userAccess } from '../../api/adminApi'
+import { userAccess } from '../../../api/adminApi'
 
 function AdminTableRow({ data }) {
     const [access, setAccess] = useState(data.access)
