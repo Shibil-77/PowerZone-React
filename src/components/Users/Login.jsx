@@ -54,10 +54,10 @@ function Login() {
               <form action="" >
                 <div>
                   <div className='grid  place-items-center mt-5 '>
-                    <TextField size='small' id="outlined-basic" className='w-full' name='email' onChange={handleEdit} label="E Mail" variant="outlined" />
+                    <TextField size='small' id="outlined-basic" type='email' className='w-full' name='email' onChange={handleEdit} label="E Mail" variant="outlined" />
                   </div>
                   <div className='grid  place-items-center mt-5 '>
-                    <TextField size='small' id="outlined-basic" className='w-full' name='password' onChange={handleEdit} label="PassWord" variant="outlined" />
+                    <TextField size='small' id="outlined-basic" type='password' className='w-full' name='password' onChange={handleEdit} label="PassWord" variant="outlined" />
                   </div>
                   {/* <Link>HELLO WORLD</Link> */}
                   <div className="flex justify-center py-2">
