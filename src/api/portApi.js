@@ -48,16 +48,14 @@ try {
 
 export const findPortData =async (portId) =>{
   try {
-    console.log("findPortData")
-    console.log(portId,"=======portId=======-----")
-    const data = await axios.post('http://localhost:4000/api/port/findPortData',{portId},{
+    const {data} = await axios.post('http://localhost:4000/api/port/findPortData',{portId},{
         withCredentials: true,
         headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
         },
     })
-    console.log(data.data);
-    return data.data;
+    
+    return data;
   } catch (error) {
     return error
   }

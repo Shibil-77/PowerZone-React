@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
-import { useLocation,useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import "./Calendar.css"
 import { findPortData } from '../../api/portApi'
 import { bookingApi } from '../../api/portApi'
@@ -14,12 +14,11 @@ function CalendarPage() {
   const [selectedTime, setSelectedTime] = useState([]);
   const [chargingPortData, setChargingPortData] = useState()
   const [findDay, setFindDay] = useState();
-
+  const [findBookingData, setFindBookingData] = useState()
+  const [filterBookingData, setFilterBooKingData] = useState()
 
   const findTime = async () => {
     const timeData = await chargingPortData.dayDetail.filter((data) => {
-      console.log(data.selectedDay, "data.selectedDay")
-      console.log(day, "day")
       return data.selectedDay === day
     })
     setFindDay(timeData)
@@ -32,18 +31,35 @@ function CalendarPage() {
       for (let i = TimeData[0]; i < TimeData[1]; i++) {
         time.push(`${i}:00-${i + 1}:00`);
       }
-      setSelectedTime(time)
+      const bookingsTime = filterBookingData.map((data)=> data.time);
+      const unique = time.filter((element) => bookingsTime.indexOf(element) === -1);
+      setSelectedTime(unique)
     }
   }
 
+  function convertDate(date) {
+    let newDate = new Date(date);
+    let year = newDate.getFullYear();
+    let month = (newDate.getMonth() + 1).toString().padStart(2, '0');
+    let day = newDate.getDate().toString().padStart(2, '0');
+    let hour = newDate.getUTCHours().toString().padStart(2, '0');
+    let minute = newDate.getUTCMinutes().toString().padStart(2, '0');
+    let second = newDate.getUTCSeconds().toString().padStart(2, '0');
+    let result = `${year}-${month}-${day}T${hour}:${minute}:${second}.000Z`;
+    return result;
+  }
+
   const handleClick = (date) => {
-    console.log('date'.date)
+    const dateData = convertDate(date)
+    const filterData = findBookingData.filter((bookingData) => bookingData.date === dateData)
+    setFilterBooKingData(filterData)
     findTime()
   };
 
   async function test() {
-    const findData = await findPortData(location.hash)
-    setChargingPortData(findData)
+    const { portData, bookingData } = await findPortData(location.hash)
+    setChargingPortData(portData)
+    setFindBookingData(bookingData)
   }
 
   useEffect(() => {
@@ -53,10 +69,10 @@ function CalendarPage() {
 
 
   const onSubmit = () => {
-   const res = bookingApi(timeData, value, location.hash)
-     if(res){
+    const res = bookingApi(timeData, value, location.hash)
+    if (res) {
       navigate('/')
-     }
+    }
   }
 
   const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
@@ -76,16 +92,16 @@ function CalendarPage() {
             minDate={new Date()}
           />
         </div>
-        <p>Selected day: {day}</p>
+        <p className='text-black'>Selected day:<span className='text-blue-600'>{day}</span></p>
         <div className='grid-rows-2'>
           <div className=' flex justify-center '>
             <div className='grid grid-cols-2 md:grid-cols-4 gap-2 max-2xl:'>
-              {selectedTime.length>0 ? selectedTime.map((data) => {
-                return <button type="submit" onClick={() => {
+              {selectedTime.length > 0 ? selectedTime.map((data) => {
+                return <button type="submit" key={data} onClick={() => {
                   setTimeData(data)
                 }} class="w-20 h-11 max-w-xs mx-2 mt-2 bg-blue-600 text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 text-xs rounded-lg  px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-900 dark:focus:ring-primary-800 hover:bg-orange-600" >{data}</button>
-              }):<div>
-                <h1>not</h1>
+              }) : <div>
+                <h1 className='text-red-600'>NOT AVAILABLE</h1>
               </div>}
             </div>
           </div>
