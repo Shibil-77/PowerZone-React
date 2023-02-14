@@ -8,6 +8,7 @@
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.4",
     "@mui/styled-engine-sc": "^5.11.0",
+    "@paypal/react-paypal-js": "^7.8.2",
     "@react-leaflet/core": "^1.0.2",
     "@reduxjs/toolkit": "^1.9.2",
     "@testing-library/jest-dom": "^5.16.5",
