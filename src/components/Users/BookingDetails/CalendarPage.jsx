@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import { useLocation, useNavigate } from 'react-router-dom'
 import "./Calendar.css"
-import { findPortData } from '../../api/portApi'
-import { bookingApi } from '../../api/portApi'
+import { findPortData } from '../../../api/portApi'
+import { bookingApi } from '../../../api/portApi'
 
 
 function CalendarPage() {

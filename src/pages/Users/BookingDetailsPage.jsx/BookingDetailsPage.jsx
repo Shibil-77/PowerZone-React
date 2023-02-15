@@ -1,7 +1,7 @@
 import React from 'react'
-import BookingDetails from '../../../components/Users/BookingDetails'
+import BookingDetails from '../../../components/Users/BookingDetails/BookingDetails'
 import Layout from '../Layout/Layout'
-import CalendarPage from '../../../components/Users/CalendarPage'
+import CalendarPage from '../../../components/Users/BookingDetails/CalendarPage'
 
 function BookingDetailsPage() {
   return (

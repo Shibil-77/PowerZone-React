@@ -23,7 +23,7 @@ import ForgotPassword from './components/Users/ForgotPassword';
 import ResetPassword from './components/Users/ResetPassword';
 import MapView from './pages/Users/Map/FindMap';
 import MapValue from './pages/Users/Map/AddMap';
-import CalendarPage from './components/Users/CalendarPage';
+// import CalendarPage from './components/Users/CalendarPage';
 import UserProtectRouter from './ProtectRouter/UserProtectRouter';
 import AdminProtectRouter from './ProtectRouter/AdminProtectRouter';
 import AdminPortDetails from './pages/Admin/PortDetails/PortDetails'
@@ -90,11 +90,6 @@ function App() {
           <Route path="/mapValue" element={
             <UserProtectRouter><MapValue />
             </UserProtectRouter>} />
-          <Route path="/CalendarPage" element={
-            <UserProtectRouter>
-              <CalendarPage />
-            </UserProtectRouter>} />
-
         </Routes>
       </div>
 
