@@ -52,7 +52,7 @@ const SideBar = () => {
         </NavLink>
         <ul className="pt-6">
           {Menus.map((Menu, index) => (
-            <NavLink to={Menu.link}>
+            <NavLink key={index} to={Menu.link}>
               <li
                 key={index}
                 className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 

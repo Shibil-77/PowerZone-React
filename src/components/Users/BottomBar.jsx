@@ -9,7 +9,7 @@ import ThreePSharpIcon from '@mui/icons-material/ThreePSharp';
 
 function BottomBar() {
 
-  const [open, setOpen] = useState(true);
+
   const Menus = [
     { title: "Home", src: HomeIcon },
     { title: "Add a charging point", src: AddLocationAltSharpIcon },
@@ -21,22 +21,15 @@ function BottomBar() {
   ];
   return (
 
-    <div className="fixed bottom-0 w-full border-t-2 flex px-4 py-2 justify-between border-slate-700 bg-white h-14">
-      {Menus.map((menu) => (
+    <div  className="fixed bottom-0 w-full border-t-2 flex px-4 py-2 justify-between border-slate-700 bg-white h-14">
+      {Menus.map((menu,index) => (
         <Link
           href={`${'/login'}`}
-          key={menu?.name}
+          key={index}
         >
           <div className="hover:bg-[#bbc0c7] rounded-md p-2"><menu.src fontSize="large" color="success" /></div>
         </Link>
       ))}
-
-      {/* <Link
-            href="/user/Friends"
-            >
-            <div  className="hover:bg-[#bbc0c7] rounded-md p-2"> <Menu.src fontSize="large" color="success" /></div>
-            </Link> */}
-
     </div>
   )
 }

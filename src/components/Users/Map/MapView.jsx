@@ -7,7 +7,7 @@ import { mapDataApi } from '../../../api/portApi'
 function MapView() {
 
 
-  const currentLocation = { lat:  9.221001595129604, lng:77.32796920716841 }
+  const currentLocation = { lat: 9.221001595129604, lng: 77.32796920716841 }
   const [mapData, setMapData] = useState([])
   useEffect(() => {
     const apiCall = async () => {

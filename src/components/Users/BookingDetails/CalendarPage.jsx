@@ -60,6 +60,16 @@ function CalendarPage() {
     const { portData, bookingData } = await findPortData(location.hash)
     setChargingPortData(portData)
     setFindBookingData(bookingData)
+    console.log("===========================");
+    const filterData = findBookingData.filter((bookingData) => {
+      console.log(bookingData.date,"bookingData.date");
+      const dateData = convertDate(new Date())
+      console.log(dateData,"dateData==");
+      return bookingData.date === dateData
+    })
+    console.log(filterData,"filterData=============");
+    setFilterBooKingData(filterData)
+    findTime()
   }
 
   useEffect(() => {
@@ -81,7 +91,7 @@ function CalendarPage() {
   return (
     <>
       <div className='grid-rows-2'>
-        <div className='calendar-container h-48 flex justify-start mt-6 '>
+        <div className='calendar-container h-48 flex  justify-start mt-6 '>
           <Calendar
             onChange={onChange}
             value={value}
@@ -92,21 +102,23 @@ function CalendarPage() {
             minDate={new Date()}
           />
         </div>
-        <p className='text-black'>Selected day:<span className='text-blue-600'>{day}</span></p>
+        <p className='text-black font-extrabold'>Selected day:<span className='text-blue-600'>{day}</span></p>
         <div className='grid-rows-2'>
           <div className=' flex justify-center '>
-            <div className='grid grid-cols-2 md:grid-cols-4 gap-2 max-2xl:'>
+            <div className='grid gap-5 grid-cols-3 md:grid-cols-4  max-2xl: '>
               {selectedTime.length > 0 ? selectedTime.map((data) => {
-                return <button type="submit" key={data} onClick={() => {
+                return (
+                <div className='flex' key={data}>
+                <button type="submit"  onClick={() => {
                   setTimeData(data)
-                }} class="w-20 h-11 max-w-xs mx-2 mt-2 bg-blue-600 text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 text-xs rounded-lg  px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-900 dark:focus:ring-primary-800 hover:bg-orange-600" >{data}</button>
-              }) : <div>
-                <h1 className='text-red-600'>NOT AVAILABLE</h1>
+                }} className="w-20  h-11 max-w-xs  mt-2 bg-blue-600 text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 text-xs rounded-lg  px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-900 dark:focus:ring-primary-800 hover:bg-orange-600 " >{data}</button> </div>)
+              }) : <div className='w-fu h-10 flex justify-center rounded-xl bg-slate-100'>
+                <h1 className='text-red-600 font-bold'>NOT AVAILABLE</h1>
               </div>}
             </div>
           </div>
-          <div className='flex justify-center'>
-            <button type="submit" onClick={onSubmit} class="w-20 h-11 max-w-xs mx-2 mt-2 bg-green-600 text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 text-xs rounded-lg  px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-900 dark:focus:ring-primary-800 hover:bg-orange-600" >Booking Now</button>
+          <div className='flex justify-center '>
+            <button type="submit" onClick={onSubmit} className="w-20   h-11 max-w-xs mx-2 mt-2 bg-green-600 text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 text-xs rounded-lg  px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-900 dark:focus:ring-primary-800 hover:bg-orange-600 " >Booking Now</button>
           </div>
         </div>
       </div>

@@ -13,7 +13,7 @@ function Layout({ children }) {
                 </div>
                 <div>
                     <div className="flex ">
-                        <div className='hidden md:block fixed top-15'>
+                        <div className='hidden md:block '>
                             <SideBar />
                         </div>
                         {children}

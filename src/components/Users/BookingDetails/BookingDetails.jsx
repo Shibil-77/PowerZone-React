@@ -5,89 +5,95 @@ import charging from '../../../assets/Icons/charging.png'
 import pay from '../../../assets/Icons/pay-day.png'
 import { useLocation } from 'react-router-dom'
 import { findPortData } from '../../../api/portApi'
+import CalendarPage from './CalendarPage'
 
 function BookingDetails({ children }) {
   const location = useLocation()
   const [chargingPortData,setChargingPortData] = useState()
+  console.log(chargingPortData,"country");
 
   async function test() {
-    const findData = await findPortData(location.hash)
-    setChargingPortData(findData)
+    const {portData} = await findPortData(location.hash)
+    setChargingPortData(portData)
   }
-  // useEffect(()=>{
-  //  test()
-  // },[])
+  useEffect(()=>{
+   test()
+  },[])
 
   return (
-    <>
-        <div className='w-8/12 mb-10   '>
-        <h1 className='text-[50px] text-center'>Details</h1>
-        <img src="https://electricvehicles.bchydro.com/sites/default/files/content-row/charging-an-ev-right-align%402x.png" className='w-screen h-1/6' alt="" />
-        <hr />
-        <div className='flex'>
-            <div>
-                 <img src={Icons} alt="" className='mx-5 w-10 h-10 mt-3' />
+    <>{chargingPortData&&
+      <section className="relative pt-16 bg-blueGray-50 bg-white rounded-2xl flex justify-center">
+      <div className="container mx-auto">
+        <div className="flex flex-wrap items-center">
+          <div className="w-10/12 md:w-6/12 lg:w-4/12 px-12 md:px-4 mr-auto ml-auto -mt-78">
+            <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-green-500">
+              <img alt="..." src="https://electricvehicles.bchydro.com/sites/default/files/content-row/charging-an-ev-right-align%402x.png" className="w-full align-middle rounded-t-lg"/>
+              <blockquote className="relative p-8 mb-4">
+                <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" className="absolute left-0 w-full block h-95-px -top-94-px">
+                  <polygon points="-30,95 583,95 583,65" className="text-green-500 fill-current"></polygon>
+                </svg>
+                <h4 className="text-xl font-bold text-white">
+                  Charging Port Details
+                </h4>
+                <div>
+                  <h1 className='text-black text-lg font-bold'>Rate:<span className='text-black text-md'>{chargingPortData.rate}</span></h1>
+                  <h1 className='text-black text-lg font-bold'>kW:<span className='text-black text-md'>{chargingPortData.kW}</span></h1>
+                  <h1 className='text-black text-lg font-bold'>Type:<span className='text-black text-md'>{chargingPortData.type}</span></h1>
+                  <h1 className='text-black text-lg font-bold'>Rate:<span className='text-black text-sm'>{chargingPortData.location}<br/>,{chargingPortData.city}<br/>,{chargingPortData.country}</span></h1>
+      
+                </div>
+                 
+              </blockquote>
             </div>
-            <div className='flex justify-center'>
-                <h1 className='text-[20px]  mt-2 mx-3'>Name:
-                {/* <span className='text-xs'>{mapData._id}</span> */}
-                </h1>
-            </div>
+          </div>
+      
+          <div className="w-full md:w-6/12 px-4">
+            <div className="flex flex-wrap">
+      
+              <div className="w-full md:w-12/12 px-4">
+                <div className="relative flex flex-col mt-4">
+                  <div className="px-4 py-5 flex-auto ">
+                   
+                  <CalendarPage/>
+                  </div>
+                </div>
+                
+              </div>
+              {/* <div className="w-full md:w-6/12 px-4">
+                <div className="relative flex flex-col min-w-0 mt-4">
+                  <div className="px-4 py-5 flex-auto">
+                    <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
+                      <i className="fas fa-newspaper"></i>
+                    </div>
+                    <h6 className="text-xl mb-1 font-semibold">Pages</h6>
+                    <p className="mb-4 text-blueGray-500">
+                      This extension also comes with 3 sample pages. They are
+                      fully coded so you can start working instantly.
+                    </p>
+                  </div>
+                </div>
+                <div className="relative flex flex-col min-w-0">
+                  <div className="px-4 py-5 flex-auto">
+                    <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
+                      <i className="fas fa-file-alt"></i>
+                    </div>
+                    <h6 className="text-xl mb-1 font-semibold">Documentation</h6>
+                    <p className="mb-4 text-blueGray-500">
+                      Built by developers for developers. You will love how easy
+                      is to to work with Notus JS.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div> */}
+      
+          </div>
         </div>
-        <hr className='mt-2' />
-
-
-        <div className='flex'>
-            <div>
-                 <img src={Location} alt="" className='mx-5  w-10 h-10 mt-2' />
-            </div>
-            <div className='flex justify-center'>
-                <h1 className='text-[20px] text-end mt-5 mx-3'>Location:
-                {/* <span>{mapData.location}</span> */}
-                </h1>
-            </div>
-        </div>
-        <hr className='mt-2' />
-
-
-        <div className='grid-flow-row'>
-            <div className='grid grid-flow-col'>
-                 <img src={charging} alt="" className='mx-5  w-10 h-10 mt-3' />
-                 <h1 className='text-[20px]'>Connection type and power</h1>
-            </div>
-            <div className='flex justify-center'>
-               <div className='grid grid-cols-1 gap-10 mt-0'>
-                 {/* <div className='bg-gray-100'><span className='text-xl font-medium w-[100px] rounded-2xl '></span></div> */}
-                 <div className='bg-gray-100'><span className='text-xl font-medium w-[100px] rounded-2xl '>kW:</span></div>
-                 {/* <div className='bg-gray-100'><span className='text-xl font-medium w-[100px] rounded-2xl '></span></div> */}
-
-               </div>
-            </div>
-        </div>
-
-        <hr className='mt-2' />
-
-        
-        <div className='grid-flow-row'>
-            <div className='grid grid-flow-col'>
-                 <img src={pay} alt="" className='mx-5  w-10 h-10 mt-3' />
-                 <h1 className='text-[20px] mt-5 mx-1 font'>Cost and Day details</h1>
-            </div>
-            <div className='flex justify-center'>
-               <div className=' mt-1'>
-               <div className=''><h1 className='text-[18px] font-semibold '>When :
-               {/* <span className='text-sm'>{mapData.dayStart} to {mapData.dayEnd}</span> */}
-               </h1></div>
-                 <div className=''><h1 className='text-[18px] font-semibold'>Cost :
-                 {/* <span className='text-sm'>${mapData.rate}</span> */}
-                 </h1></div>
-                 <div className=''><h1 className='text-[18px] font-semibold'>Time :
-                 {/* <span className='text-sm'>${mapData.timeStart} to {mapData.timeEnd}</span> */}
-                 </h1></div>
-               </div>
-            </div>
-        </div>
-    </div>
+      </div>
+      </div>
+      </section>
+    }
+    
     </>
   )
 }
