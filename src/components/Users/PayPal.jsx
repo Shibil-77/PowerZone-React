@@ -1,14 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom"
+import { bookingApi } from '../../api/portApi'
+import { useNavigate } from "react-router-dom";
 const PayPalButton = window.paypal.Buttons.driver("react", { React, ReactDOM });
 
-function PayPal({rate}) {
+function PayPal({rate,value,timeData, id}) {
+  const navigate =  useNavigate()
+   const  onBooking = ()=>{
+      const res = bookingApi(timeData, value, id)
+        if(res){
+          navigate('/')
+        }
+    }
+
+
     const createOrder = (data, actions) => {
         return actions.order.create({
           purchase_units: [
             {
               amount: {
-                value: "1",
+                value: rate,
               },
             },
           ],
@@ -24,7 +35,8 @@ function PayPal({rate}) {
           createOrder={(data, actions) => createOrder(data, actions)}
           onApprove={(data, actions) => {
             onApprove(data, actions)
-            console.log("============5===========5==========5=55555555555=5");
+            onBooking()
+           
           }}
         />
           </div>

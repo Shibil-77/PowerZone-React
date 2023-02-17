@@ -3,7 +3,7 @@ import Calendar from 'react-calendar';
 import { useLocation, useNavigate } from 'react-router-dom'
 import "./Calendar.css"
 import { findPortData } from '../../../api/portApi'
-import { bookingApi } from '../../../api/portApi'
+
 
 
 function CalendarPage() {
@@ -76,10 +76,7 @@ function CalendarPage() {
 
 
   const onSubmit = () => {
-    const res = bookingApi(timeData, value, location.hash)
-    if (res) {
-      navigate('/')
-    }
+      navigate('/checkOut',{state:{value:value,timeData:timeData,id:location.hash,portData:chargingPortData}}); 
   }
 
   const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];

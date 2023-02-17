@@ -11,7 +11,7 @@ import { NavLink } from 'react-router-dom'
 
 
 const SideBar = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const Menus = [
     { title: "Home", src: HomeIcon, link: '/' },
     { title: "Add a charging point", src: AddLocationAltSharpIcon, link: '/AddChargingPort' },

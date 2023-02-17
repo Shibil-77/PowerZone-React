@@ -7,7 +7,7 @@ function CheckOutPage() {
   return (
     <>
     <Layout>
-    <CheckOut/>
+        <CheckOut/>
     </Layout>
     </>
   )
