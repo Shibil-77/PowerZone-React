@@ -9,7 +9,6 @@ import ProfilePage from './pages/Users/ProfilePage/ProfilePage';
 import BookingPage from './pages/Users/BookingsPage/BookingPage';
 import AddChargingPort from './pages/Users/AddChargingPort/AddChargingPort';
 import BookingDetailsPage from './pages/Users/BookingDetailsPage.jsx/BookingDetailsPage';
-import NewBooking from './pages/Users/NewBookingPage/NewBooking';
 import PortDetails from './pages/Users/PortDetails/PortDetails';
 import PortBookings from './pages/Users/PortBookings/PortBookings';
 import AdminLoginPage from './pages/Admin/AdminLoginPage/AdminLoginPage';
@@ -17,7 +16,6 @@ import BookingDetails from './pages/Admin/BookingDetails/BookingDetails';
 import AddBanner from './pages/Admin/AddBanner/AddBanner';
 import BannerDetails from './pages/Admin/BannerDetails/BannerDetails'
 import UserDetails from './pages/Admin/UserDetails/UserDetails';
-import PopupPage from './pages/Users/PopupPage/PopupPage';
 import Verify from './components/Users/Verify'
 import ForgotPassword from './components/Users/ForgotPassword';
 import ResetPassword from './components/Users/ResetPassword';
@@ -44,7 +42,7 @@ function App() {
               <ProfilePage />
             </UserProtectRouter>
           } />
-          <Route path="/oldBookingsDetails" element={
+          <Route path="/userBookings" element={
             <UserProtectRouter>
               <BookingPage />
             </UserProtectRouter>
@@ -52,12 +50,6 @@ function App() {
           <Route path="/addBookingDetails" element={
             <UserProtectRouter>
               <BookingDetailsPage />
-            </UserProtectRouter>
-          } />
-
-          <Route path="/newBookings" element={
-            <UserProtectRouter>
-              <NewBooking />
             </UserProtectRouter>
           } />
 
@@ -78,11 +70,6 @@ function App() {
             </UserProtectRouter>
           } />
 
-          <Route path="/popup" element={
-            <UserProtectRouter>
-              <PopupPage />
-            </UserProtectRouter>
-          } />
 
           <Route path="/verify/:id" element={
             <Verify />
