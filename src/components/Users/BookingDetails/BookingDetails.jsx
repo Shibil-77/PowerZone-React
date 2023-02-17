@@ -7,6 +7,9 @@ import { useLocation } from 'react-router-dom'
 import { findPortData } from '../../../api/portApi'
 import CalendarPage from './CalendarPage'
 
+
+
+
 function BookingDetails({ children }) {
   const location = useLocation()
   const [chargingPortData,setChargingPortData] = useState()
@@ -86,7 +89,7 @@ function BookingDetails({ children }) {
                 </div>
               </div>
             </div> */}
-      
+   
           </div>
         </div>
       </div>

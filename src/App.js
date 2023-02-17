@@ -27,6 +27,7 @@ import MapValue from './pages/Users/Map/AddMap';
 import UserProtectRouter from './ProtectRouter/UserProtectRouter';
 import AdminProtectRouter from './ProtectRouter/AdminProtectRouter';
 import AdminPortDetails from './pages/Admin/PortDetails/PortDetails'
+import CheckOutPage from './pages/Users/CheckOutPage/CheckOutPage';
 
 
 function App() {
@@ -38,58 +39,73 @@ function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/" element={<HomePage />} />
 
-          <Route path="/Profile" element={
+          <Route path="/profile" element={
             <UserProtectRouter>
               <ProfilePage />
             </UserProtectRouter>
           } />
-          <Route path="/OldBookingsDetails" element={
+          <Route path="/oldBookingsDetails" element={
             <UserProtectRouter>
               <BookingPage />
             </UserProtectRouter>
           } />
-          <Route path="/AddBookingDetails" element={
+          <Route path="/addBookingDetails" element={
             <UserProtectRouter>
               <BookingDetailsPage />
             </UserProtectRouter>
           } />
 
-          <Route path="/NewBookings" element={
+          <Route path="/newBookings" element={
             <UserProtectRouter>
               <NewBooking />
             </UserProtectRouter>
           } />
-          <Route path="/AddChargingPort" element={
+
+          <Route path="/addChargingPort" element={
             <UserProtectRouter>
               <AddChargingPort />
             </UserProtectRouter>
           } />
-          <Route path="/PortDetails" element={
+
+          <Route path="/portDetails" element={
             <UserProtectRouter>
               <PortDetails />
             </UserProtectRouter>
           } />
-          <Route path="/PortBookings" element={
+
+          <Route path="/portBookings" element={
             <UserProtectRouter><PortBookings />
             </UserProtectRouter>
           } />
-          <Route path="/Popup" element={
+
+          <Route path="/popup" element={
             <UserProtectRouter>
               <PopupPage />
             </UserProtectRouter>
           } />
+
           <Route path="/verify/:id" element={
             <Verify />
           } />
+
           <Route path="/forgotPassword" element={<ForgotPassword />} />
+
           <Route path="/resetPassword/:id" element={<ResetPassword />} />
+
           <Route path="/map" element={
             <UserProtectRouter>
               <MapView />
             </UserProtectRouter>} />
+
           <Route path="/mapValue" element={
             <UserProtectRouter><MapValue />
             </UserProtectRouter>} />
+
+          <Route path="/checkOut" element={
+            <UserProtectRouter>
+              <CheckOutPage />
+            </UserProtectRouter>} />
+
         </Routes>
       </div>
 
@@ -111,6 +127,7 @@ function App() {
           <Route path="/admin/UsersDetails" element={
             <AdminProtectRouter> <UserDetails /></AdminProtectRouter>
           } />
+          
         </Routes>
       </div>
     </>

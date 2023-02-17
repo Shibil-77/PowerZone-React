@@ -1,7 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import   toast,{Toaster}  from 'react-hot-toast'
 
 function Home() {
+  const to = ()=>{
+    console.log("koooooooooooooooooooooooooooooo");
+    toast("hello world")
+  }
   return (
     <>
       <div className='md:flex w-full h-full justify-items-center '>
@@ -16,6 +21,7 @@ function Home() {
         </div>
         <div className='hidden md:block w-full h-full md:pt-40 pt-4 flex justify-center'>
           <div>
+            <button onClick={to}>Hello HAI</button>
             <h1 className=' text-3xl text-myColor-600 font-extrabold  md:mt-10 font-white '>The India’s <br /> bookable destination <br /> EV charging network</h1>
           </div>
           <Link to='/map'>

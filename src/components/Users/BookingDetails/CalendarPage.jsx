@@ -60,14 +60,11 @@ function CalendarPage() {
     const { portData, bookingData } = await findPortData(location.hash)
     setChargingPortData(portData)
     setFindBookingData(bookingData)
-    console.log("===========================");
     const filterData = findBookingData.filter((bookingData) => {
       console.log(bookingData.date,"bookingData.date");
       const dateData = convertDate(new Date())
-      console.log(dateData,"dateData==");
       return bookingData.date === dateData
     })
-    console.log(filterData,"filterData=============");
     setFilterBooKingData(filterData)
     findTime()
   }
