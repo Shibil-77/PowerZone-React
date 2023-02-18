@@ -99,6 +99,11 @@ function App() {
       <div>
         <Routes>
           <Route path="/admin/login" element={<AdminLoginPage />} />
+          <Route path="/admin" element={
+            <AdminProtectRouter><div>
+              <h1>Admin</h1>
+            </div></AdminProtectRouter>
+          } />
           <Route path="/admin/BookingDetails" element={
             <AdminProtectRouter><BookingDetails /></AdminProtectRouter>
           } />

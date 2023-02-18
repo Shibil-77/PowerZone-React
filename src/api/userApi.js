@@ -33,7 +33,6 @@ export const findNewBookings = async()=>{
  
 export const findChargingPort = async()=>{
     try {
-        console.log("=------------------============-------------=-------------=-");
         const response = await axios.get("http://localhost:4000/api/user/findChargingPort", {
             withCredentials: true,
             headers: {

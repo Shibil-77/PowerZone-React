@@ -29,8 +29,6 @@ function Profile() {
   return (
     <>
       <div className='flex justify-center w-full'>
-
-
         <section class="pt-10 bg-blueGray-50">
           <div class="w-full lg:w-7/12 px-4 mx-auto">
             <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
@@ -41,20 +39,18 @@ function Profile() {
                       <img alt="👨🏻‍🦱" src={Icons} class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px" />
                       <h1 className='text-xl text-white '>{profileData.fullName} </h1>
                     </div>
-
                   </div>
                   <div class="w-full px-4 text-center mt-10">
                     <div class="flex justify-center py-4 lg:pt-4 pt-8">
-                      <Link to='/'>
+                      <Link to='/UserBookings'>
                         <div class="mr-4 p-3 text-center">
-
                           <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
                             {booking}
                           </span>
                           <span class="text-sm text-blueGray-400">Bookings</span>
                         </div>
                       </Link>
-                      <Link to='/'>
+                      <Link to='/portDetails'>
                         <div class="mr-4 p-3 text-center">
                           <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
                             {chargingPort}

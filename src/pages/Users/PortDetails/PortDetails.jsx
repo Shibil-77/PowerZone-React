@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import Table from '../../../components/Users/Table'
 import Layout from '../Layout/Layout'
 import {findChargingPort} from '../../.././api/userApi'
+import UserChargingTable from '../../../components/Users/UserChargingTable'
 
 function PortDetails() {
 
@@ -25,7 +26,7 @@ function PortDetails() {
     <div className='bg-[#e9f7fa] h-screen'>
     {newPortData &&
       <Layout>
-        <Table headData={headData} tableData={newPortData} />
+        <UserChargingTable headData={headData} tableData={newPortData} />
       </Layout>
     }
   </div>
