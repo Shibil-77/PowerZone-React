@@ -33,6 +33,7 @@ function App() {
     <>
       <div>
         <Routes>
+
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/" element={<HomePage />} />
@@ -59,16 +60,17 @@ function App() {
             </UserProtectRouter>
           } />
 
-          <Route path="/portDetails" element={
+          {/* <Route path="/portDetails" element={
             <UserProtectRouter>
               <PortDetails />
             </UserProtectRouter>
           } />
 
           <Route path="/portBookings" element={
-            <UserProtectRouter><PortBookings />
+            <UserProtectRouter>
+              <PortBookings />
             </UserProtectRouter>
-          } />
+          } /> */}
 
 
           <Route path="/verify/:id" element={
@@ -119,7 +121,7 @@ function App() {
           <Route path="/admin/UsersDetails" element={
             <AdminProtectRouter> <UserDetails /></AdminProtectRouter>
           } />
-          
+
         </Routes>
       </div>
     </>

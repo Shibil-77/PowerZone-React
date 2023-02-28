@@ -16,8 +16,8 @@ const SideBar = () => {
     { title: "Home", src: HomeIcon, link: '/' },
     { title: "Add a charging point", src: AddLocationAltSharpIcon, link: '/AddChargingPort' },
     { title: "Find a Charging point", src: QueryStatsIcon, link: '/map' },
-    { title: "Bookings ", src: EventNoteIcon, link: '/NewBookings' },
-    { title: "Requests", src: ThreePSharpIcon, link: '/PortDetails' },
+    { title: "Bookings ", src: EventNoteIcon, link: '/userBookings' },
+    { title: "Charging Details", src: ThreePSharpIcon, link: '/PortDetails' },
     { title: "Login", src: LoginIcon, link: '/login' },
   ];
 

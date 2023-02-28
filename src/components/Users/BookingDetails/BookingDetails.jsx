@@ -10,7 +10,6 @@ import CalendarPage from './CalendarPage'
 function BookingDetails({ children }) {
   const location = useLocation()
   const [chargingPortData, setChargingPortData] = useState()
-  console.log(chargingPortData, "country");
 
   async function test() {
     const { portData } = await findPortData(location.hash)
@@ -19,6 +18,8 @@ function BookingDetails({ children }) {
   useEffect(() => {
     test()
   }, [])
+
+  
 
   return (
     <>{chargingPortData &&

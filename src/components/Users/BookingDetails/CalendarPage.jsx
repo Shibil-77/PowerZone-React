@@ -27,8 +27,8 @@ function CalendarPage() {
       const myArray2 = findDay[0].timeEnd.split(":")
       console.log(Number(myArray[0]), Number(myArray2[0]))
       const TimeData = [Number(myArray[0]), Number(myArray2[0])]
-      let time = [];
-      for (let i = TimeData[0]; i < TimeData[1]; i++) {
+      const time = [];
+      for (const i = TimeData[0]; i < TimeData[1]; i++) {
         time.push(`${i}:00-${i + 1}:00`);
       }
       const bookingsTime = filterBookingData.map((data)=> data.time);
@@ -38,14 +38,14 @@ function CalendarPage() {
   }
 
   function convertDate(date) {
-    let newDate = new Date(date);
-    let year = newDate.getFullYear();
-    let month = (newDate.getMonth() + 1).toString().padStart(2, '0');
-    let day = newDate.getDate().toString().padStart(2, '0');
-    let hour = newDate.getUTCHours().toString().padStart(2, '0');
-    let minute = newDate.getUTCMinutes().toString().padStart(2, '0');
-    let second = newDate.getUTCSeconds().toString().padStart(2, '0');
-    let result = `${year}-${month}-${day}T${hour}:${minute}:${second}.000Z`;
+    const newDate = new Date(date);
+    const year = newDate.getFullYear();
+    const month = (newDate.getMonth() + 1).toString().padStart(2, '0');
+    const day = newDate.getDate().toString().padStart(2, '0');
+    const hour = newDate.getUTCHours().toString().padStart(2, '0');
+    const minute = newDate.getUTCMinutes().toString().padStart(2, '0');
+    const second = newDate.getUTCSeconds().toString().padStart(2, '0');
+    const result = `${year}-${month}-${day}T${hour}:${minute}:${second}.000Z`;
     return result;
   }
 

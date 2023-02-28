@@ -6,15 +6,15 @@ import { useNavigate } from 'react-router-dom'
 function AddChargingPort({ children }) {
 
   const navigate = useNavigate()
- 
+
   // State
 
   const [chargingPortData, setChargingPortData] = useState('')
   const [dayDetails, setDayDetails] = useState('')
   const [selectedDay, setSelectedDay] = useState(null);
-  const [dayAndTime,setDayAndTime] = useState([])
+  const [dayAndTime, setDayAndTime] = useState([])
   const [stateUpdate, setStateUpdated] = useState(false)
-  const [errorMessage,setErrorMessage] = useState()
+  const [errorMessage, setErrorMessage] = useState()
   // functions
 
   const handleEdit = async (e) => {
@@ -28,41 +28,40 @@ function AddChargingPort({ children }) {
 
   const dayHandle = async (e) => {
     const { name, value } = e.target;
-    setDayDetails({...dayDetails, [name]:value,selectedDay });
+    setDayDetails({ ...dayDetails, [name]: value, selectedDay });
   };
 
-  
 
-  const dayAdding  = (e)=>{
+
+  const dayAdding = (e) => {
     e.preventDefault();
-    setDayAndTime([...dayAndTime,dayDetails])
-    console.log(dayAndTime,"dayAndTime")
+    setDayAndTime([...dayAndTime, dayDetails])
+    console.log(dayAndTime, "dayAndTime")
     setStateUpdated(true)
   }
 
-  useEffect(()=>{
-    if(stateUpdate){
-      setChargingPortData({ ...chargingPortData,dayDetail:dayAndTime});
+  useEffect(() => {
+    if (stateUpdate) {
+      setChargingPortData({ ...chargingPortData, dayDetail: dayAndTime });
       setSelectedDay(null)
       setStateUpdated(false)
     }
-  },[stateUpdate])
+  }, [stateUpdate])
 
 
-  const deleteDay =(day)=>{
-      const filterData = dayAndTime.filter((data)=>data.selectedDay !== day)
-      setDayAndTime(filterData)
+  const deleteDay = (day) => {
+    const filterData = dayAndTime.filter((data) => data.selectedDay !== day)
+    setDayAndTime(filterData)
   }
 
   // main function
 
   const onSubmit = async (e) => {
     e.preventDefault();
-  
-    console.log(chargingPortData,"chargingPortData")
-   const error =  addChargingPortValidation(chargingPortData)
-   setErrorMessage(error)
-   if(error === "success"){
+    //   console.log(chargingPortData,"chargingPortData")
+    //  const error =  addChargingPortValidation(chargingPortData)
+    //  setErrorMessage(error)
+    //  if(error === "success"){
     const chargingData = await addChargingPortApi(chargingPortData)
 
     if (chargingData.status === 200) {
@@ -75,8 +74,8 @@ function AddChargingPort({ children }) {
     } else {
       alert(chargingData.data.message)
     }
-   }
-   
+
+
   }
 
   return (
@@ -145,30 +144,30 @@ function AddChargingPort({ children }) {
                 <div className="w-full lg:w-6/12 px-4">
                   <div className="relative w-full mb-3">
                     <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
-                     Select Days 
+                      Select Days
                     </label>
                     <select name='days' value={selectedDay} onChange={handleSelectChange} className="border-0 px-3 py-3  placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" >
                       <option>Choose a Day</option>
                       <option value="sunday" name='sunday'>Sunday</option>
                       <option value="monday" name='monday'>Monday</option>
-                      <option  value="tuesday" name='tuesday'>Tuesday</option>
-                      <option  value="wednesday" name='wednesday'>Wednesday</option>
-                      <option  value="thursday" name='thursday'>Thursday</option>
-                      <option  value="friday" name='friday'>Friday</option>
-                      <option  value="saturday" name='saturday'>Saturday</option>
+                      <option value="tuesday" name='tuesday'>Tuesday</option>
+                      <option value="wednesday" name='wednesday'>Wednesday</option>
+                      <option value="thursday" name='thursday'>Thursday</option>
+                      <option value="friday" name='friday'>Friday</option>
+                      <option value="saturday" name='saturday'>Saturday</option>
                     </select>
                   </div>
                 </div>
 
                 <div className="w-full lg:w-6/12 px-4">
                   <div className="relative w-full mb-3">
-                    {dayAndTime.length>0 && <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                    {dayAndTime.length > 0 && <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                       Days available
                     </label>}
                     <div className='grid-cols-4'>
-                    {dayAndTime.map((data)=>{
-                      return(
-                           <div
+                      {dayAndTime.map((data) => {
+                        return (
+                          <div
                             // key={index}
                             className="bg-gray-400 inline-flex items-center text-sm rounded mt-2 mr-1 overflow-hidden"
                           >
@@ -193,10 +192,10 @@ function AddChargingPort({ children }) {
                             </button>
                           </div>
 
-                      )       
-                    }) }
+                        )
+                      })}
                     </div>
-                
+
                   </div>
                 </div>
 
@@ -274,7 +273,7 @@ function AddChargingPort({ children }) {
                 </button>
               </div>
 
-{errorMessage && <p>{errorMessage}</p>}
+              {errorMessage && <p>{errorMessage}</p>}
             </form>
           </div>
         </div>
