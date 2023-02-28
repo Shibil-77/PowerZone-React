@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Checkout.css'
 import PayPal from '../PayPal'
 import { useLocation } from 'react-router-dom'
@@ -36,7 +36,7 @@ function CheckOut() {
             <tbody>
               <tr>
                 <td>Type</td>
-                <td align="right">{portData.type}</td>
+                <td align="right">{portData?.type}</td>
               </tr>
               <tr>
                 <td>Time </td>
@@ -44,13 +44,13 @@ function CheckOut() {
               </tr>
               <tr>
                 <td>Rate</td>
-                <td align="right">${portData.rate}</td>
+                <td align="right">${portData?.rate}</td>
               </tr>
             </tbody>
             <tfoot>
               <tr>
                 <td>Total</td>
-                <td align="right">${portData.rate}</td>
+                <td align="right">${portData?.rate}</td>
               </tr>
             </tfoot>
           </table>
@@ -60,7 +60,7 @@ function CheckOut() {
         <fieldset>
           <legend>Payment Method</legend>
           <div className="form__radios">
-            <PayPal rate={portData.rate} value={value} timeData={timeData} id={id} />
+            <PayPal rate={portData?.rate} value={value} timeData={timeData} id={id} />
           </div>
         </fieldset>
 

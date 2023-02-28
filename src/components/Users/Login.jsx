@@ -6,7 +6,6 @@ import { useNavigate, Link } from 'react-router-dom'
 // import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
 import { userActions } from '../../redux/userAuth'
-import   toast,{Toaster}  from 'react-hot-toast'
 
 
 function Login() {
@@ -31,7 +30,6 @@ function Login() {
         dispatch(
           userActions.userAddDetails({ token: login.data.token, user: localStorage.getItem("user") })
         )
-        toast('hello hai hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh ')
     navigate('/')
 }else {
   setErrorMessage(login.data.message)

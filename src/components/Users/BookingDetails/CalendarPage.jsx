@@ -100,7 +100,8 @@ function CalendarPage() {
         <div className='grid-rows-2'>
           <div className=' flex justify-center '>
             <div className='grid gap-5 grid-cols-3 md:grid-cols-4  max-2xl: '>
-              {selectedTime.length > 0 ? selectedTime.map((data) => {
+          
+              {selectedTime?.length > 0 ? selectedTime?.map((data) => {
                 return (
                 <div className='flex' key={data}>
                 <button type="submit"  onClick={() => {

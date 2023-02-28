@@ -1,5 +1,10 @@
+
+
+
 export const  addChargingPortValidation  =(data)=>{
+
        const {kW,rate,dayStart,dayEnd,timeStart,timeEnd,type,address,city,postalCode,country} = data;
+       
           if(kW !== Number ){
              return "Please enter kW "
          }else if(type !==null ){
