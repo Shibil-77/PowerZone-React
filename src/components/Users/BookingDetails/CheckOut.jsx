@@ -15,20 +15,6 @@ function CheckOut() {
         <header className="header">
           <h1>Checkout</h1>
         </header>
-
-        {/* <div>
-      <h2>Address</h2>
-
-      <div className="card">
-        <address>
-          Adam Johnson<br />
-          403 Oakland Ave Street, A city, Florida, 32104,<br />
-          United States of America
-        </address>
-      </div>
-    </div> */}
-
-
         <div>
           <h2>Shopping Bill</h2>
 

@@ -6,9 +6,13 @@ import { useNavigate, Link } from 'react-router-dom'
 // import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
 import { userActions } from '../../redux/userAuth'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function Login() {
+
+
   const dispatch = useDispatch()
   const [errorMessage, setErrorMessage] = useState()
   const navigate = useNavigate()
@@ -20,21 +24,53 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     const login = loginValidation(loginData)
+    console.log(login);
     if (login === 'success') {
       const login = await apiLogin(loginData)
       if (login.status === 200) {
         setErrorMessage(null)
+        toast.success("login success",{
+          position: "top-right",
+          autoClose: 1500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         localStorage.setItem('token', login.data.token)
-        console.log(login.data.user);
         localStorage.setItem('user', login.data.user.fullName)
         dispatch(
           userActions.userAddDetails({ token: login.data.token, user: localStorage.getItem("user") })
         )
-    navigate('/')
+        setTimeout(() => {
+          navigate('/')
+        }, 2000);
 }else {
   setErrorMessage(login.data.message)
+  toast.success(login.data.message,{
+    position: "top-right",
+    autoClose: 1500,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
 }
-      }else {
+}else {
+  toast.error(login, {
+    position: "bottom-left",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    });
   setErrorMessage(login.data.message)
 }
   }
@@ -42,7 +78,8 @@ function Login() {
 
 return (
   <>
-    <div className='flex w-full h-full justify-items-center bg-[#e9f7fa]'>
+    
+    <div className='flex w-full h-full justify-items-center bg-[#e9f7fa]'><ToastContainer/>
       <div className='h-screen w-8/12  flex-col hidden lg:block'>
         <img className='mt-[250px]'
           src="https://electricvehicles.bchydro.com/sites/default/files/content-row/charging-an-ev-right-align%402x.png" alt="" />

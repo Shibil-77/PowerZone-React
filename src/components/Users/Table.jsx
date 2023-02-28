@@ -20,7 +20,7 @@ function Table({ headData, tableData }) {
 
     return (
         <div className="overflow-x-auto w-full flex justify-center">
-            <table className="  rounded-2xl shadow-2xl sm:rounded-lg text-sm text-left text-gray-500 dark:text-gray-400 w-1/3 ">
+            <table className="  rounded-2xl shadow-2xl sm:rounded-lg text-sm text-left text-gray-500 dark:text-gray-400 w-2/3 ">
                 <thead className="text-xs text-gray-700 uppercase rounded-lg  dark:bg-gray-700 bg-green-600 dark:text-gray-400">
                     <tr>
                         {headData?.map((data) => {

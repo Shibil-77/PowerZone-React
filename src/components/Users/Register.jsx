@@ -3,6 +3,8 @@ import TextField from '@mui/material/TextField';
 import {SignUpValidation} from './userUtils/utilRegister'
 import { apiUserSignUp } from '../../api/authApi';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Register() {
   const [registerData, setRegisterData] = useState('')
@@ -21,18 +23,37 @@ function Register() {
          const userData = await apiUserSignUp(registerData)
           if(userData.status === 200){
             setErrorMessage(null)
+            toast.success("Check user email",{
+              position: "top-right",
+              autoClose: 1500,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
             setSuccessMessage("check user email")
           }else{
             setErrorMessage(userData)
           }
       }else{
-        setErrorMessage(signUp)
-        console.log(errorMessage,"errorMessage");
+        toast.error(signUp, {
+          position: "bottom-left",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
       }
   }
   return (
     <>
       <div className='flex w-full h-full justify-items-center bg-[#e9f7fa] '>
+      <ToastContainer/>
         <div className='h-screen w-8/12  flex-col hidden lg:block'>
           <img className='mt-[250px]'
             src="https://electricvehicles.bchydro.com/sites/default/files/content-row/charging-an-ev-right-align%402x.png" alt="" />

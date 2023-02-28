@@ -1,25 +1,39 @@
 import React, { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import { apiResetPassword } from '../../api/authApi'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function ResetPassword() {
     const navigate = useNavigate()
     const { id } = useParams()
-    const [resetData,setResetData] = useState()
+    const [resetData, setResetData] = useState()
     const handleEdit = async (e) => {
-      const { name, value } = e.target;
-      setResetData({ ...resetData, [name]: value });
+        const { name, value } = e.target;
+        setResetData({ ...resetData, [name]: value });
     };
     const resetSubmit = async (e) => {
         e.preventDefault();
-        const data = await apiResetPassword(id,resetData)
-          if(data.status === 200){
-            alert('Password has been reset successfully')
-            navigate('/')
-          }
+        const data = await apiResetPassword(id, resetData)
+        if (data.status === 200) {
+            toast.success('Password has been reset successfully', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+            setTimeout(() => {
+                navigate('/')
+            }, 2000)
+        }
     }
     return (
         <div>
+            <ToastContainer />
             <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
                 <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
                     {/* <img class="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo"/> */}

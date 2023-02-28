@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom"
 import { bookingApi } from '../../api/portApi'
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const PayPalButton = window.paypal.Buttons.driver("react", { React, ReactDOM });
 
 function PayPal({rate,value,timeData, id}) {
@@ -9,7 +12,20 @@ function PayPal({rate,value,timeData, id}) {
    const  onBooking = ()=>{
       const res = bookingApi(timeData, value, id)
         if(res){
-          navigate('/')
+          toast.success('Booking SuccessFully completed', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            });
+          setTimeout(()=>{
+            navigate('/')
+          },3000)
+       
         }
     }
 
@@ -30,7 +46,7 @@ function PayPal({rate,value,timeData, id}) {
       };
       return (
         <div>
-
+        <ToastContainer/>
         <PayPalButton
           createOrder={(data, actions) => createOrder(data, actions)}
           onApprove={(data, actions) => {

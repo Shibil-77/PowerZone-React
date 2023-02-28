@@ -28,68 +28,68 @@ function Profile() {
 
   return (
     <>
-      <div className='flex justify-center w-full'>
-        <section class="pt-10 bg-blueGray-50">
-          <div class="w-full lg:w-7/12 px-4 mx-auto">
-            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
-              <div class="px-6">
-                <div class="flex flex-wrap justify-center">
-                  <div class="w-full px-4 flex justify-center">
-                    <div class="relative">
-                      <img alt="👨🏻‍🦱" src={Icons} class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px" />
-                      <h1 className='text-xl text-white '>{profileData.fullName} </h1>
+      <div classNameName='flex justify-center w-full'>
+        <section className="pt-10 bg-blueGray-50">
+          <div className="w-full lg:w-10/12 px-4 mx-auto">
+            <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
+              <div className="px-6">
+                <div className="flex flex-wrap justify-center">
+                  <div className="w-full px-4 flex justify-center">
+                    <div className="relative">
+                      <img alt="👨🏻‍🦱" src={Icons} className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px" />
+                      <h1 classNameName='text-xl text-white '>{profileData.fullName} </h1>
                     </div>
                   </div>
-                  <div class="w-full px-4 text-center mt-10">
-                    <div class="flex justify-center py-4 lg:pt-4 pt-8">
+                  <div className="w-full px-4 text-center mt-10">
+                    <div className="flex justify-center py-4 lg:pt-4 pt-8  ">
                       <Link to='/UserBookings'>
-                        <div class="mr-4 p-3 text-center">
-                          <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
+                        <div className="mr-4 p-3 text-center bg-gray-100 rounded-xl shadow-2xl ">
+                          <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
                             {booking}
                           </span>
-                          <span class="text-sm text-blueGray-400">Bookings</span>
+                          <span className="text-sm text-blueGray-400">Bookings</span>
                         </div>
                       </Link>
                       <Link to='/portDetails'>
-                        <div class="mr-4 p-3 text-center">
-                          <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
+                        <div className="mr-4 p-3 text-center bg-gray-100 rounded-xl shadow-2xl">
+                          <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
                             {chargingPort}
                           </span>
-                          <span class="text-sm text-blueGray-400">Charging Ports</span>
+                          <span className="text-sm text-blueGray-400">Charging Ports</span>
                         </div>
                       </Link>
                       <Link to='/'>
-                        <div class="lg:mr-4 p-3 text-center">
-                          <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
+                        <div className="lg:mr-4 p-3 text-center bg-gray-100 rounded-xl shadow-2xl">
+                          <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
                             89
                           </span>
-                          <span class="text-sm text-blueGray-400">Your Bookings</span>
+                          <span className="text-sm text-blueGray-400">Your Bookings</span>
                         </div>
                       </Link>
                     </div>
                   </div>
                 </div>
-                <div class="text-center mt-3">
-                  <h3 class="text-xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
+                <div className="text-center mt-3 bg-gray-100 rounded-xl shadow-2xl">
+                  <h3 className="text-xl font-semibold leading-normal mb-2 text-blueGray-700 ">
                     {profileData.fullName}
                   </h3>
-                  <div class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold ">
-                    <i class="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>
+                  <div className="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold ">
+                    <i className="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>
                     {profileData.email}
                   </div>
-                  <div class="mb-2 text-blueGray-600 mt-2">
-                    <i class="fas fa-briefcase mr-2 text-lg text-blueGray-400"></i>
+                  <div className="mb-2 text-blueGray-600 mt-2">
+                    <i className="fas fa-briefcase mr-2 text-lg text-blueGray-400"></i>
                     {profileData.phone}
                   </div>
-                  {/* <div class="mb-2 text-blueGray-600">
-                  <i class="fas fa-university mr-2 text-lg text-blueGray-400"></i>
+                  {/* <div className="mb-2 text-blueGray-600">
+                  <i className="fas fa-university mr-2 text-lg text-blueGray-400"></i>
                   University of Computer Science
                 </div> */}
                 </div>
-                {/* <div class="mt-10 py-10 border-t border-blueGray-200 text-center">
-                <div class="flex flex-wrap justify-center">
-                  <div class="w-full lg:w-9/12 px-4">
-                    <p class="mb-4 text-lg leading-relaxed text-blueGray-700">
+                {/* <div className="mt-10 py-10 border-t border-blueGray-200 text-center">
+                <div className="flex flex-wrap justify-center">
+                  <div className="w-full lg:w-9/12 px-4">
+                    <p className="mb-4 text-lg leading-relaxed text-blueGray-700">
                       An artist of considerable range, Jenna the name taken
                       by Melbourne-raised, Brooklyn-based Nick Murphy
                       writes, performs and records all of his own music,

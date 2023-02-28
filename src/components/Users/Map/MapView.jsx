@@ -18,14 +18,14 @@ function MapView() {
   }, [])
 
   return (
-    mapData.length &&
+    mapData.length ?
     <MapContainer center={currentLocation} zoom={5}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
       />
       <Markers venues={mapData} />
-    </MapContainer>
+    </MapContainer> :   <h1 className='text-red-500  font-bold text-3xl text-center mt-2'>Sorry Not Available Charging Ports </h1>
   )
 }
 
