@@ -28,7 +28,7 @@ function Profile() {
 
   return (
     <>
-      <div classNameName='flex justify-center w-full'>
+      <div className='flex justify-center w-10/12'>
         <section className="pt-10 bg-blueGray-50">
           <div className="w-full lg:w-10/12 px-4 mx-auto">
             <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
@@ -37,7 +37,7 @@ function Profile() {
                   <div className="w-full px-4 flex justify-center">
                     <div className="relative">
                       <img alt="👨🏻‍🦱" src={Icons} className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px" />
-                      <h1 classNameName='text-xl text-white '>{profileData.fullName} </h1>
+                      <h1 classNameName='text-3xl  text-white '>{profileData.fullName} </h1>
                     </div>
                   </div>
                   <div className="w-full px-4 text-center mt-10">

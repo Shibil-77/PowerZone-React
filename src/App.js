@@ -26,6 +26,8 @@ import UserProtectRouter from './ProtectRouter/UserProtectRouter';
 import AdminProtectRouter from './ProtectRouter/AdminProtectRouter';
 import AdminPortDetails from './pages/Admin/PortDetails/PortDetails'
 import CheckOutPage from './pages/Users/CheckOutPage/CheckOutPage';
+import ErrorPage from './components/Users/ErrorPage';
+import DashBoardPage from './pages/Admin/Dashborad/DashBoardPage';
 
 
 function App() {
@@ -95,7 +97,10 @@ function App() {
               <CheckOutPage />
             </UserProtectRouter>} />
 
+          <Route path="/*" element={<ErrorPage />} />
+
         </Routes>
+
       </div>
 
       <div>
@@ -103,7 +108,7 @@ function App() {
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route path="/admin" element={
             <AdminProtectRouter><div>
-              <h1>Admin</h1>
+              <DashBoardPage />
             </div></AdminProtectRouter>
           } />
           <Route path="/admin/BookingDetails" element={
@@ -121,6 +126,8 @@ function App() {
           <Route path="/admin/UsersDetails" element={
             <AdminProtectRouter> <UserDetails /></AdminProtectRouter>
           } />
+
+          <Route path="/admin/*" element={<ErrorPage />} />
 
         </Routes>
       </div>
