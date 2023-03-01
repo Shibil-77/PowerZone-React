@@ -12,13 +12,11 @@ function AdminTable({ tableHeaders, data }) {
             if (data === "userDetails") {
                 const data = await getUserData()
                 if (data) {
-                    console.log(data,"data======");
                     setTableData(data)
                 } else {
                     console.log("server error");
                 }
             } else {
-                console.log("==================");
             }
         }
         user()

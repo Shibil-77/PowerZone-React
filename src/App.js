@@ -38,7 +38,11 @@ import UserProtectRouter from './ProtectRouter/UserProtectRouter';
 
 import CheckOutPage from './pages/Users/CheckOutPage/CheckOutPage';
 
+import ChargingPortDetails from './pages/Users/ChargingPortDetails/ChargingPortDetails';
+
 import ErrorPage from './components/Users/ErrorPage';
+
+
 
 // <---=== admin pages ====--> 
 
@@ -49,6 +53,7 @@ import AdminLoginPage from './pages/Admin/AdminLoginPage/AdminLoginPage';
 import AdminPortDetails from './pages/Admin/PortDetails/PortDetails'
 
 import DashBoardPage from './pages/Admin/Dashboard/DashBoardPage';
+
 
 
 function App() {
@@ -73,7 +78,6 @@ function App() {
 
           <Route path="/profile" element={ <UserProtectRouter> <ProfilePage /> </UserProtectRouter>  } />
 
-          <Route path="/userBookings" element={   <UserProtectRouter> <BookingPage />  </UserProtectRouter>  } />
 
           <Route path="/addBookingDetails" element={ <UserProtectRouter> <BookingDetailsPage /> </UserProtectRouter> } />
 
@@ -84,6 +88,10 @@ function App() {
           <Route path="/mapValue" element={ <UserProtectRouter><MapValue />  </UserProtectRouter>} />
 
           <Route path="/checkOut" element={ <UserProtectRouter>   <CheckOutPage />  </UserProtectRouter>} />
+
+          <Route path="/userBookings" element={   <UserProtectRouter> <BookingPage />  </UserProtectRouter>  } />
+
+          <Route path="/userChargingPortDetails" element={ <UserProtectRouter> <ChargingPortDetails/></UserProtectRouter>  } />
 
             {/* <---========= admin side =======----> */}
 

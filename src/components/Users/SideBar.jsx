@@ -17,16 +17,15 @@ const SideBar = () => {
 
   const user = useSelector((state) => state?.user.user)
 
-  console.log(user,"user==============");
-
   const Menus = [
     { title: "Home", src: HomeIcon, link: '/' },
     { title: "Add a charging point", src: AddLocationAltSharpIcon, link: '/AddChargingPort' },
     { title: "Find a Charging point", src: QueryStatsIcon, link: '/map' },
     { title: "Bookings ", src: EventNoteIcon, link: '/userBookings' },
-    { title: "Charging Details", src: EvStationIcon, link: '/PortDetails' },
+    { title: "Charging Details", src: EvStationIcon, link: '/userChargingPortDetails' },
   ];
-  if(!user){
+  
+  if (!user) {
     Menus.push({ title: "Login", src: LoginIcon, link: '/login' })
   }
 
@@ -55,7 +54,7 @@ const SideBar = () => {
               className={`text-[#004f6d] origin-left font-medium mt-5 text-xl duration-200 ${!open && "scale-0"
                 }`}
             >
-            {user ? user : "Profile"}
+              {user ? user : "Profile"}
             </h1>
           </div>
         </NavLink>
