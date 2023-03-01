@@ -20,7 +20,7 @@ import AddChargingPort from './pages/Users/AddChargingPort/AddChargingPort';
 
 import BookingDetailsPage from './pages/Users/BookingDetailsPage.jsx/BookingDetailsPage';
 
-import BookingDetails from './pages/Admin/BookingDetails/BookingDetails';
+import BookingDetails from './pages/Admin/BookingDetails/BookingDetailsPage';
 
 import Verify from './components/Users/Verify'
 
@@ -97,7 +97,7 @@ function App() {
 
           <Route path="/admin/login" element={<AdminLoginPage />} />
 
-          <Route path="/admin" element={<AdminProtectRouter><DashBoardPage /></AdminProtectRouter> } />
+          <Route path="/admin" element={<AdminProtectRouter><DashBoardPage/></AdminProtectRouter> } />
 
           <Route path="/admin/BookingDetails" element={ <AdminProtectRouter><BookingDetails /></AdminProtectRouter> } />
 

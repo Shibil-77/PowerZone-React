@@ -52,7 +52,7 @@ function Profile() {
                           <span className="text-sm text-blueGray-400">Your Bookings</span>
                         </div>
                       </Link>
-                      <Link to='/portDetails'>
+                      <Link to='/userChargingPortDetails'>
                         <div className="mr-4 p-3 text-center bg-gray-100 rounded-xl shadow-2xl">
                           <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
                             {chargingPort}

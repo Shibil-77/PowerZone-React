@@ -24,13 +24,13 @@ function UserChargingTable({ headData, tableData }) {
                                     <th scope="row" className="px-6 py-0 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         {data?._id}
                                     </th>
-                                    <td className="px-6 py-0">
+                                    <td className="px-6 py-0 font-medium text-gray-900 whitespace-nowrap">
                                         {data?.rate}
                                     </td>
-                                    <td className="px-6 ">
+                                    <td className="px-6 font-medium text-gray-900 whitespace-nowrap">
                                         {data?.type}
                                     </td>
-                                    <td className="px-6 ">
+                                    <td className="px-6 font-medium text-gray-900 whitespace-nowrap">
                                         {data?.location}
                                     </td>
                                 </tr>

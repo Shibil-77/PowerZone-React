@@ -71,3 +71,18 @@ export const deletePort = async(id)=>{
         console.log(error)
     }
 }
+
+
+export const bookingCancelApi = async(id)=>{
+    try {
+        const response = await axios.get(`http://localhost:4000/api/user/bookingCancel/${id}`, {
+            withCredentials: true,
+            headers: {
+                Authorization: "Bearer " + localStorage.getItem("token"),
+            },
+        })
+        return response.data
+    } catch (error) {
+        console.log(error)
+    }
+}

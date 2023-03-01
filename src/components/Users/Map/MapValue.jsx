@@ -4,7 +4,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react'
 import { VenueLocationIcon } from './VenueLocationIcon';
 import { addPointValueApi } from '../../../api/portApi'
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function MapValue() {
   const [latitude, setLatitude] = useState(11.151974290747289);
@@ -22,13 +23,26 @@ function MapValue() {
     const pointValue = [latitude, longitude]
     const  mapValueData =await addPointValueApi(pointValue, location.hash)
     if (mapValueData.status === 200) {
-      navigate('/')
+      toast.success('Charging Port successFully Added', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
+      setTimeout(()=>{
+        navigate('/')
+      },3000)
     } else {
       alert(mapValueData.data.message)
     }
   }
   return (
     <>
+      <ToastContainer/>
       <div className='grid grid-flow-col'>
         <button onClick={(e) => {
           e.preventDefault();

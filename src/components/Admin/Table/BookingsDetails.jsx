@@ -1,12 +1,13 @@
 
-import React, { useState } from 'react'
+import React, { useState,useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
 import {bookingCancelApi} from '../../api/userApi'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {adminFindNewBookings } from '../../../api/adminApi'
 
-function Table({ headData, tableData }) {
-    const [table, setTable] = useState(tableData)
+function BookingDetails({ headData }) {
+    const [table, setTable] = useState()
     const navigate =    useNavigate()
 
     function convertDate(date) {
@@ -18,21 +19,18 @@ function Table({ headData, tableData }) {
         return result;
     }
 
-   const bookingCancel = (bookingId)=>{
-    console.log(bookingId);
-      bookingCancelApi(bookingId)
-     setTable( table.filter((data)=>data._id != bookingId)) 
-     toast.success('Booking SuccessFully Canceled', {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        });
-    }
+    const bookingApiCall = async () => {
+        const { bookingsData } = await adminFindNewBookings()
+        console.log(bookingsData);
+        if (bookingsData) {
+            setTable(bookingsData)
+        }
+      }
+    
+      useEffect(() => {
+        bookingApiCall()
+      }, [])
+ 
 
     return (
         
@@ -62,13 +60,13 @@ function Table({ headData, tableData }) {
                                     <td className="px-6 font-medium text-gray-900 whitespace-nowrap">
                                         {data?.time}
                                     </td>
-                                    <td className="px-6 ">
+                                    {/* <td className="px-6 ">
                                         <button onClick={()=>{
                                             bookingCancel(data._id)
                                         }} className="bg-green-600 text-white active:bg-green-500 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150 h-12" type="button">
                                          Cancel
                                         </button>
-                                    </td>
+                                    </td> */}
                                 </tr>
                             )
                         })}
@@ -79,4 +77,4 @@ function Table({ headData, tableData }) {
     )
 }
 
-export default Table
+export default BookingDetails

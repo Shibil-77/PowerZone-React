@@ -1,11 +1,13 @@
 import { useState, React } from "react";
 import Icons from '../../assets/Icons/user.png'
 import Arrow from '../../assets/Icons/arrow.png'
+import AddLocationAltSharpIcon from '@mui/icons-material/AddLocationAltSharp';
 import HomeIcon from '@mui/icons-material/HomeSharp';
 import QueryStatsIcon from '@mui/icons-material/QueryStatsSharp';
 import LoginIcon from '@mui/icons-material/LoginSharp';
+import PeopleIcon from '@mui/icons-material/People';
 import EventNoteIcon from '@mui/icons-material/EventNoteSharp';
-import ThreePSharpIcon from '@mui/icons-material/ThreePSharp';
+import EvStationIcon from '@mui/icons-material/EvStation';
 import { NavLink } from 'react-router-dom'
 
 
@@ -13,13 +15,11 @@ const AdminSideBar = () => {
   const [open, setOpen] = useState(true);
 
   const Menus = [
-    { title: "Home", src: HomeIcon, link: '/' },
-    { title: "Add a charging point", src: HomeIcon, link: '/AddChargingPort' },
-    { title: "Find a Charging point", src: QueryStatsIcon, link: '/AddBookingDetails' },
-    { title: "Bookings ", src: EventNoteIcon, link: '/NewBookings' },
-    { title: "Requests", src: ThreePSharpIcon, link: '/PortDetails' },
-    { title: "Login", src: LoginIcon, link: '/AddBookingDetails' },
-
+    { title: "Home", src: HomeIcon, link: '/admin' },
+    { title: "Add a charging point", src: PeopleIcon, link: '/admin/UsersDetails' },
+    { title: "Find a Charging point", src: QueryStatsIcon, link: '/map' },
+    { title: "Bookings ", src: EventNoteIcon, link: '/userBookings' },
+    { title: "Charging Details", src: EvStationIcon, link: '/admin/PortDetails' },
   ];
 
   return (
@@ -35,7 +35,7 @@ const AdminSideBar = () => {
         onClick={() => setOpen(!open)}
         alt='hello'
       />
-        <NavLink to='/profile'>
+        <NavLink to='/admin'>
       <div className="flex gap-x-4 items-center">
         <img
           src={Icons}
@@ -47,7 +47,7 @@ const AdminSideBar = () => {
           className={`text-[#004f6d] origin-left font-medium text-xl duration-200 ${!open && "scale-0"
             }`}
         >
-          Muhammed Shibil
+          Admin
         </h1>
       </div>
       </NavLink>

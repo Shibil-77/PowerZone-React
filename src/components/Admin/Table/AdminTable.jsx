@@ -24,7 +24,7 @@ function AdminTable({ tableHeaders, data }) {
 
 
     return (
-        <div className="overflow-x-auto w-full flex justify-center">
+        <div className="overflow-x-auto w-full h-full flex justify-center">
             <table className="   shadow-md sm:rounded-lg text-sm text-left text-gray-500 dark:text-gray-400 w-1/3 ">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
