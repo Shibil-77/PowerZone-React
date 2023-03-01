@@ -18,7 +18,7 @@ const AdminSideBar = () => {
     { title: "Home", src: HomeIcon, link: '/admin' },
     { title: "Add a charging point", src: PeopleIcon, link: '/admin/UsersDetails' },
     { title: "Find a Charging point", src: QueryStatsIcon, link: '/map' },
-    { title: "Bookings ", src: EventNoteIcon, link: '/userBookings' },
+    { title: "Bookings ", src: EventNoteIcon, link: '/admin/BookingDetails' },
     { title: "Charging Details", src: EvStationIcon, link: '/admin/PortDetails' },
   ];
 

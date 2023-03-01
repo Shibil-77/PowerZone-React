@@ -20,7 +20,7 @@ function BookingPage() {
 
 
 
-  const headData = ["bookingId", "Date", "Time","view"]
+  const headData = ["bookingId", "Date", "Time"]
 
   return (
     <div className='bg-[#e9f7fa] h-screen'>

@@ -1,7 +1,6 @@
 
 import React, { useState,useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
-import {bookingCancelApi} from '../../api/userApi'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {adminFindNewBookings } from '../../../api/adminApi'
@@ -20,7 +19,7 @@ function BookingDetails({ headData }) {
     }
 
     const bookingApiCall = async () => {
-        const { bookingsData } = await adminFindNewBookings()
+        const bookingsData  = await adminFindNewBookings()
         console.log(bookingsData);
         if (bookingsData) {
             setTable(bookingsData)

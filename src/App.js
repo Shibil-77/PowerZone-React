@@ -54,6 +54,8 @@ import AdminPortDetails from './pages/Admin/PortDetails/PortDetails'
 
 import DashBoardPage from './pages/Admin/Dashboard/DashBoardPage';
 
+import AdminBookingDetailsPage from './pages/Admin/BookingDetails/BookingDetailsPage'
+
 
 
 function App() {
@@ -99,7 +101,7 @@ function App() {
 
           <Route path="/admin" element={<AdminProtectRouter><DashBoardPage/></AdminProtectRouter> } />
 
-          <Route path="/admin/BookingDetails" element={ <AdminProtectRouter><BookingDetails /></AdminProtectRouter> } />
+          <Route path="/admin/BookingDetails" element={ <AdminProtectRouter><AdminBookingDetailsPage /></AdminProtectRouter> } />
 
           <Route path="/admin/PortDetails" element={ <AdminProtectRouter> <AdminPortDetails /></AdminProtectRouter>  } />
 
