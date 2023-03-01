@@ -6,7 +6,7 @@ import HomeIcon from '@mui/icons-material/HomeSharp';
 import QueryStatsIcon from '@mui/icons-material/QueryStatsSharp';
 import LoginIcon from '@mui/icons-material/LoginSharp';
 import EventNoteIcon from '@mui/icons-material/EventNoteSharp';
-import ThreePSharpIcon from '@mui/icons-material/ThreePSharp';
+import EvStationIcon from '@mui/icons-material/EvStation';
 import { NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 
@@ -24,7 +24,7 @@ const SideBar = () => {
     { title: "Add a charging point", src: AddLocationAltSharpIcon, link: '/AddChargingPort' },
     { title: "Find a Charging point", src: QueryStatsIcon, link: '/map' },
     { title: "Bookings ", src: EventNoteIcon, link: '/userBookings' },
-    { title: "Charging Details", src: ThreePSharpIcon, link: '/PortDetails' },
+    { title: "Charging Details", src: EvStationIcon, link: '/PortDetails' },
   ];
   if(!user){
     Menus.push({ title: "Login", src: LoginIcon, link: '/login' })
@@ -47,12 +47,12 @@ const SideBar = () => {
           <div className="flex gap-x-4 items-center">
             <img
               src={Icons}
-              className={`cursor-pointer duration-500 w-10 ${open && "rotate-[360deg]"
+              className={`cursor-pointer duration-500 w-10 ${open && ""
                 }`}
               alt='hello'
             />
             <h1
-              className={`text-[#004f6d] origin-left font-medium text-xl duration-200 ${!open && "scale-0"
+              className={`text-[#004f6d] origin-left font-medium mt-5 text-xl duration-200 ${!open && "scale-0"
                 }`}
             >
             {user ? user : "Profile"}
