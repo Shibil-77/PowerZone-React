@@ -29,15 +29,17 @@ function Profile() {
   return (
     <>
       <div className='flex justify-center w-10/12'>
+       
         <section className="pt-10 bg-blueGray-50">
+        <h1 className='text-center font-extrabold text-black mb-10 '>PROFILE PAGE</h1>
           <div className="w-full lg:w-10/12 px-4 mx-auto">
             <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
-              <div className="px-6">
+              <div className="px-6 w-full">
                 <div className="flex flex-wrap justify-center">
                   <div className="w-full px-4 flex justify-center">
                     <div className="relative">
-                      <img alt="👨🏻‍🦱" src={Icons} className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px" />
-                      <h1 classNameName='text-3xl  text-white '>{profileData.fullName} </h1>
+                      <img alt="👨🏻‍🦱" src={Icons} className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-200-px" />
+                      <h1 className='font-extrabold text-black mt-5'>{profileData.fullName} </h1>
                     </div>
                   </div>
                   <div className="w-full px-4 text-center mt-10">
@@ -47,7 +49,7 @@ function Profile() {
                           <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
                             {booking}
                           </span>
-                          <span className="text-sm text-blueGray-400">Bookings</span>
+                          <span className="text-sm text-blueGray-400">Your Bookings</span>
                         </div>
                       </Link>
                       <Link to='/portDetails'>
@@ -61,9 +63,9 @@ function Profile() {
                       <Link to='/'>
                         <div className="lg:mr-4 p-3 text-center bg-gray-100 rounded-xl shadow-2xl">
                           <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
-                            89
+                           0
                           </span>
-                          <span className="text-sm text-blueGray-400">Your Bookings</span>
+                          <span className="text-sm text-blueGray-400">Charging Port Bookings</span>
                         </div>
                       </Link>
                     </div>

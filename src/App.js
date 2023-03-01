@@ -97,37 +97,24 @@ function App() {
               <CheckOutPage />
             </UserProtectRouter>} />
 
-          <Route path="/*" element={<ErrorPage />} />
-
-        </Routes>
-
-      </div>
-
-      <div>
-        <Routes>
           <Route path="/admin/login" element={<AdminLoginPage />} />
+
           <Route path="/admin" element={
-            <AdminProtectRouter><div>
-              <DashBoardPage />
-            </div></AdminProtectRouter>
+            <AdminProtectRouter><DashBoardPage /></AdminProtectRouter>
           } />
           <Route path="/admin/BookingDetails" element={
             <AdminProtectRouter><BookingDetails /></AdminProtectRouter>
           } />
+
           <Route path="/admin/PortDetails" element={
             <AdminProtectRouter> <AdminPortDetails /></AdminProtectRouter>
           } />
-          <Route path="/admin/AddBanner" element={
-            <AdminProtectRouter><AddBanner /></AdminProtectRouter>
-          } />
-          <Route path="/admin/BannerDetails" element={
-            <AdminProtectRouter><BannerDetails /></AdminProtectRouter>
-          } />
+
           <Route path="/admin/UsersDetails" element={
             <AdminProtectRouter> <UserDetails /></AdminProtectRouter>
           } />
 
-          <Route path="/admin/*" element={<ErrorPage />} />
+          <Route path="/*" element={<ErrorPage />} />
 
         </Routes>
       </div>

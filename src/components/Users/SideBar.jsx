@@ -8,18 +8,27 @@ import LoginIcon from '@mui/icons-material/LoginSharp';
 import EventNoteIcon from '@mui/icons-material/EventNoteSharp';
 import ThreePSharpIcon from '@mui/icons-material/ThreePSharp';
 import { NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux';
+
 
 
 const SideBar = () => {
   const [open, setOpen] = useState(false);
+
+  const user = useSelector((state) => state?.user.user)
+
+  console.log(user,"user==============");
+
   const Menus = [
     { title: "Home", src: HomeIcon, link: '/' },
     { title: "Add a charging point", src: AddLocationAltSharpIcon, link: '/AddChargingPort' },
     { title: "Find a Charging point", src: QueryStatsIcon, link: '/map' },
     { title: "Bookings ", src: EventNoteIcon, link: '/userBookings' },
     { title: "Charging Details", src: ThreePSharpIcon, link: '/PortDetails' },
-    { title: "Login", src: LoginIcon, link: '/login' },
   ];
+  if(!user){
+    Menus.push({ title: "Login", src: LoginIcon, link: '/login' })
+  }
 
   return (
     <>
@@ -34,21 +43,21 @@ const SideBar = () => {
           onClick={() => setOpen(!open)}
           alt='hello'
         />
-          <NavLink to='/profile'>
-        <div className="flex gap-x-4 items-center">
-          <img
-            src={Icons}
-            className={`cursor-pointer duration-500 w-10 ${open && "rotate-[360deg]"
-              }`}
-            alt='hello'
-          />
-          <h1
-            className={`text-[#004f6d] origin-left font-medium text-xl duration-200 ${!open && "scale-0"
-              }`}
-          >
-            Muhammed Shibil
-          </h1>
-        </div>
+        <NavLink to='/profile'>
+          <div className="flex gap-x-4 items-center">
+            <img
+              src={Icons}
+              className={`cursor-pointer duration-500 w-10 ${open && "rotate-[360deg]"
+                }`}
+              alt='hello'
+            />
+            <h1
+              className={`text-[#004f6d] origin-left font-medium text-xl duration-200 ${!open && "scale-0"
+                }`}
+            >
+            {user ? user : "Profile"}
+            </h1>
+          </div>
         </NavLink>
         <ul className="pt-6">
           {Menus.map((Menu, index) => (
