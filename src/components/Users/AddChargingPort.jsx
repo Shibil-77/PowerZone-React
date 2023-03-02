@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { addChargingPortValidation } from './userUtils/utilsPort'
 import { addChargingPortApi } from '../../api/portApi'
 import { useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function AddChargingPort({ children }) {
 
@@ -58,28 +60,38 @@ function AddChargingPort({ children }) {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    //   console.log(chargingPortData,"chargingPortData")
-    //  const error =  addChargingPortValidation(chargingPortData)
-    //  setErrorMessage(error)
-    //  if(error === "success"){
+     const validation  = await addChargingPortValidation(chargingPortData)
+     console.log(validation);
+      if(validation === "success"){
     const chargingData = await addChargingPortApi(chargingPortData)
-
     if (chargingData.status === 200) {
-
       navigate({
         pathname: '/mapValue',
         hash: chargingData.data.message,
       })
-
     } else {
       alert(chargingData.data.message)
     }
-
+  }else {
+    console.log(validation,"==--=-=-===-=-=");
+    toast.error(validation, {
+      position: "bottom-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+  }
 
   }
 
   return (
+    
     <section className=" py-1 bg-blueGray-50 w-full flex justify-center">
+      <ToastContainer/>
       <div className=" md:w-6/12 px-4 mx-auto mt-6 w-full">
         <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0">
           <div className="rounded-t bg-white mb-0 px-6 py-6">

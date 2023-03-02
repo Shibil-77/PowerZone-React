@@ -9,7 +9,9 @@ function Navbar() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const user = useSelector((state) => state?.user.user)
+
     const Logout = () => {
+        
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         dispatch(
@@ -23,7 +25,7 @@ function Navbar() {
         <>
             <div className="flex justify-between bg-white shadow-md w-full h-16 shadow-heavy-metal-400 p-4 mb-5 sticky top-0 z-50">
                 <div>
-                   <Link to="/"> <h2 className="ml-5 font-bold text-snow-drift-200  text-myColor-600 text-xl md:text-2xl">Power Zone</h2> </Link>
+                    <Link to="/"> <h2 className="ml-5 font-bold text-snow-drift-200  text-myColor-600 text-xl md:text-2xl">Power Zone</h2> </Link>
                 </div>
                 <div className="flex gap-4 mr-2">
                     <span className="text-left mt-1 text-white">

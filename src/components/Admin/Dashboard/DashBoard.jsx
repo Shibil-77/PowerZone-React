@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Chart from "react-apexcharts";
 
-const DashBoard = ({postGraphCategories,postGraphData}) => {
+const DashBoard = ({postGraphCategories,postGraphData,type}) => {
     const [state, setState] = useState({
         options: {
           chart: {
@@ -19,14 +19,14 @@ const DashBoard = ({postGraphCategories,postGraphData}) => {
         ],
       });
       return (
-        <div className="flex flex-col w-full  content-center justify-center p-5 gap-y-5">
-          <h1 className="text-center text-2xl font-bold">Post chart </h1>
+        <div className="flex flex-col w-full rounded-3xl mx-10 bg-white content-center justify-center p-5 gap-y-5">
+          <h1 className="text-center text-2xl font-bold">Bookings Chart</h1>
           <div className="mx-auto">
           <Chart 
             options={state.options}
             series={state.series}
-            type="line"
-            width="600"
+            type={type}
+            width="300"
           />
           </div>
         </div>

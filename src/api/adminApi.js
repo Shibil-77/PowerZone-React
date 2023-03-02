@@ -65,14 +65,22 @@ export const portRequest = async(id)=>{
 
 export const adminFindNewBookings = async()=>{
     try {
-        console.log("==============");
         const response = await axios.get(`http://localhost:4000/api/admin/adminFindNewBookings`, {
             withCredentials: true,
         })
-        console.log(response);
         return response.data
     } catch (error) {
-        console.log(error)
+        return error
+    }
+}
+
+export const dashBoard = async()=>{
+    try {
+        const response = await axios.get(`http://localhost:4000/api/admin/dashBoard`, {
+            withCredentials: true,
+        })
+        return response.data
+    } catch (error) {
         return error
     }
 }

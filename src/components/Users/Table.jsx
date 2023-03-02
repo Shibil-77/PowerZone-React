@@ -7,7 +7,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function Table({ headData, tableData }) {
     const [table, setTable] = useState(tableData)
-    const navigate =    useNavigate()
 
     function convertDate(date) {
         const newDate = new Date(date);
@@ -19,7 +18,6 @@ function Table({ headData, tableData }) {
     }
 
    const bookingCancel = (bookingId)=>{
-    console.log(bookingId);
       bookingCancelApi(bookingId)
      setTable( table.filter((data)=>data._id != bookingId)) 
      toast.success('Booking SuccessFully Canceled', {

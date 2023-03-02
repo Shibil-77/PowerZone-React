@@ -24,7 +24,6 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     const login = loginValidation(loginData)
-    console.log(login);
     if (login === 'success') {
       const login = await apiLogin(loginData)
       if (login.status === 200) {
@@ -47,10 +46,9 @@ function Login() {
         setTimeout(() => {
           navigate('/')
         }, 2000);
-}else {
-  setErrorMessage(login.data.message)
-  toast.success(login.data.message,{
-    position: "top-right",
+  }else {
+  toast.error(login,{
+    position: "bottom-left",
     autoClose: 1500,
     hideProgressBar: false,
     closeOnClick: true,
@@ -99,7 +97,7 @@ return (
                 {/* <Link>HELLO WORLD</Link> */}
                 <div className="flex justify-center py-2">
                   {/* <Link to={'/register'}> */}
-                  <p className=" text-sm text-heavy-metal-900">SignUp?<Link to='/register'><span className="text-blue-600 cursor-pointer hover:underline">Click Me</span></Link></p><br />
+                  <p className=" text-sm text-heavy-metal-900">SignUp? <Link to='/register'><span className="text-blue-600 cursor-pointer hover:underline"> Click Me</span></Link></p><br />
                   <p className=" text-sm text-heavy-metal-900">   forgotPassword<Link to='/forgotPassword'><span className="text-blue-600 cursor-pointer hover:underline">Click Me</span></Link></p>
                   {/* </Link> */}
                 </div>

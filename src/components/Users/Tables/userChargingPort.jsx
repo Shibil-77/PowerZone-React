@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { userPortDetailsFinding ,deletePort} from '../../../api/userApi'
+import { userPortDetailsFinding, deletePort } from '../../../api/userApi'
 
 function UserChargingPort({ headData }) {
 
@@ -11,11 +11,9 @@ function UserChargingPort({ headData }) {
         setTable(res.chargingData)
     }
 
-    
-
-    const deletePortSubmit =async (id)=>{
+    const deletePortSubmit = async (id) => {
         console.log(id);
-      await deletePort(id)
+        await deletePort(id)
     }
 
     useEffect(() => {
@@ -58,7 +56,7 @@ function UserChargingPort({ headData }) {
                                         {data.location}
                                     </td>
                                     <td classNameName="px-10  py-10" >
-                                        <button onClick={()=>deletePortSubmit(data._id)}  className="bg-green-600 text-white active:bg-green-500 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="button">
+                                        <button onClick={() => deletePortSubmit(data._id)} className="bg-green-600 text-white active:bg-green-500 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="button">
                                             Delete
                                         </button>
                                     </td>
