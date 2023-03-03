@@ -5,7 +5,7 @@ import BookingDetails from '../../../components/Admin/Table/BookingsDetails'
 
 function BookingDetailsPage() {
 
-    const headData = ["bookingId", "Date", "Time","view"]
+    const headData = ["bookingId", "Date", "Time"]
 
     return (
         <div>

@@ -79,6 +79,7 @@ export const dashBoard = async()=>{
         const response = await axios.get(`http://localhost:4000/api/admin/dashBoard`, {
             withCredentials: true,
         })
+        console.log(response.data);
         return response.data
     } catch (error) {
         return error
