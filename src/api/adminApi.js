@@ -3,7 +3,7 @@ import axios from "axios"
 
 export const getUserData = async () => {
     try {
-        const response = await axios.get("http://localhost:4000/api/admin/getUsersData", {
+        const response = await axios.get("https://powerzoneserver.smartshoping.club/api/admin/getUsersData", {
             withCredentials: true,
         })
         return response.data
@@ -15,7 +15,7 @@ export const getUserData = async () => {
 export const userAccess = async (id) => {
     console.log(id);
     try {
-        const response = await axios.get(`http://localhost:4000/api/admin/userAccess/${id}`, {
+        const response = await axios.get(`https://powerzoneserver.smartshoping.club/api/admin/userAccess/${id}`, {
             withCredentials: true,
         })
         return response.data
@@ -28,7 +28,7 @@ export const userAccess = async (id) => {
 export const apiAdminLogin =async (data)=>{
      try {
         console.log(data);
-        const response = await axios.post('http://localhost:4000/api/admin/adminLogin',data,{
+        const response = await axios.post('https://powerzoneserver.smartshoping.club/api/admin/adminLogin',data,{
             withCredentials: true,
         })
         return response
@@ -40,7 +40,7 @@ export const apiAdminLogin =async (data)=>{
 
 export const getPortData =async ()=>{
     try {
-        const response = await axios.get("http://localhost:4000/api/admin/getPortData", {
+        const response = await axios.get("https://powerzoneserver.smartshoping.club/api/admin/getPortData", {
             withCredentials: true,
         })
         console.log(response,"response");
@@ -53,7 +53,7 @@ export const getPortData =async ()=>{
 
 export const portRequest = async(id)=>{
     try {
-        const response = await axios.get(`http://localhost:4000/api/admin/portRequest/${id}`, {
+        const response = await axios.get(`https://powerzoneserver.smartshoping.club/api/admin/portRequest/${id}`, {
             withCredentials: true,
         })
         return response.data
@@ -65,7 +65,7 @@ export const portRequest = async(id)=>{
 
 export const adminFindNewBookings = async()=>{
     try {
-        const response = await axios.get(`http://localhost:4000/api/admin/adminFindNewBookings`, {
+        const response = await axios.get(`https://powerzoneserver.smartshoping.club/api/admin/adminFindNewBookings`, {
             withCredentials: true,
         })
         return response.data
@@ -76,7 +76,7 @@ export const adminFindNewBookings = async()=>{
 
 export const dashBoard = async()=>{
     try {
-        const response = await axios.get(`http://localhost:4000/api/admin/dashBoard`, {
+        const response = await axios.get(`https://powerzoneserver.smartshoping.club/api/admin/dashBoard`, {
             withCredentials: true,
         })
         console.log(response.data);
