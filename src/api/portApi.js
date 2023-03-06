@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const addChargingPortApi = async(value) => {
     try {
-          const chargingData = await axios.post('https://server.smartshoping.club/api/port/addChargingPort', value, {
+          const chargingData = await axios.post('http://localhost:4000/api/port/addChargingPort', value, {
             withCredentials: true,
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("token"),
@@ -19,7 +19,7 @@ export const addChargingPortApi = async(value) => {
 export const addPointValueApi = async(map,id)=>{
     try {
          console.log(map);
-        const chargingData = await axios.patch('https://server.smartshoping.club/api/port/addMapValue',{map,id},{
+        const chargingData = await axios.patch('http://localhost:4000/api/port/addMapValue',{map,id},{
             withCredentials: true,
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("token"),
@@ -34,7 +34,7 @@ export const addPointValueApi = async(map,id)=>{
 
 export const mapDataApi =async()=>{
 try {
-    const data = await axios.get('https://server.smartshoping.club/api/port/mapData',{
+    const data = await axios.get('http://localhost:4000/api/port/mapData',{
         withCredentials: true,
         headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
@@ -48,7 +48,7 @@ try {
 
 export const findPortData =async (portId) =>{
   try {
-    const {data} = await axios.post('https://server.smartshoping.club/api/port/findPortData',{portId},{
+    const {data} = await axios.post('http://localhost:4000/api/port/findPortData',{portId},{
         withCredentials: true,
         headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
@@ -65,7 +65,7 @@ export const findPortData =async (portId) =>{
 export const bookingApi =async(time,date,id)=>{
     try {
         console.log(time);
-        const data = await axios.post('https://server.smartshoping.club/api/port/booking',{time,date,id},{
+        const data = await axios.post('http://localhost:4000/api/port/booking',{time,date,id},{
             withCredentials: true,
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("token"),

@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const apiUserSignUp=async(registerData)=>{
     try {
-      const data =  await axios.post('https://server.smartshoping.club/api/auth/register',registerData,{
+      const data =  await axios.post('http://localhost:4000/api/auth/register',registerData,{
         withCredentials: true,
       })
      return data
@@ -14,7 +14,7 @@ export const apiUserSignUp=async(registerData)=>{
 
 export const verifyResponse= async(id,code)=>{
   try {
-     const data =  await axios.get(`https://server.smartshoping.club/api/auth/verify/${id}`,{
+     const data =  await axios.get(`http://localhost:4000/api/auth/verify/${id}`,{
       withCredentials: true,
     })
     console.log(data.token);
@@ -26,14 +26,14 @@ export const verifyResponse= async(id,code)=>{
 
 
 export const timeReset = async(id)=>{
-    await axios.get(`https://server.smartshoping.club/api/auth/timeReset/${id}`,{
+    await axios.get(`http://localhost:4000/api/auth/timeReset/${id}`,{
     withCredentials: true,
 })
 }
 
 export const apiLogin = async(loginData) => {
   try {
-    const data = await axios.post(`https://server.smartshoping.club/api/auth/login`,loginData,{
+    const data = await axios.post(`http://localhost:4000/api/auth/login`,loginData,{
       withCredentials: true,
     })
     console.log("api call success");
@@ -47,7 +47,7 @@ export const apiLogin = async(loginData) => {
 
 export const apiForgotPassword = async(forgotData)=>{
   try {
-   const data = await axios.post(`https://server.smartshoping.club/api/auth/forgotPassword`,forgotData,
+   const data = await axios.post(`http://localhost:4000/api/auth/forgotPassword`,forgotData,
    {
     withCredentials: true,
   })
@@ -60,7 +60,7 @@ export const apiForgotPassword = async(forgotData)=>{
 export const apiResetPassword = async(id,resetData)=>{
   try {
     console.log(resetData);
-    const data = await axios.post(`https://server.smartshoping.club/api/auth/resetPassword/${id}`,resetData,{
+    const data = await axios.post(`http://localhost:4000/api/auth/resetPassword/${id}`,resetData,{
       withCredentials: true,
     })
     return data
