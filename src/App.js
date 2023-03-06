@@ -56,6 +56,9 @@ import DashBoardPage from './pages/Admin/Dashboard/DashBoardPage';
 
 import AdminBookingDetailsPage from './pages/Admin/BookingDetails/BookingDetailsPage'
 
+import UserPublicRoute from './PublicRoute/UserPublicRoute';
+import AdminPublicRoute from './PublicRoute/AdminPublicRoute';
+
 
 
 function App() {
@@ -66,15 +69,16 @@ function App() {
 
              {/*<------==========user side========---> */}
 
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/login" element={
+         <UserPublicRoute>    <LoginPage /> </UserPublicRoute>} />
 
-          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/register" element={ <UserPublicRoute><RegisterPage /></UserPublicRoute> } />
 
           <Route path="/verify/:id" element={<Verify />} />
 
-          <Route path="/forgotPassword" element={<ForgotPassword />} />
+          <Route path="/forgotPassword" element={<UserPublicRoute> <ForgotPassword /></UserPublicRoute>} />
 
-          <Route path="/resetPassword/:id" element={<ResetPassword />} />
+          <Route path="/resetPassword/:id" element={<UserPublicRoute><ResetPassword /></UserPublicRoute>} />
 
           <Route path="/" element={<HomePage />} />
 
@@ -97,7 +101,7 @@ function App() {
 
             {/* <---========= admin side =======----> */}
 
-          <Route path="/admin/login" element={<AdminLoginPage />} />
+          <Route path="/admin/login" element={<AdminPublicRoute><AdminLoginPage /></AdminPublicRoute>} />
 
           <Route path="/admin" element={<AdminProtectRouter><DashBoardPage/></AdminProtectRouter> } />
 
