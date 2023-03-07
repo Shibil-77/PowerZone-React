@@ -12,6 +12,7 @@ function Profile() {
 
   const ApiCall = async () => {
     const { newBookings, portData, userData } = await findProfileData()
+    console.log(newBookings, portData, userData,"newBookings, portData, userData");
     if (userData) {
       setProfileData(userData)
       setChargingPort(portData)
