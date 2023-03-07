@@ -1,10 +1,8 @@
 import { useState, React } from "react";
 import Icons from '../../assets/Icons/user.png'
 import Arrow from '../../assets/Icons/arrow.png'
-import AddLocationAltSharpIcon from '@mui/icons-material/AddLocationAltSharp';
 import HomeIcon from '@mui/icons-material/HomeSharp';
 import QueryStatsIcon from '@mui/icons-material/QueryStatsSharp';
-import LoginIcon from '@mui/icons-material/LoginSharp';
 import PeopleIcon from '@mui/icons-material/People';
 import EventNoteIcon from '@mui/icons-material/EventNoteSharp';
 import EvStationIcon from '@mui/icons-material/EvStation';
@@ -16,8 +14,8 @@ const AdminSideBar = () => {
 
   const Menus = [
     { title: "Home", src: HomeIcon, link: '/admin' },
-    { title: "Add a charging point", src: PeopleIcon, link: '/admin/UsersDetails' },
-    { title: "Find a Charging point", src: QueryStatsIcon, link: '/map' },
+    { title: "User Details", src: PeopleIcon, link: '/admin/UsersDetails' },
+    { title: "Sales Report", src: QueryStatsIcon, link: '/admin/salesReport' },
     { title: "Bookings ", src: EventNoteIcon, link: '/admin/BookingDetails' },
     { title: "Charging Details", src: EvStationIcon, link: '/admin/PortDetails' },
   ];

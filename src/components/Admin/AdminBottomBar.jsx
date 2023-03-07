@@ -1,21 +1,18 @@
 import React  from 'react';
 import { Link } from 'react-router-dom'
-import AddLocationAltSharpIcon from '@mui/icons-material/AddLocationAltSharp';
+import PeopleIcon from '@mui/icons-material/People';
 import HomeIcon from '@mui/icons-material/HomeSharp';
 import QueryStatsIcon from '@mui/icons-material/QueryStatsSharp';
-import LoginIcon from '@mui/icons-material/LoginSharp';
 import EventNoteIcon from '@mui/icons-material/EventNoteSharp';
-import ThreePSharpIcon from '@mui/icons-material/ThreePSharp';
+import EvStationIcon from '@mui/icons-material/EvStation';
 
 function AdminBottomBar() {
   const Menus = [
-    { title: "Home", src: HomeIcon },
-    { title: "Add a charging point", src: AddLocationAltSharpIcon },
-    { title: "Find a Charging point", src: QueryStatsIcon },
-    { title: "Bookings ", src: EventNoteIcon },
-    { title: "Requests", src: ThreePSharpIcon },
-    { title: "Login", src: LoginIcon },
-
+    { title: "Home", src: HomeIcon, link: '/admin' },
+    { title: "User Details", src: PeopleIcon, link: '/admin/UsersDetails' },
+    { title: "Sales Report", src: QueryStatsIcon, link: '/admin/salesReport' },
+    { title: "Bookings ", src: EventNoteIcon, link: '/admin/BookingDetails' },
+    { title: "Charging Details", src: EvStationIcon, link: '/admin/PortDetails' },
   ];
   return (
 

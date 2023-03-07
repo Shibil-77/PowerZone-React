@@ -64,7 +64,7 @@ export const findPortData =async (portId) =>{
 
 export const bookingApi =async(time,date,id)=>{
     try {
-        console.log(time);
+        console.log(time,date,id,"api");
         const data = await axios.post('http://localhost:4000/api/port/booking',{time,date,id},{
             withCredentials: true,
             headers: {

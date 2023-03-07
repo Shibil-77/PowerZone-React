@@ -91,7 +91,7 @@ function CalendarPage() {
             value={value}
             showTimeSelect
             timeFormat="HH:mm"
-            timeIntervals={15}
+            timeIntervals={1}
             onClickDay={handleClick}
             minDate={new Date()}
           />

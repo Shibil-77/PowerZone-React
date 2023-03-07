@@ -10,6 +10,7 @@ const PayPalButton = window.paypal.Buttons.driver("react", { React, ReactDOM });
 function PayPal({rate,value,timeData, id}) {
   const navigate =  useNavigate()
    const  onBooking = ()=>{
+    console.log(timeData, value, id);
       const res = bookingApi(timeData, value, id)
         if(res){
           toast.success('Booking SuccessFully completed', {
