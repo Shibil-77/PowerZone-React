@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import {bookingCancelApi} from '../../api/userApi'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+const Swal = require('sweetalert2')
 
 function Table({ headData, tableData }) {
     const [table, setTable] = useState(tableData)
@@ -18,7 +19,23 @@ function Table({ headData, tableData }) {
     }
 
    const bookingCancel = (bookingId)=>{
-      bookingCancelApi(bookingId)
+
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Cancel it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Cancel!',
+            'Your file has been deleted.',
+            'success'
+          )
+          bookingCancelApi(bookingId)
      setTable( table.filter((data)=>data._id != bookingId)) 
      toast.success('Booking SuccessFully Canceled', {
         position: "top-center",
@@ -30,6 +47,9 @@ function Table({ headData, tableData }) {
         progress: undefined,
         theme: "dark",
         });
+        }
+      })
+      
     }
 
     return (

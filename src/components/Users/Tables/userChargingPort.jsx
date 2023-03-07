@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { userPortDetailsFinding, deletePort } from '../../../api/userApi'
+const Swal = require('sweetalert2')
 
 function UserChargingPort({ headData }) {
 
@@ -13,8 +14,26 @@ function UserChargingPort({ headData }) {
 
     const deletePortSubmit = async (id) => {
         console.log(id);
-        await deletePort(id)
-        setTable(table.filter((data) => data._id !== id))
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then(async(result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+              )
+              await deletePort(id)
+              setTable(table.filter((data) => data._id !== id))
+            }
+          })
+       
     }
 
     useEffect(() => {
