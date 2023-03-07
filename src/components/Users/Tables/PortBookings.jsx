@@ -1,14 +1,25 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 import {userPortBooking} from '../../../api/userApi'
 
 function PortBookings({ headData }) {
+    const [table, setTable] = useState([])
+    const APICall =async ()=>{
+      const tableData = await userPortBooking()
+      console.log(tableData);
+      setTable(tableData)
+    }
 
-    const APICall = ()=>{
-        userPortBooking ()
+    function convertDate(date) {
+        const newDate = new Date(date);
+        const year = newDate.getFullYear();
+        const month = (newDate.getMonth() + 1).toString().padStart(2, '0');
+        const day = newDate.getDate().toString().padStart(2, '0');
+        const result = `${day}-${month}-${year}`;
+        return result;
     }
 
     useEffect(() => {
-
+        APICall()
     }, [])
 
     return (
@@ -34,21 +45,13 @@ function PortBookings({ headData }) {
                                             {data._id}
                                         </th>
                                         <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                            {data.rate}
+                                            {data.portId}
                                         </td>
                                         <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                            {data.kW}
+                                            {convertDate(data.date)}
                                         </td>
                                         <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                            {data.type}
-                                        </td>
-                                        <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                            {data.location}
-                                        </td>
-                                        <td classNameName="px-10  py-10" >
-                                            <button onClick={() => deletePortSubmit(data._id)} className="bg-green-600 text-white active:bg-green-500 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="button">
-                                                Delete
-                                            </button>
+                                            {data.time}
                                         </td>
                                     </tr>
                                 )

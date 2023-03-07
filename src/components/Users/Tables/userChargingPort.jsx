@@ -14,11 +14,12 @@ function UserChargingPort({ headData }) {
     const deletePortSubmit = async (id) => {
         console.log(id);
         await deletePort(id)
+        setTable(table.filter((data) => data._id !== id))
     }
 
     useEffect(() => {
         APICall()
-    }, [table])
+    }, [])
 
 
     return (

@@ -40,6 +40,7 @@ import CheckOutPage from './pages/Users/CheckOutPage/CheckOutPage';
 
 import ChargingPortDetails from './pages/Users/ChargingPortDetails/ChargingPortDetails';
 
+
 import ErrorPage from './components/Users/ErrorPage';
 
 
@@ -57,7 +58,9 @@ import DashBoardPage from './pages/Admin/Dashboard/DashBoardPage';
 import AdminBookingDetailsPage from './pages/Admin/BookingDetails/BookingDetailsPage'
 
 import UserPublicRoute from './PublicRoute/UserPublicRoute';
+
 import AdminPublicRoute from './PublicRoute/AdminPublicRoute';
+import PortBookingPage from './pages/Users/PortBookings/PortBookingPage';
 
 
 
@@ -70,7 +73,7 @@ function App() {
              {/*<------==========user side========---> */}
 
           <Route path="/login" element={
-         <UserPublicRoute>    <LoginPage /> </UserPublicRoute>} />
+         <UserPublicRoute><LoginPage /></UserPublicRoute>} />
 
           <Route path="/register" element={ <UserPublicRoute><RegisterPage /></UserPublicRoute> } />
 
@@ -83,7 +86,6 @@ function App() {
           <Route path="/" element={<HomePage />} />
 
           <Route path="/profile" element={ <UserProtectRouter> <ProfilePage /> </UserProtectRouter>  } />
-
 
           <Route path="/addBookingDetails" element={ <UserProtectRouter> <BookingDetailsPage /> </UserProtectRouter> } />
 
@@ -98,6 +100,9 @@ function App() {
           <Route path="/userBookings" element={   <UserProtectRouter> <BookingPage />  </UserProtectRouter>  } />
 
           <Route path="/userChargingPortDetails" element={ <UserProtectRouter> <ChargingPortDetails/></UserProtectRouter>  } />
+
+          <Route path="/userChargingPortBookings" element={ <UserProtectRouter> <PortBookingPage/></UserProtectRouter>  } />
+
 
             {/* <---========= admin side =======----> */}
 
