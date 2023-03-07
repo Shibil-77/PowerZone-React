@@ -1,11 +1,15 @@
 import React from 'react'
 import SalesReport from '../../../components/Admin/Table/SalesReport'
+import AdminLayout from '../AdminLayout/AdminLayout'
 
 function SalesReportPage() {
-    const headData = ["bookingId", "Date", "Time","Action"]
+    const headData = ["Id", "Date", "BookingCount"]
   return (
     <>
-    <SalesReport headData={headData}/>
+    <AdminLayout>
+      <SalesReport headData={headData}/>
+    </AdminLayout>
+   
     </>
   )
 }

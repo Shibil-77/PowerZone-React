@@ -61,6 +61,7 @@ import UserPublicRoute from './PublicRoute/UserPublicRoute';
 
 import AdminPublicRoute from './PublicRoute/AdminPublicRoute';
 import PortBookingPage from './pages/Users/PortBookings/PortBookingPage';
+import SalesReportPage from './pages/Admin/SalesReportPage/SalesReportPage';
 
 
 
@@ -115,6 +116,11 @@ function App() {
           <Route path="/admin/PortDetails" element={ <AdminProtectRouter> <AdminPortDetails /></AdminProtectRouter>  } />
 
           <Route path="/admin/UsersDetails" element={  <AdminProtectRouter> <UserDetails /></AdminProtectRouter> } />
+
+          
+          <Route path="/admin/salesReport" element={  <AdminProtectRouter> <SalesReportPage/> </AdminProtectRouter> } />
+
+          
 
           <Route path="/*" element={<ErrorPage />} />
 
