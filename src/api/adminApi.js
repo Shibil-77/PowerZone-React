@@ -85,3 +85,15 @@ export const dashBoard = async()=>{
         return error
     }
 }
+
+export const SalesReportApi =async()=>{
+    try {
+        const response = await axios.get(`https://server.smartshoping.club/api/admin/salesReport`, {
+            withCredentials: true,
+        })
+        console.log(response.data);
+        return response.data
+    } catch (error) {
+        return error
+    }
+}

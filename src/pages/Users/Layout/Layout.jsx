@@ -17,7 +17,6 @@ function Layout({ children }) {
                             <SideBar />
                         </div>
                         {children}
-
                     </div>
                 </div>
                 <div>

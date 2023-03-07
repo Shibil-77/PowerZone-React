@@ -3,6 +3,9 @@ import TextField from '@mui/material/TextField';
 import { useNavigate } from 'react-router-dom';
 import {apiAdminLogin} from "../../api/adminApi"
 import {loginValidation} from '../Users/userUtils/utilRegister'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 function AdminLogin() {
@@ -25,16 +28,35 @@ const [adminLoginData,setAdminLoginData] = useState()
         localStorage.setItem('adminToken',loginData.data.adminToken)
         navigate('/admin')
       }else{
-        // setErrorMessage(login.data.message)
+        toast.error(loginData,{
+          position: "bottom-left",
+          autoClose: 1500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       }
       }else {
-        // setErrorMessage(login.data.message)
+        toast.error(login,{
+          position: "bottom-left",
+          autoClose: 1500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
     }
   }
 
   return (
     <>
       <div className='flex w-full h-full justify-items-center bg-[#e9f7fa]'>
+      <ToastContainer/>
         <div className='h-screen w-8/12  flex-col hidden lg:block'>
           <img className='mt-[250px]'
             src="https://electricvehicles.bchydro.com/sites/default/files/content-row/charging-an-ev-right-align%402x.png" alt="" />
