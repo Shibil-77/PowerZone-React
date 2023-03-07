@@ -33,6 +33,10 @@ function UserChargingPort({ headData }) {
               setTable(table.filter((data) => data._id !== id))
             }
           })
+
+     
+
+       
        
     }
 
