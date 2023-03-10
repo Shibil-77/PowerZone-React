@@ -6,12 +6,13 @@ import { userActions } from '../../redux/userAuth'
 import { Link, useNavigate } from 'react-router-dom';
 
 function Navbar() {
+
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    
     const user = useSelector((state) => state?.user.user)
 
     const Logout = () => {
-        
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         dispatch(
@@ -20,7 +21,7 @@ function Navbar() {
         navigate('/')
 
     }
-    console.log(user);
+
     return (
         <>
             <div className="flex justify-between bg-white shadow-md w-full h-16 shadow-heavy-metal-400 p-4 mb-5 sticky top-0 z-50">

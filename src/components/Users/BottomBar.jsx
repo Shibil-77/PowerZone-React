@@ -19,6 +19,7 @@ function BottomBar() {
     { title: "Bookings ", src: EventNoteIcon, link: '/userBookings' },
     { title: "Charging Details", src: ThreePSharpIcon, link: '/PortDetails' },
   ];
+  
   if(!user){
     Menus.push({ title: "Login", src: LoginIcon, link: '/login' })
   }

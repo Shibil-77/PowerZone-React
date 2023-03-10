@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 // import { NavLink } from 'react-router-dom'
 import Icons from '../../assets/Icons/user.png'
 import { findProfileData } from '../.././api/userApi'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Profile() {
 
+  const navigate =   useNavigate()
   const [profileData, setProfileData] = useState({})
   const [booking, setBooking] = useState(0)
   const [chargingPort, setChargingPort] = useState(0)
@@ -18,7 +19,7 @@ function Profile() {
       setChargingPort(portData)
       setBooking(newBookings)
     } else {
-      console.log("================================");
+      navigate('/*')
     }
   }
 

@@ -17,6 +17,7 @@ function AddChargingPort({ children }) {
   const [dayAndTime, setDayAndTime] = useState([])
   const [stateUpdate, setStateUpdated] = useState(false)
   const [errorMessage, setErrorMessage] = useState()
+
   // functions
 
   const handleEdit = async (e) => {
@@ -34,8 +35,7 @@ function AddChargingPort({ children }) {
   };
 
 
-
-  const dayAdding = (e) => {
+ const dayAdding = (e) => {
     e.preventDefault();
     setDayAndTime([...dayAndTime, dayDetails])
     console.log(dayAndTime, "dayAndTime")
@@ -60,38 +60,37 @@ function AddChargingPort({ children }) {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-     const validation  = await addChargingPortValidation(chargingPortData)
-     console.log(validation);
-      if(validation === "success"){
-    const chargingData = await addChargingPortApi(chargingPortData)
-    if (chargingData.status === 200) {
-      navigate({
-        pathname: '/mapValue',
-        hash: chargingData.data.message,
-      })
+    const validation = await addChargingPortValidation(chargingPortData)
+    console.log(validation);
+    if (validation === "success") {
+      const chargingData = await addChargingPortApi(chargingPortData)
+      if (chargingData.status === 200) {
+        navigate({
+          pathname: '/mapValue',
+          hash: chargingData.data.message,
+        })
+      } else {
+        alert(chargingData.data.message)
+      }
     } else {
-      alert(chargingData.data.message)
-    }
-  }else {
-    console.log(validation,"==--=-=-===-=-=");
-    toast.error(validation, {
-      position: "bottom-left",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
+      toast.error(validation, {
+        position: "bottom-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
       });
-  }
+    }
 
   }
 
   return (
-    
+
     <section className=" py-1 bg-blueGray-50 w-full flex justify-center">
-      <ToastContainer/>
+      <ToastContainer />
       <div className=" md:w-6/12 px-4 mx-auto mt-6 w-full">
         <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0">
           <div className="rounded-t bg-white mb-0 px-6 py-6">
@@ -134,14 +133,6 @@ function AddChargingPort({ children }) {
                     <input type="text" name='type' className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" onChange={handleEdit} />
                   </div>
                 </div>
-                {/* <div className="w-full lg:w-6/12 px-4">
-                  <div className="relative w-full mb-3">
-                    <label className="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                      Time
-                    </label>
-                    <input type="time" className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
-                  </div>
-                </div> */}
               </div>
 
               <hr className="mt-6 border-b-1 border-blueGray-300" />
