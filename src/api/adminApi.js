@@ -8,26 +8,22 @@ export const getUserData = async () => {
         })
         return response.data
     } catch (error) {
-        console.log(error)
     }
 }
 
 export const userAccess = async (id) => {
-    console.log(id);
     try {
         const response = await axios.get(`https://server.smartshoping.club/api/admin/userAccess/${id}`, {
             withCredentials: true,
         })
         return response.data
     } catch (error) {
-        console.log(error)
         return error
     }
 }
 
 export const apiAdminLogin =async (data)=>{
      try {
-        console.log(data);
         const response = await axios.post('https://server.smartshoping.club/api/admin/adminLogin',data,{
             withCredentials: true,
         })
@@ -43,7 +39,6 @@ export const getPortData =async ()=>{
         const response = await axios.get("https://server.smartshoping.club/api/admin/getPortData", {
             withCredentials: true,
         })
-        console.log(response,"response");
         return response.data
     } catch (error) {
         
@@ -58,7 +53,6 @@ export const portRequest = async(id)=>{
         })
         return response.data
     } catch (error) {
-        console.log(error)
         return error
     }
 }
@@ -79,7 +73,6 @@ export const dashBoard = async()=>{
         const response = await axios.get(`https://server.smartshoping.club/api/admin/dashBoard`, {
             withCredentials: true,
         })
-        console.log(response.data);
         return response.data
     } catch (error) {
         return error
@@ -91,7 +84,6 @@ export const SalesReportApi =async()=>{
         const response = await axios.get(`https://server.smartshoping.club/api/admin/salesReport`, {
             withCredentials: true,
         })
-        console.log(response.data);
         return response.data
     } catch (error) {
         return error

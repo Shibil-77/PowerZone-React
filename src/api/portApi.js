@@ -9,7 +9,6 @@ export const addChargingPortApi = async(value) => {
                 Authorization: "Bearer " + localStorage.getItem("token"),
             },
         })
-        console.log(chargingData);
           return chargingData
          } catch (error) {
             
@@ -18,7 +17,6 @@ export const addChargingPortApi = async(value) => {
 
 export const addPointValueApi = async(map,id)=>{
     try {
-         console.log(map);
         const chargingData = await axios.patch('https://server.smartshoping.club/api/port/addMapValue',{map,id},{
             withCredentials: true,
             headers: {
@@ -64,14 +62,12 @@ export const findPortData =async (portId) =>{
 
 export const bookingApi =async(time,date,id)=>{
     try {
-        console.log(time,date,id,"api");
         const data = await axios.post('https://server.smartshoping.club/api/port/booking',{time,date,id},{
             withCredentials: true,
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("token"),
             },
         })
-        console.log(data.data);
         return data.data;
     } catch (error) {
         return error

@@ -10,8 +10,7 @@ export const findProfileData = async()=>{
         })
         return response.data
     } catch (error) {
-        console.log(error)
-    }
+        return error    }
 }
 
 export const findNewBookings = async()=>{
@@ -24,7 +23,7 @@ export const findNewBookings = async()=>{
         })
         return response.data
     } catch (error) {
-        console.log(error)
+        return error
     }
 }
 
@@ -37,10 +36,9 @@ export const findChargingPort = async()=>{
                 Authorization: "Bearer " + localStorage.getItem("token"),
             },
         })
-        console.log(response,"response.data");
         return response.data
     } catch (error) {
-        console.log(error)
+        return error
     }
 }
 
@@ -54,7 +52,7 @@ export const userPortDetailsFinding = async()=>{
         })
         return response.data
     } catch (error) {
-        console.log("Errrrrrrrr",error)
+        return error
     }
 }
 
@@ -68,7 +66,7 @@ export const deletePort = async(id)=>{
         })
         return response.data
     } catch (error) {
-        console.log(error)
+        return error
     }
 }
 
@@ -83,7 +81,7 @@ export const bookingCancelApi = async(id)=>{
         })
         return response.data
     } catch (error) {
-        console.log(error)
+        return error
     }
 }
 
