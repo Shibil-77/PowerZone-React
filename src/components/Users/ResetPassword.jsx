@@ -12,6 +12,7 @@ function ResetPassword() {
         const { name, value } = e.target;
         setResetData({ ...resetData, [name]: value });
     };
+    
     const resetSubmit = async (e) => {
         e.preventDefault();
         const data = await apiResetPassword(id, resetData)
@@ -31,6 +32,7 @@ function ResetPassword() {
             }, 2000)
         }
     }
+
     return (
         <div>
             <ToastContainer />

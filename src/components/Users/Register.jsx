@@ -7,33 +7,36 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Register() {
+  
+  const [errorMessage,setErrorMessage] = useState(null)
+  const [successMessage,setSuccessMessage] = useState(null)
   const [registerData, setRegisterData] = useState('')
+
+
   const handleEdit = async (e) => {
     const { name, value } = e.target;
     setRegisterData({ ...registerData, [name]: value });
   };
 
-  const [errorMessage,setErrorMessage] = useState(null)
-  const [successMessage,setSuccessMessage] = useState(null)
   async function handleSignUp(e){
-    e.preventDefault();
+       e.preventDefault();
        const signUp =  SignUpValidation(registerData)
       if(signUp === 'success'){
-        setSuccessMessage(null)
-         const userData = await apiUserSignUp(registerData)
-          if(userData.status === 200){
-            setErrorMessage(null)
-            toast.success("Check user email",{
-              position: "top-right",
-              autoClose: 1500,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "light",
-            });
-            setSuccessMessage("check user email")
+           setSuccessMessage(null)
+           const userData = await apiUserSignUp(registerData)
+              if(userData.status === 200){
+                  setErrorMessage(null)
+                  toast.success("Check user email",{
+                  position: "top-right",
+                  autoClose: 1500,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "light",
+                });
+                setSuccessMessage("check user email")
           }else{
             setErrorMessage(userData)
           }
@@ -50,6 +53,7 @@ function Register() {
           });
       }
   }
+
   return (
     <>
       <div className='flex w-full h-full justify-items-center bg-[#e9f7fa] '>

@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import {bookingCancelApi} from '../../api/userApi'
+import { bookingCancelApi } from '../../api/userApi'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const Swal = require('sweetalert2')
@@ -18,44 +18,44 @@ function Table({ headData, tableData }) {
         return result;
     }
 
-   const bookingCancel = (bookingId)=>{
+    const bookingCancel = (bookingId) => {
 
-    Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, Cancel it!'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire(
-            'Cancel!',
-            'Your file has been deleted.',
-            'success'
-          )
-          bookingCancelApi(bookingId)
-     setTable( table.filter((data)=>data._id != bookingId)) 
-     toast.success('Booking SuccessFully Canceled', {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-        });
-        }
-      })
-      
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, Cancel it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Cancel!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+                bookingCancelApi(bookingId)
+                setTable(table.filter((data) => data._id != bookingId))
+                toast.success('Booking SuccessFully Canceled', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                });
+            }
+        })
+
     }
 
     return (
-        
+
         <div className="overflow-x-auto w-full h-full  flex justify-center">
-              <ToastContainer/>
+            <ToastContainer />
             <table className="  rounded-2xl shadow-2xl sm:rounded-lg text-sm text-left text-gray-500 dark:text-gray-400 w-2/3 ">
                 <thead className="text-xs text-gray-700 uppercase rounded-lg  dark:bg-gray-700 bg-green-600 dark:text-gray-400">
                     <tr>
@@ -81,10 +81,10 @@ function Table({ headData, tableData }) {
                                         {data?.time}
                                     </td>
                                     <td className="px-6 ">
-                                        <button onClick={()=>{
+                                        <button onClick={() => {
                                             bookingCancel(data._id)
                                         }} className="bg-green-600 text-white active:bg-green-500 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150 h-12" type="button">
-                                         Cancel
+                                            Cancel
                                         </button>
                                     </td>
                                 </tr>

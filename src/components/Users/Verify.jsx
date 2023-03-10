@@ -1,27 +1,30 @@
 import React, { useState } from 'react'
-import { useParams,useNavigate } from 'react-router-dom'
-import { verifyResponse,timeReset } from "../../api/authApi"
+import { useParams, useNavigate } from 'react-router-dom'
+import { verifyResponse, timeReset } from "../../api/authApi"
 
 function Verify() {
 
     const navigate = useNavigate()
-    const [errorMessage,setErrorMessage] =useState(null)
+    const [errorMessage, setErrorMessage] = useState(null)
 
     const { id, code } = useParams()
-    const submitVerify =async (e) => {
+
+    const submitVerify = async (e) => {
         e.preventDefault();
-     const data =  await  verifyResponse(id, code)
-      if(data.status === 200){
-          navigate('/')
-      }else{
-        setErrorMessage(data)
-      }
+        const data = await verifyResponse(id, code)
+        if (data.status === 200) {
+            navigate('/')
+        } else {
+            setErrorMessage(data)
+        }
     }
-    const resendEmail =(e)=>{
-    e.preventDefault();
-    setErrorMessage(null)
-    timeReset(id);
+
+    const resendEmail = (e) => {
+        e.preventDefault();
+        setErrorMessage(null)
+        timeReset(id);
     }
+    
     return (
         <div>
             <div className="flex items-center justify-center min-h-screen p-5 bg-white min-w-screen">
