@@ -7,7 +7,6 @@ function SalesReport({headData}) {
    
   const APICall = async()=>{
      const salesData = await  SalesReportApi()
-     console.log(salesData);
      setTable(salesData)
   }
 

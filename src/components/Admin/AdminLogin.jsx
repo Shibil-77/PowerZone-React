@@ -19,10 +19,8 @@ const [adminLoginData,setAdminLoginData] = useState()
   const handleAdminLogin = async (e) => {
     e.preventDefault();
     const login = loginValidation(adminLoginData)
-     console.log(login);
     if (login === 'success') {
       const loginData =await apiAdminLogin(adminLoginData)
-      console.log("success login",loginData)
       if (loginData.status === 200) {
         // setErrorMessage(null)
         localStorage.setItem('adminToken',loginData.data.adminToken)

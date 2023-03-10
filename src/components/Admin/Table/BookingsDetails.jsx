@@ -20,7 +20,6 @@ function BookingDetails({ headData }) {
 
     const bookingApiCall = async () => {
         const bookingsData  = await adminFindNewBookings()
-        console.log(bookingsData);
         if (bookingsData) {
             setTable(bookingsData)
         }
@@ -59,13 +58,6 @@ function BookingDetails({ headData }) {
                                     <td className="px-6 font-medium text-gray-900 whitespace-nowrap">
                                         {data?.time}
                                     </td>
-                                    {/* <td className="px-6 ">
-                                        <button onClick={()=>{
-                                            bookingCancel(data._id)
-                                        }} className="bg-green-600 text-white active:bg-green-500 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150 h-12" type="button">
-                                         Cancel
-                                        </button>
-                                    </td> */}
                                 </tr>
                             )
                         })}

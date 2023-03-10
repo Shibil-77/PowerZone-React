@@ -6,15 +6,12 @@ import AdminTableRow from './AdminTableRow'
 
 function AdminTable({ tableHeaders, data }) {
     const [tableData, setTableData] = useState([])
-    console.log(data)
     useEffect(() => {
         const user = async () => {
             if (data === "userDetails") {
                 const data = await getUserData()
                 if (data) {
                     setTableData(data)
-                } else {
-                    console.log("server error");
                 }
             } else {
             }
